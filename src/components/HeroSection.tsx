@@ -5,7 +5,7 @@ import CountdownTimer from "./CountdownTimer";
 const HeroSection = () => {
   // Set end date to 7 days from now for the countdown
   const endDate = new Date();
-  endDate.setDate(endDate.getDate() + 7);
+  endDate.setDate(endDate.getDate() + 3);
 
   return (
     <div className="pt-20 pb-20 bg-hero-pattern relative overflow-hidden">
@@ -18,13 +18,13 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-            Turn Cold Data Into 
-            <span className="bg-gradient-to-r from-kloudfox-orange to-kloudfox-yellow bg-clip-text text-transparent"> Hot Profits </span>
-            With KloudFox
+            Don't Let Your Website 
+            <span className="bg-gradient-to-r from-kloudfox-orange to-kloudfox-yellow bg-clip-text text-transparent"> Go Down </span>
+            Without You Knowing
           </h1>
           
           <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-            The all-in-one analytics platform that transforms your business data into actionable insights. <span className="font-bold text-white">97% OFF today only!</span>
+            Like spinach between your teeth, you don't want to be the last person to realize your website is down. <span className="font-bold text-white">KloudFox monitors your uptime 24/7 so you never miss a beat.</span>
           </p>
           
           <div className="mb-10">

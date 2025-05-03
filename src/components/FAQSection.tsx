@@ -12,28 +12,28 @@ const faqs = [
     answer: "Yes! This is a LIMITED TIME offer exclusive to AppSumo. Pay once and get lifetime access to KloudFox with no further fees, subscriptions, or hidden costs. All future updates and features are included."
   },
   {
-    question: "How is KloudFox different from other analytics tools?",
-    answer: "KloudFox combines powerful enterprise-level features with an intuitive interface, making advanced analytics accessible to businesses of all sizes. Our proprietary AI engine provides actionable insights automatically, not just raw data that you need to interpret yourself."
+    question: "How is KloudFox different from other uptime monitoring tools?",
+    answer: "KloudFox combines powerful multi-location monitoring with custom status pages and instant alerts across multiple channels. Our intuitive interface makes it accessible for non-technical users while offering advanced features that competitors charge hundreds per month for."
   },
   {
-    question: "Do I need technical skills to use KloudFox?",
-    answer: "Not at all! KloudFox was designed to be user-friendly for non-technical users while still providing advanced capabilities for data professionals. Our setup wizard will have you collecting valuable insights in minutes."
+    question: "How many websites can I monitor with this deal?",
+    answer: "This lifetime deal includes monitoring for up to 10 websites with custom check intervals as frequent as every 40 seconds. You'll get unlimited status pages, team members, and alert channels—all with no monthly fees ever."
   },
   {
     question: "What if I'm not satisfied with KloudFox?",
     answer: "Your purchase is backed by AppSumo's 30-day money-back guarantee. If you're not completely satisfied, simply request a refund within 30 days – no questions asked."
   },
   {
-    question: "Will I get access to future updates?",
-    answer: "Absolutely! Your lifetime access includes ALL future updates to KloudFox. As we release new features and improvements, you'll get them at no additional cost."
+    question: "Which notification channels are supported?",
+    answer: "KloudFox supports email alerts, Slack notifications, webhook integrations, Zapier connections, and mobile push notifications through our companion app. You can set up multiple channels to ensure your team never misses an incident."
   },
   {
-    question: "How do I integrate KloudFox with my existing tools?",
-    answer: "KloudFox integrates seamlessly with over 50 popular platforms including Shopify, WooCommerce, Google Analytics, Facebook Ads, and more. Our setup wizard makes connecting your data sources simple, and our support team is available to help if needed."
+    question: "Do I need technical skills to use KloudFox?",
+    answer: "Not at all! KloudFox was designed with a zero learning curve approach. Simply enter your website URL, customize your monitoring preferences, and you're protected within minutes. The setup wizard guides you through the entire process."
   },
   {
     question: "How long will this offer be available?",
-    answer: "This is a strictly limited-time offer that will expire soon. Once it's gone, KloudFox will return to its regular subscription pricing model. We cannot guarantee this lifetime deal will ever be offered again."
+    answer: "This is a strictly limited-time offer with only a few codes remaining. Once they're gone, KloudFox will return to its regular subscription pricing of $74/month. We cannot guarantee this lifetime deal will ever be offered again."
   }
 ];
 

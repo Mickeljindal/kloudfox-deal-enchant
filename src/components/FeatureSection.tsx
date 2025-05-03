@@ -1,36 +1,36 @@
 
-import { Award, Zap, Rocket, Users, DollarSign, Shield } from "lucide-react";
+import { Bell, Globe, Shield, Clock, Zap, Layers } from "lucide-react";
 
 const features = [
   {
-    icon: <Zap className="h-8 w-8" />,
-    title: "Real-Time Analytics",
-    description: "Track user behavior as it happens with lightning-fast data processing that updates in milliseconds, not hours."
+    icon: <Globe className="h-8 w-8" />,
+    title: "Multi-Location Monitoring",
+    description: "Monitor your website uptime from multiple locations across North America, Europe, Asia, and Australia to ensure global availability."
   },
   {
-    icon: <Award className="h-8 w-8" />,
-    title: "AI-Powered Insights",
-    description: "Our advanced AI engine automatically identifies patterns and opportunities others miss, giving you the competitive edge."
-  },
-  {
-    icon: <Users className="h-8 w-8" />,
-    title: "Customer Segmentation",
-    description: "Slice and dice your audience into precise segments to deliver perfectly targeted campaigns that convert."
-  },
-  {
-    icon: <Rocket className="h-8 w-8" />,
-    title: "Growth Forecasting",
-    description: "Predict future trends with stunning accuracy using our proprietary prediction algorithm trusted by industry leaders."
-  },
-  {
-    icon: <DollarSign className="h-8 w-8" />,
-    title: "ROI Calculation",
-    description: "Instantly see which marketing channels deliver the highest returns, so you can double down on what works."
+    icon: <Bell className="h-8 w-8" />,
+    title: "Instant Alerts",
+    description: "Get notified within seconds when your site goes down via Slack, email, or push notifications to your phone so you can act immediately."
   },
   {
     icon: <Shield className="h-8 w-8" />,
-    title: "Enterprise-Grade Security",
-    description: "Bank-level encryption and compliance with all major privacy regulations keep your sensitive data protected."
+    title: "SSL Verification",
+    description: "Never miss an SSL expiration again. Get alerted days before certificates expire to prevent security warnings that scare away customers."
+  },
+  {
+    icon: <Clock className="h-8 w-8" />,
+    title: "Customizable Checks",
+    description: "Set monitoring intervals from 40 seconds to hourly to match your specific needs and get the perfect balance of coverage and resources."
+  },
+  {
+    icon: <Layers className="h-8 w-8" />,
+    title: "Branded Status Pages",
+    description: "Create beautiful, customized status pages with your logo and colors that build trust with your customers during incidents."
+  },
+  {
+    icon: <Zap className="h-8 w-8" />,
+    title: "Zero Learning Curve",
+    description: "Get up and running in minutes with our intuitive interface—simply enter your URL, customize your preferences, and you're protected."
   }
 ];
 
@@ -39,11 +39,11 @@ const FeatureSection = () => {
     <div id="features" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="section-title">
-          Everything You Need To <span className="text-kloudfox-blue">Skyrocket Growth</span>
+          Everything You Need To <span className="text-kloudfox-blue">Keep Your Website Up</span>
         </h2>
         
         <p className="section-subtitle">
-          KloudFox delivers powerful analytics tools that are typically reserved for enterprise companies with million-dollar budgets. Now available to you at a fraction of the cost.
+          KloudFox delivers powerful uptime monitoring tools that are typically reserved for enterprise companies with million-dollar budgets. Now available to you at a fraction of the cost.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
@@ -70,13 +70,13 @@ const FeatureSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-sm border border-blue-50">
               <div className="text-kloudfox-orange font-bold mb-2">BONUS #1</div>
-              <h4 className="text-xl font-bold mb-3">Free Data Migration ($997 Value)</h4>
-              <p className="text-gray-600">Our team will handle the complete transfer of your existing analytics data at no extra charge.</p>
+              <h4 className="text-xl font-bold mb-3">Mobile App Access ($197 Value)</h4>
+              <p className="text-gray-600">Get real-time push notifications and monitor your websites directly from your smartphone to stay connected anywhere.</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm border border-blue-50">
               <div className="text-kloudfox-orange font-bold mb-2">BONUS #2</div>
-              <h4 className="text-xl font-bold mb-3">Strategy Session ($499 Value)</h4>
-              <p className="text-gray-600">60-minute consultation with our data experts to optimize your analytics strategy and setup.</p>
+              <h4 className="text-xl font-bold mb-3">Premium Integrations ($249 Value)</h4>
+              <p className="text-gray-600">Connect with Slack, Zapier, webhooks, and more to create a seamless monitoring workflow with your existing tools.</p>
             </div>
           </div>
         </div>

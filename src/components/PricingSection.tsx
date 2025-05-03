@@ -3,33 +3,33 @@ import ValueComparison from "./ValueComparison";
 
 const comparisonFeatures = [
   { feature: "Lifetime Access to KloudFox Platform", included: true },
-  { feature: "Unlimited Data Points", included: true },
-  { feature: "All Analytics Features", included: true },
-  { feature: "Advanced AI Insights", included: true },
-  { feature: "Free Data Migration", included: true },
-  { feature: "Priority Support", included: true },
-  { feature: "Strategy Consultation Call", included: true },
+  { feature: "Multi-Location Uptime Monitoring", included: true },
+  { feature: "Custom Status Pages", included: true },
+  { feature: "SSL Certificate Monitoring", included: true },
+  { feature: "Instant Downtime Alerts", included: true },
+  { feature: "Mobile App Access", included: true },
+  { feature: "Premium Integrations", included: true },
   { feature: "All Future Updates", included: true },
 ];
 
 const alternatives = [
   {
-    name: "Traditional Analytics",
-    monthlyPrice: "$299/mo",
-    yearCost: "$3,588/yr",
-    limitations: "High monthly fees, limited features, no AI"
+    name: "Pingdom",
+    monthlyPrice: "$199/mo",
+    yearCost: "$2,388/yr",
+    limitations: "Limited monitors, fewer features, no custom status pages"
   },
   {
-    name: "Enterprise Solutions",
-    monthlyPrice: "$2,000+/mo",
-    yearCost: "$24,000+/yr",
-    limitations: "Expensive, complex setup, requires dedicated team"
+    name: "StatusPage",
+    monthlyPrice: "$99/mo",
+    yearCost: "$1,188/yr",
+    limitations: "No uptime monitoring, status pages only, expensive add-ons"
   },
   {
-    name: "Basic Tools",
-    monthlyPrice: "$49/mo",
-    yearCost: "$588/yr",
-    limitations: "Limited data, basic features, no advanced insights"
+    name: "UptimeRobot",
+    monthlyPrice: "$74/mo",
+    yearCost: "$888/yr",
+    limitations: "Limited monitors, basic alerts, no premium integrations"
   }
 ];
 
@@ -42,16 +42,16 @@ const PricingSection = () => {
         </h2>
         
         <p className="section-subtitle">
-          You could spend thousands on traditional analytics platforms... or get lifetime access to KloudFox today for a one-time payment.
+          You could spend thousands on traditional monitoring platforms... or get lifetime access to KloudFox today for a one-time payment.
         </p>
         
         <div className="flex flex-col lg:flex-row gap-10 mt-12">
           <div className="flex-1">
             <ValueComparison 
               features={comparisonFeatures}
-              totalValue="$5,982"
+              totalValue="$4,982"
               dealPrice="$149"
-              savings="$5,833 (97% OFF)"
+              savings="$4,833 (97% OFF)"
             />
           </div>
           
@@ -83,7 +83,7 @@ const PricingSection = () => {
                   KloudFox: <span className="text-kloudfox-blue">$149</span> <span className="text-green-500">one-time payment</span>
                 </p>
                 <p className="text-sm text-gray-600 text-center mt-2">
-                  No monthly fees. No annual renewals. Just pure value.
+                  No monthly fees. No annual renewals. Just pure uptime protection.
                 </p>
               </div>
             </div>
@@ -93,7 +93,7 @@ const PricingSection = () => {
         <div className="mt-16 bg-gradient-to-r from-kloudfox-blue to-kloudfox-darkBlue rounded-2xl p-8 text-white text-center">
           <h3 className="text-2xl font-bold mb-4">Still On The Fence?</h3>
           <p className="text-xl mb-6 max-w-2xl mx-auto">
-            Consider this: With just <span className="font-bold text-kloudfox-yellow">ONE sale or client</span> from the insights you gain, this tool will pay for itself hundreds of times over.
+            Consider this: With just <span className="font-bold text-kloudfox-yellow">ONE hour of website downtime</span> prevented, this tool will pay for itself hundreds of times over in saved revenue and customer trust.
           </p>
           <button className="cta-button">
             Get Lifetime Access Now

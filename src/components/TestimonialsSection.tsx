@@ -4,36 +4,37 @@ import ReviewCard from "./ReviewCard";
 const testimonials = [
   {
     name: "Sarah Johnson",
-    title: "Marketing Director",
-    company: "GrowthGenius",
-    review: "KloudFox completely transformed how we analyze customer data. We identified a segment that was 4x more valuable than we thought, and our ROI increased by 267% in just two months!"
+    title: "E-commerce Owner",
+    company: "StyleBoutique",
+    review: "KloudFox caught our site outage at 2 AM when our hosting provider had issues. We fixed it before the morning rush and saved thousands in potential lost sales. Best investment for our online store!"
   },
   {
     name: "Michael Chen",
-    title: "E-commerce Owner",
-    review: "I was wasting thousands on ads that didn't convert. KloudFox showed me exactly where to focus, and we've doubled our sales while cutting ad spend by 40%. Best business decision I've made this year."
+    title: "IT Director",
+    company: "TechSolutions",
+    review: "Before KloudFox, we found out about downtime from angry customer calls. Now we're the first to know and our client satisfaction scores have improved dramatically. The status page feature alone is worth the price."
   },
   {
     name: "Alex Rodriguez",
     title: "SaaS Founder",
-    review: "The AI insights are like having a data scientist on the team. We discovered behavior patterns that led to a 53% reduction in churn rate. At this price point, it's an absolute no-brainer."
+    review: "Our SSL certificate expired and we had no idea until customers started complaining. With KloudFox's SSL monitoring, we now get alerts days before expiration. This tool paid for itself in the first week!"
   },
   {
     name: "Jennifer Williams",
-    title: "Digital Strategist",
-    company: "ConversionPro",
-    review: "I've used every analytics tool on the market, and KloudFox blows them away. The real-time data and actionable reports have increased our client conversion rates by an average of 31%."
+    title: "Marketing Director",
+    company: "GrowthAgency",
+    review: "We manage websites for 12 clients and KloudFox has been a game-changer. The multi-location monitoring catches issues our previous tool missed, and the custom status pages make us look professional during incidents."
   },
   {
     name: "David Park",
     title: "Startup Founder",
-    review: "As a non-technical founder, I needed something powerful but easy to use. KloudFox gave me exactly that, plus insights that helped us secure our Series A funding. Worth 100x the price!"
+    review: "As a non-technical founder, I needed something easy to use that would protect our revenue. KloudFox alerts me instantly when our site goes down, and I can check status from my phone anywhere. Worth every penny!"
   },
   {
     name: "Emma Thompson",
-    title: "Revenue Operations",
-    company: "ScaleUp Inc.",
-    review: "We were paying $2,400/year for a solution that did half of what KloudFox does. The migration was seamless, and the insights helped us identify a $1.2M revenue opportunity in the first week."
+    title: "Web Developer",
+    company: "CreativeCraft",
+    review: "I was paying $74/month for basic monitoring. KloudFox offers more features at a fraction of the lifetime cost. The Slack integration sends alerts directly to our team channel for immediate action. Absolutely love it."
   }
 ];
 
@@ -46,7 +47,7 @@ const TestimonialsSection = () => {
         </h2>
         
         <p className="section-subtitle">
-          See what our customers have achieved after implementing KloudFox in their businesses.
+          See how businesses are preventing costly downtime and keeping customers informed with KloudFox.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
@@ -63,24 +64,24 @@ const TestimonialsSection = () => {
         
         <div className="mt-16 text-center">
           <p className="text-kloudfox-blue font-bold text-lg mb-6">
-            Join 10,000+ successful businesses already using KloudFox
+            Join 10,000+ websites already protected by KloudFox
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
             <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-500">ACME Corp</span>
+              <span className="font-bold text-xl text-gray-500">E-commerce</span>
             </div>
             <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-500">GrowthCo</span>
+              <span className="font-bold text-xl text-gray-500">SaaS</span>
             </div>
             <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-500">TechGiants</span>
+              <span className="font-bold text-xl text-gray-500">Agencies</span>
             </div>
             <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-500">FutureX</span>
+              <span className="font-bold text-xl text-gray-500">Startups</span>
             </div>
             <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-500">ElevateHQ</span>
+              <span className="font-bold text-xl text-gray-500">Enterprise</span>
             </div>
           </div>
         </div>
