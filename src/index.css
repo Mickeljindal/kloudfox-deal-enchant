@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,40 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .deal-highlight {
+    @apply text-kloudfox-orange font-bold;
+  }
+  
+  .deal-card {
+    @apply border rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white p-6;
+  }
+  
+  .price-card {
+    @apply rounded-2xl shadow-xl bg-white border p-8 relative overflow-hidden;
+  }
+  
+  .feature-icon {
+    @apply w-12 h-12 flex items-center justify-center rounded-full bg-blue-50 text-kloudfox-lightBlue mb-4;
+  }
+  
+  .cta-button {
+    @apply bg-gradient-to-r from-kloudfox-orange to-kloudfox-yellow text-white font-bold rounded-full px-8 py-4 transition-all hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12;
+  }
+  
+  .highlight-banner {
+    @apply bg-gradient-to-r from-kloudfox-darkBlue to-kloudfox-lightBlue text-white p-3 font-semibold rounded-lg;
   }
 }
