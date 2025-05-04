@@ -17,10 +17,10 @@ const ValueComparison = ({ features, totalValue, dealPrice, savings }: ValueComp
   return (
     <div className="price-card">
       <div className="absolute top-0 right-0 bg-red-500 text-white font-bold py-1 px-4 transform translate-y-4 -translate-x-4 rotate-12 text-sm">
-        GOING FAST!
+        37 LEFT!
       </div>
       
-      <h3 className="text-2xl font-bold mb-6">Your "Never Pay Again" Bundle:</h3>
+      <h3 className="text-2xl font-bold mb-6">Your Website Protection Bundle:</h3>
       
       <div className="space-y-3 mb-8">
         {features.map((item, index) => (
@@ -39,7 +39,7 @@ const ValueComparison = ({ features, totalValue, dealPrice, savings }: ValueComp
       
       <div className="border-t border-dashed border-gray-200 pt-6 mb-6">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-gray-600">Monthly Subscribers Pay:</span>
+          <span className="text-gray-600">What Others Pay Monthly:</span>
           <span className="text-xl font-bold line-through text-gray-500">{totalValue}</span>
         </div>
         <div className="flex justify-between items-center mb-2">
@@ -47,19 +47,19 @@ const ValueComparison = ({ features, totalValue, dealPrice, savings }: ValueComp
           <span className="text-2xl font-bold text-green-600">{dealPrice}</span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-gray-600">LIFETIME SAVINGS:</span>
+          <span className="text-gray-600">YOU SAVE FOREVER:</span>
           <span className="text-xl font-bold text-red-500">{savings}</span>
         </div>
       </div>
       
       <button className="cta-button w-full relative overflow-hidden group">
-        <span className="relative z-10">Claim Your Lifetime Access (37 Left!)</span>
+        <span className="relative z-10">Fix Your Website Problems Now (37 Left!)</span>
         <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
       </button>
       
       <div className="mt-4 bg-yellow-50 border border-yellow-200 rounded-lg p-3">
         <p className="text-sm text-center font-medium text-yellow-800">
-          ⏰ Timer-based deal: When the clock hits zero, this page disappears forever. No extensions.
+          ⏰ WARNING: Every second you wait is another second your site could be losing customers without you knowing it.
         </p>
       </div>
     </div>
