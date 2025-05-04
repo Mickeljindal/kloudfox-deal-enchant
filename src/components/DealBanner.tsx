@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react';
 
 const messages = [
-  "🔥 LIFETIME ACCESS: 97% OFF TODAY ONLY!",
-  "⚡️ NEVER MISS WEBSITE DOWNTIME AGAIN!",
-  "🚨 ONLY 48 CODES LEFT — THEY'RE GOING FAST!",
-  "🛡️ PROTECT YOUR REVENUE FROM COSTLY OUTAGES!"
+  "🔥 FLASH DEAL: 97% OFF LIFETIME ACCESS - ENDING SOON!",
+  "⚡️ DON'T LOSE $1000s IN SALES FROM WEBSITE DOWNTIME!",
+  "🚨 ONLY 48 CODES LEFT — GRAB YOURS BEFORE THEY VANISH!",
+  "🛡️ WEBSITE DOWN? CUSTOMERS LEAVING? NEVER AGAIN!"
 ];
 
 const DealBanner = () => {
