@@ -19,7 +19,7 @@ const features = [
   },
   {
     icon: <Clock className="h-8 w-8" />,
-    title: "Eliminate the "5-Minute Blindspot"",
+    title: "Eliminate the '5-Minute Blindspot'",
     description: "Basic tools only check your site every 5 minutes—leaving huge windows where customers see errors while you remain clueless. Our 40-second monitoring cycle catches even brief outages that other tools completely miss, protecting your reputation 24/7."
   },
   {
@@ -29,7 +29,7 @@ const features = [
   },
   {
     icon: <Zap className="h-8 w-8" />,
-    title: "End the "Technical Nightmare" Forever",
+    title: "End the 'Technical Nightmare' Forever",
     description: "While your competitors struggle with complex enterprise solutions that require IT teams to manage, you'll be up and running in 5 minutes with zero technical skills. Just enter your URL and start protecting your business instantly."
   }
 ];
