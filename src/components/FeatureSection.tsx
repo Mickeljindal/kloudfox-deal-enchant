@@ -1,49 +1,52 @@
 
 import { Bell, Globe, Shield, Clock, Zap, Layers } from "lucide-react";
-
-const features = [
-  {
-    icon: <Globe className="h-8 w-8" />,
-    title: "Never Miss a Customer-Losing Outage Again",
-    description: "While your competitors' sites go down unnoticed for hours, you'll catch EVERY issue within seconds. Our global monitoring network watches your site from 4 continents, alerting you before customers start complaining or abandoning your brand."
-  },
-  {
-    icon: <Bell className="h-8 w-8" />,
-    title: "Stop Losing $200+ Per Minute of Downtime",
-    description: "The average business loses $200-$500 every minute their site is down. KloudFox sends instant alerts to your phone, Slack, and email, so you can fix issues in seconds instead of hours—saving thousands in lost revenue and reputation damage."
-  },
-  {
-    icon: <Shield className="h-8 w-8" />,
-    title: "Prevent the Google Ranking Disaster",
-    description: "An expired SSL certificate doesn't just scare away customers with browser warnings—it can TANK your hard-earned Google rankings overnight. We alert you days before expiration, preventing the SEO nightmare that your competitors keep experiencing."
-  },
-  {
-    icon: <Clock className="h-8 w-8" />,
-    title: "Eliminate the '5-Minute Blindspot'",
-    description: "Basic tools only check your site every 5 minutes—leaving huge windows where customers see errors while you remain clueless. Our 40-second monitoring cycle catches even brief outages that other tools completely miss, protecting your reputation 24/7."
-  },
-  {
-    icon: <Layers className="h-8 w-8" />,
-    title: "Turn Angry Customers into Loyal Fans",
-    description: "When outages inevitably happen, most businesses leave customers frustrated and in the dark. Your branded status pages will keep customers informed with professional updates, turning potential negative reviews into appreciation for your transparency."
-  },
-  {
-    icon: <Zap className="h-8 w-8" />,
-    title: "End the 'Technical Nightmare' Forever",
-    description: "While your competitors struggle with complex enterprise solutions that require IT teams to manage, you'll be up and running in 5 minutes with zero technical skills. Just enter your URL and start protecting your business instantly."
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FeatureSection = () => {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: <Globe className="h-8 w-8" />,
+      title: "Never Miss a Customer-Losing Outage Again",
+      description: "While your competitors' sites go down unnoticed for hours, you'll catch EVERY issue within seconds. Our global monitoring network watches your site from 4 continents, alerting you before customers start complaining or abandoning your brand."
+    },
+    {
+      icon: <Bell className="h-8 w-8" />,
+      title: "Stop Losing $200+ Per Minute of Downtime",
+      description: "The average business loses $200-$500 every minute their site is down. KloudFox sends instant alerts to your phone, Slack, and email, so you can fix issues in seconds instead of hours—saving thousands in lost revenue and reputation damage."
+    },
+    {
+      icon: <Shield className="h-8 w-8" />,
+      title: "Prevent the Google Ranking Disaster",
+      description: "An expired SSL certificate doesn't just scare away customers with browser warnings—it can TANK your hard-earned Google rankings overnight. We alert you days before expiration, preventing the SEO nightmare that your competitors keep experiencing."
+    },
+    {
+      icon: <Clock className="h-8 w-8" />,
+      title: "Eliminate the '5-Minute Blindspot'",
+      description: "Basic tools only check your site every 5 minutes—leaving huge windows where customers see errors while you remain clueless. Our 40-second monitoring cycle catches even brief outages that other tools completely miss, protecting your reputation 24/7."
+    },
+    {
+      icon: <Layers className="h-8 w-8" />,
+      title: "Turn Angry Customers into Loyal Fans",
+      description: "When outages inevitably happen, most businesses leave customers frustrated and in the dark. Your branded status pages will keep customers informed with professional updates, turning potential negative reviews into appreciation for your transparency."
+    },
+    {
+      icon: <Zap className="h-8 w-8" />,
+      title: "End the 'Technical Nightmare' Forever",
+      description: "While your competitors struggle with complex enterprise solutions that require IT teams to manage, you'll be up and running in 5 minutes with zero technical skills. Just enter your URL and start protecting your business instantly."
+    }
+  ];
+
   return (
     <div id="features" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="section-title">
-          6 Business-Killing Problems <span className="text-kloudfox-blue">KloudFox Solves Instantly</span>
+          {t('problemsSolves')}
         </h2>
         
         <p className="section-subtitle">
-          Why are smart business owners switching to KloudFox? Because these costly problems are destroying their revenue and reputation—and now you can solve them all with one simple tool.
+          {t('whySwitching')}
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">

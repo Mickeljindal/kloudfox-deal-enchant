@@ -34,22 +34,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -80,14 +64,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -95,43 +71,63 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-@layer components {
-  .deal-highlight {
-    @apply text-kloudfox-orange font-bold;
+/* RTL Support */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .inline {
+  display: inline-block;
+}
+
+/* Existing styles */
+.bg-hero-pattern {
+  background: linear-gradient(to bottom, #1e40af, #1e3a8a);
+}
+
+.bg-feature-gradient {
+  background: linear-gradient(to bottom right, #f0f9ff, #f8fafc);
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-center mb-4;
+}
+
+.section-subtitle {
+  @apply text-xl text-gray-600 text-center max-w-3xl mx-auto;
+}
+
+.cta-button {
+  @apply flex items-center justify-center bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all;
+}
+
+.deal-card {
+  @apply bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md;
+}
+
+.feature-icon {
+  @apply p-3 rounded-full bg-blue-50 inline-block text-kloudfox-blue mb-6;
+}
+
+.price-card {
+  @apply bg-white p-8 rounded-2xl shadow-lg border border-gray-200 relative;
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  .deal-card {
-    @apply border rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white p-6;
+  50% {
+    transform: scale(1.05);
   }
-  
-  .price-card {
-    @apply rounded-2xl shadow-xl bg-white border p-8 relative overflow-hidden;
-  }
-  
-  .feature-icon {
-    @apply w-12 h-12 flex items-center justify-center rounded-full bg-blue-50 text-kloudfox-lightBlue mb-4;
-  }
-  
-  .cta-button {
-    @apply bg-gradient-to-r from-kloudfox-orange to-kloudfox-yellow text-white font-bold rounded-full px-8 py-4 transition-all hover:scale-105 hover:shadow-lg active:scale-95;
-  }
-  
-  .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center;
-  }
-  
-  .section-subtitle {
-    @apply text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12;
-  }
-  
-  .highlight-banner {
-    @apply bg-gradient-to-r from-kloudfox-darkBlue to-kloudfox-lightBlue text-white p-3 font-semibold rounded-lg;
-  }
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 2s infinite;
 }
