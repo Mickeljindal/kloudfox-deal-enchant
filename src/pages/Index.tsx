@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import DealBanner from "@/components/DealBanner";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
+import KloudBeanSection from "@/components/KloudBeanSection";
 import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
@@ -35,6 +36,8 @@ const Index = () => {
       </section>
       
       <FeatureSection />
+
+      <KloudBeanSection />
       
       <section className="py-20 bg-kloudfox-blue text-white text-center">
         <div className="container mx-auto px-4">
