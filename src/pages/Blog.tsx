@@ -1,32 +1,56 @@
 
+import { Link } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { blogPosts } from "./BlogList";
+
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">KloudFox Blog</h1>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-600 mb-8">
-              Stay updated with the latest insights on website monitoring, server performance, and infrastructure management.
-            </p>
+    <div className="min-h-screen bg-white flex flex-col">
+      <Header />
+      <div className="flex-1 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold mb-8 text-center">KloudFox Blog</h1>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-600 mb-12 text-center text-xl">
+                Stay updated with the latest insights on website monitoring, server performance, and infrastructure management.
+              </p>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-bold mb-2">Website Monitoring Best Practices</h3>
-                <p className="text-gray-600 mb-4">Learn the essential strategies for effective website monitoring.</p>
-                <span className="text-sm text-gray-500">March 15, 2024</span>
-              </div>
-              
-              <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-bold mb-2">SSL Certificate Management Guide</h3>
-                <p className="text-gray-600 mb-4">Everything you need to know about SSL certificates and monitoring.</p>
-                <span className="text-sm text-gray-500">March 10, 2024</span>
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {blogPosts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow bg-white"
+                  >
+                    <div className="mb-3">
+                      <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                        {post.category}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 hover:text-blue-600 transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm">
+                      {post.excerpt}
+                    </p>
+                    <span className="text-sm text-gray-500">
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </span>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

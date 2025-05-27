@@ -1,12 +1,16 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const CookiePolicy = () => {
   return (
-    <div className="min-h-screen bg-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">Cookie Policy</h1>
-          
-          <div className="prose prose-lg max-w-none">
+    <div className="min-h-screen bg-white flex flex-col">
+      <Header />
+      <div className="flex-1 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold mb-8">Cookie Policy</h1>
+            
+            <div className="prose prose-lg max-w-none">
             <p className="text-gray-600 mb-8">
               This Cookie Policy explains how KloudFox (https://kloudfox.com) ("we", "our", "us") uses cookies and similar technologies to recognize you when you visit our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.
             </p>
@@ -46,6 +50,7 @@ const CookiePolicy = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

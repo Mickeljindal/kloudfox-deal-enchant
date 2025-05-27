@@ -36,7 +36,7 @@ const alternatives = [
 
 const PricingSection = () => {
   const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.com/products/kloudfox-licensing-v2-tier-1-only-may-2025-ver-2-0/', '_blank');
+    window.open('https://appsumo.com/products/kloudfox/', '_blank');
   };
 
   return (

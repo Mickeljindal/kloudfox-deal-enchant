@@ -9,20 +9,40 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import MobileAppSection from "@/components/MobileAppSection";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const { t, language } = useLanguage();
   
   const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.com/products/kloudfox-licensing-v2-tier-1-only-may-2025-ver-2-0/', '_blank');
+    window.open('https://appsumo.com/products/kloudfox/', '_blank');
   };
+
+  const customerLogos = [
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-01.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-02.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-03.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-04.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-05.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-06.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-07.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-08.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-09.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-10.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-11.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-12.svg",
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-13.svg"
+  ];
   
   return (
     <div className={`relative ${language === 'ar' ? 'rtl' : 'ltr'}`}>
       <div className="fixed top-4 right-4 z-50">
         <LanguageSwitcher />
       </div>
+      
+      <Header />
       
       <DealBanner />
       
@@ -31,19 +51,16 @@ const Index = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">{t('trustedBy')}</h2>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-            <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-700">Shopify</span>
-            </div>
-            <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-700">WordPress</span>
-            </div>
-            <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-700">WooCommerce</span>
-            </div>
-            <div className="h-12 flex items-center">
-              <span className="font-bold text-xl text-gray-700">SaaS Startups</span>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60">
+            {customerLogos.map((logo, index) => (
+              <div key={index} className="h-12 flex items-center justify-center">
+                <img 
+                  src={logo} 
+                  alt={`Customer Logo ${index + 1}`} 
+                  className="max-h-10 max-w-full object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -170,23 +187,7 @@ const Index = () => {
         </div>
       </section>
       
-      <footer className="bg-kloudfox-blue text-white/70 py-10">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="font-bold text-xl text-white mb-4">KloudFox</div>
-            <p className="mb-6">{t('neverMiss')}</p>
-            <div className="flex justify-center space-x-6 mb-8">
-              <a href="https://www.facebook.com/profile.php?id=61559311342847" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
-              <a href="https://twitter.com/kloudfox" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
-              <a href="http://linkedin.com/company/kloudfox" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
-              <a href="https://www.instagram.com/thekloudfox/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
-            </div>
-            <p className="text-sm">
-              © {new Date().getFullYear()} KloudFox. {t('allRights')}
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
