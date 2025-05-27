@@ -7,11 +7,16 @@ import KloudBeanSection from "@/components/KloudBeanSection";
 import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
+import MobileAppSection from "@/components/MobileAppSection";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const { t, language } = useLanguage();
+  
+  const handleAppSumoRedirect = () => {
+    window.open('https://appsumo.com/products/kloudfox-licensing-v2-tier-1-only-may-2025-ver-2-0/', '_blank');
+  };
   
   return (
     <div className={`relative ${language === 'ar' ? 'rtl' : 'ltr'}`}>
@@ -46,6 +51,8 @@ const Index = () => {
       <FeatureSection />
 
       <KloudBeanSection />
+
+      <MobileAppSection />
       
       <section className="py-20 bg-kloudfox-blue text-white text-center">
         <div className="container mx-auto px-4">
@@ -150,7 +157,10 @@ const Index = () => {
             </div>
           </div>
           
-          <button className="cta-button text-xl px-10 py-5 animate-pulse-scale">
+          <button 
+            onClick={handleAppSumoRedirect}
+            className="cta-button text-xl px-10 py-5 animate-pulse-scale"
+          >
             {t('stopFlying')} <ArrowRight className="ml-2 h-6 w-6 inline" />
           </button>
           
@@ -166,10 +176,10 @@ const Index = () => {
             <div className="font-bold text-xl text-white mb-4">KloudFox</div>
             <p className="mb-6">{t('neverMiss')}</p>
             <div className="flex justify-center space-x-6 mb-8">
-              <a href="#" className="hover:text-white transition-colors">Twitter</a>
-              <a href="#" className="hover:text-white transition-colors">Facebook</a>
-              <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-white transition-colors">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=61559311342847" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
+              <a href="https://twitter.com/kloudfox" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
+              <a href="http://linkedin.com/company/kloudfox" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+              <a href="https://www.instagram.com/thekloudfox/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
             </div>
             <p className="text-sm">
               © {new Date().getFullYear()} KloudFox. {t('allRights')}

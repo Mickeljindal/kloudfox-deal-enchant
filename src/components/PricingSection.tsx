@@ -35,6 +35,10 @@ const alternatives = [
 ];
 
 const PricingSection = () => {
+  const handleAppSumoRedirect = () => {
+    window.open('https://appsumo.com/products/kloudfox-licensing-v2-tier-1-only-may-2025-ver-2-0/', '_blank');
+  };
+
   return (
     <div className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -51,8 +55,9 @@ const PricingSection = () => {
             <ValueComparison 
               features={comparisonFeatures}
               totalValue="$4,982"
-              dealPrice="$149"
-              savings="$4,833 (97% OFF!)"
+              dealPrice="$29"
+              savings="$4,953 (99% OFF!)"
+              onButtonClick={handleAppSumoRedirect}
             />
           </div>
           
@@ -87,7 +92,7 @@ const PricingSection = () => {
               
               <div className="mt-8 bg-green-50 p-4 rounded-lg border border-green-100">
                 <p className="font-bold text-center">
-                  KloudFox Solution: <span className="text-green-600">$149</span> <span className="text-green-600 font-black">ONCE & NEVER AGAIN!</span>
+                  KloudFox Solution: <span className="text-green-600">$29</span> <span className="text-green-600 font-black">ONCE & NEVER AGAIN!</span>
                 </p>
                 <p className="text-sm text-gray-700 text-center mt-2">
                   Fix ALL these problems today and never worry about them again with one simple payment.
@@ -105,9 +110,13 @@ const PricingSection = () => {
           <p className="text-xl mb-6 max-w-2xl mx-auto">
             Research shows that <span className="font-bold text-yellow-300">75% of businesses</span> experience website issues they never detect, costing them <span className="font-bold text-yellow-300">$12,000+ in lost revenue</span> per incident. Without proper monitoring, you're gambling with your business every single day. KloudFox pays for itself <span className="font-bold text-yellow-300">80X OVER</span> with just one prevented outage!
           </p>
-          <button className="cta-button bg-white text-orange-500 hover:bg-yellow-100">
-            Stop Flying Blind — Get Protected Now
+          <button 
+            onClick={handleAppSumoRedirect}
+            className="cta-button bg-white text-orange-500 hover:bg-yellow-100"
+          >
+            Stop Flying Blind — Get Protected Now for $29
           </button>
+          <p className="mt-4 text-sm">60 Days Money Back Guarantee • No Questions Asked</p>
         </div>
       </div>
     </div>

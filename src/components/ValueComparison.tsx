@@ -11,9 +11,10 @@ interface ValueComparisonProps {
   totalValue: string;
   dealPrice: string;
   savings: string;
+  onButtonClick?: () => void;
 }
 
-const ValueComparison = ({ features, totalValue, dealPrice, savings }: ValueComparisonProps) => {
+const ValueComparison = ({ features, totalValue, dealPrice, savings, onButtonClick }: ValueComparisonProps) => {
   return (
     <div className="price-card">
       <div className="absolute top-0 right-0 bg-red-500 text-white font-bold py-1 px-4 transform translate-y-4 -translate-x-4 rotate-12 text-sm">
@@ -52,8 +53,11 @@ const ValueComparison = ({ features, totalValue, dealPrice, savings }: ValueComp
         </div>
       </div>
       
-      <button className="cta-button w-full relative overflow-hidden group">
-        <span className="relative z-10">Fix Your Website Problems Now (37 Left!)</span>
+      <button 
+        onClick={onButtonClick}
+        className="cta-button w-full relative overflow-hidden group"
+      >
+        <span className="relative z-10">Get AppSumo Deal Now - Only $29!</span>
         <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
       </button>
       
@@ -61,6 +65,10 @@ const ValueComparison = ({ features, totalValue, dealPrice, savings }: ValueComp
         <p className="text-sm text-center font-medium text-yellow-800">
           ⏰ WARNING: Every second you wait is another second your site could be losing customers without you knowing it.
         </p>
+      </div>
+      
+      <div className="mt-3 text-center text-sm text-gray-600">
+        <p>60 Days Money Back Guarantee • No Questions Asked</p>
       </div>
     </div>
   );
