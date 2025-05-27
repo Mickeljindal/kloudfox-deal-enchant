@@ -8,32 +8,28 @@ import {
 
 const faqs = [
   {
-    question: "Is this really a one-time payment for lifetime access?",
-    answer: "Yes! This is a LIMITED TIME offer exclusive to AppSumo. Pay once and get lifetime access to KloudFox with no further fees, subscriptions, or hidden costs. All future updates and features are included."
+    question: "How can I pay?",
+    answer: "You can pay with your Visa, Maestro, MasterCard, Discover/Novus, Diners Club and American Express card or use PayPal. To process credit card payments we use Stripe."
   },
   {
-    question: "How is KloudFox different from other uptime monitoring tools?",
-    answer: "KloudFox combines powerful multi-location monitoring with custom status pages and instant alerts across multiple channels. Our intuitive interface makes it accessible for non-technical users while offering advanced features that competitors charge hundreds per month for."
+    question: "Why is kloudfox free?",
+    answer: "Kloudfox is free because we love to give out to the uptime monitoring community and it all began with a desire to create a useful and accessible tool for the web community. Over time, the service grew significantly, leading us to spend countless hours improving it and gaining valuable insights."
   },
   {
-    question: "How many websites can I monitor with this deal?",
-    answer: "This lifetime deal includes monitoring for up to 10 websites with custom check intervals as frequent as every 40 seconds. You'll get unlimited status pages, team members, and alert channels—all with no monthly fees ever."
+    question: "How does website monitoring affect my website performance?",
+    answer: "All of our website monitoring is conducted remotely, and the load is no heavier than a typical visit from a regular user. Therefore, running performance tests poses no risk."
   },
   {
-    question: "What if I'm not satisfied with KloudFox?",
-    answer: "Your purchase is backed by AppSumo's 30-day money-back guarantee. If you're not completely satisfied, simply request a refund within 30 days – no questions asked."
+    question: "What is website downtime?",
+    answer: "Website downtime occurs when your site becomes inaccessible to users. This issue isn't always straightforward; for instance, your site could be accessible in the UK but not in Canada, leaving you unaware of the problem. Downtime isn't limited to '404 not found' errors. It can also result from a distant component failing, preventing customers from placing orders on your e-commerce site or visitors from reading the latest blog post."
   },
   {
-    question: "Which notification channels are supported?",
-    answer: "KloudFox supports email alerts, Slack notifications, webhook integrations, Zapier connections, and mobile push notifications through our companion app. You can set up multiple channels to ensure your team never misses an incident."
+    question: "What's the best check rate to use on my website uptime test?",
+    answer: "We recommend utilizing the fastest check rate possible to ensure the most detailed monitoring coverage and to accurately determine the duration of any downtime that might be detected."
   },
   {
-    question: "Do I need technical skills to use KloudFox?",
-    answer: "Not at all! KloudFox was designed with a zero learning curve approach. Simply enter your website URL, customize your monitoring preferences, and you're protected within minutes. The setup wizard guides you through the entire process."
-  },
-  {
-    question: "How long will this offer be available?",
-    answer: "This is a strictly limited-time offer with only a few codes remaining. Once they're gone, KloudFox will return to its regular subscription pricing of $74/month. We cannot guarantee this lifetime deal will ever be offered again."
+    question: "How do I know when my website is down?",
+    answer: "When your website experiences downtime, we can promptly alert you through your preferred method (email, SMS, mobile push, or web hook). Additionally, we will log the downtime and all relevant information on a dedicated detailed page within the app."
   }
 ];
 
@@ -67,7 +63,7 @@ const FAQSection = () => {
               Our team is standing by to help you make the most of this incredible offer.
             </p>
             <a 
-              href="#contact" 
+              href="/contact" 
               className="inline-block bg-kloudfox-blue hover:bg-kloudfox-darkBlue text-white font-medium rounded-full px-6 py-3 transition-colors"
             >
               Contact Support

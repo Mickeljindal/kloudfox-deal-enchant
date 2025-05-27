@@ -129,7 +129,7 @@ const KloudBeanSection = () => {
               <div className="flex justify-center items-center space-x-6">
                 <div className="text-center">
                   <div className="text-2xl line-through text-gray-400">$97/mo</div>
-                  <div className="text-4xl font-bold text-green-600">$27/mo</div>
+                  <div className="text-4xl font-bold text-green-600">$29/mo</div>
                 </div>
                 <div>
                   <div className="bg-yellow-300 rounded-full font-bold text-center py-2 px-4 rotate-6 mb-2">
@@ -138,9 +138,30 @@ const KloudBeanSection = () => {
                 </div>
               </div>
             </div>
-            <Button className="bg-gradient-to-r from-kloudfox-orange to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-bold py-6 px-8 rounded-lg text-xl shadow-lg hover:shadow-xl transition-all animate-pulse-scale">
-              {t('secureHosting')}
-            </Button>
+            <div className="flex justify-center">
+              <Button className="bg-gradient-to-r from-kloudfox-orange to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-bold py-6 px-8 rounded-lg text-xl shadow-lg hover:shadow-xl transition-all animate-pulse-scale">
+                {t('secureHosting')}
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Trusted by section with properly aligned logos */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-center mb-12">Trusted By Smart Companies</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-60">
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-01.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-02.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-03.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-04.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-05.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-06.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-07.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-08.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-09.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-10.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-11.svg" alt="Customer Logo" className="h-12 object-contain" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-12.svg" alt="Customer Logo" className="h-12 object-contain" />
           </div>
         </div>
       </div>

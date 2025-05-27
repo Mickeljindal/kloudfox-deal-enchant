@@ -18,6 +18,7 @@ import ServerMonitoring from "./pages/ServerMonitoring";
 import StatusPage from "./pages/StatusPage";
 import IncidentManagement from "./pages/IncidentManagement";
 import SSLMonitoring from "./pages/SSLMonitoring";
+import Integrations from "./pages/Integrations";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="/status-page" element={<StatusPage />} />
             <Route path="/incident-management" element={<IncidentManagement />} />
             <Route path="/ssl-monitoring" element={<SSLMonitoring />} />
+            <Route path="/integrations" element={<Integrations />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
