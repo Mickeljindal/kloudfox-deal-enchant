@@ -53,13 +53,15 @@ const ValueComparison = ({ features, totalValue, dealPrice, savings, onButtonCli
         </div>
       </div>
       
-      <button 
-        onClick={onButtonClick}
-        className="cta-button w-full relative overflow-hidden group"
-      >
-        <span className="relative z-10">Get AppSumo Deal Now - Only $29!</span>
-        <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-      </button>
+      <div className="flex justify-center">
+        <button 
+          onClick={onButtonClick}
+          className="cta-button w-full relative overflow-hidden group"
+        >
+          <span className="relative z-10">Get AppSumo Deal Now - Only $29!</span>
+          <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+        </button>
+      </div>
       
       <div className="mt-4 bg-yellow-50 border border-yellow-200 rounded-lg p-3">
         <p className="text-sm text-center font-medium text-yellow-800">

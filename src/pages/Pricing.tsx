@@ -123,12 +123,14 @@ const Pricing = () => {
               <p className="text-lg mb-4">
                 Get KloudFox for LIFE at just <span className="font-bold text-3xl">$29</span> (Originally $85/month)
               </p>
-              <Button 
-                onClick={handleAppSumoRedirect}
-                className="bg-white text-orange-500 hover:bg-gray-100 font-bold py-3 px-8"
-              >
-                Get Lifetime Deal for $29
-              </Button>
+              <div className="flex justify-center">
+                <Button 
+                  onClick={handleAppSumoRedirect}
+                  className="bg-white text-orange-500 hover:bg-gray-100 font-bold py-3 px-8"
+                >
+                  Get Lifetime Deal for $29
+                </Button>
+              </div>
               <p className="text-sm mt-2 opacity-90">60 Days Money Back Guarantee • No Questions Asked</p>
             </div>
 
@@ -175,16 +177,18 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <Button 
-                  asChild 
-                  className={`w-full ${
-                    plan.popular ? 'bg-orange-500 hover:bg-orange-600' : 'bg-blue-600 hover:bg-blue-700'
-                  }`}
-                >
-                  <a href={plan.ctaLink} target="_blank" rel="noopener noreferrer">
-                    {plan.cta}
-                  </a>
-                </Button>
+                <div className="flex justify-center">
+                  <Button 
+                    asChild 
+                    className={`w-full ${
+                      plan.popular ? 'bg-orange-500 hover:bg-orange-600' : 'bg-blue-600 hover:bg-blue-700'
+                    }`}
+                  >
+                    <a href={plan.ctaLink} target="_blank" rel="noopener noreferrer">
+                      {plan.cta}
+                    </a>
+                  </Button>
+                </div>
               </div>
             ))}
           </div>

@@ -1,6 +1,5 @@
 
 import { ArrowRight } from "lucide-react";
-import DealBanner from "@/components/DealBanner";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
 import KloudBeanSection from "@/components/KloudBeanSection";
@@ -43,8 +42,6 @@ const Index = () => {
       </div>
       
       <Header />
-      
-      <DealBanner />
       
       <HeroSection />
       
@@ -174,12 +171,14 @@ const Index = () => {
             </div>
           </div>
           
-          <button 
-            onClick={handleAppSumoRedirect}
-            className="cta-button text-xl px-10 py-5 animate-pulse-scale"
-          >
-            {t('stopFlying')} <ArrowRight className="ml-2 h-6 w-6 inline" />
-          </button>
+          <div className="flex justify-center">
+            <button 
+              onClick={handleAppSumoRedirect}
+              className="cta-button text-xl px-10 py-5 animate-pulse-scale"
+            >
+              {t('stopFlying')} <ArrowRight className="ml-2 h-6 w-6 inline" />
+            </button>
+          </div>
           
           <p className="mt-6 text-white/80">
             {t('fixAllProblems')}

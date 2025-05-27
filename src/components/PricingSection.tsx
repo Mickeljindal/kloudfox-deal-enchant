@@ -110,12 +110,14 @@ const PricingSection = () => {
           <p className="text-xl mb-6 max-w-2xl mx-auto">
             Research shows that <span className="font-bold text-yellow-300">75% of businesses</span> experience website issues they never detect, costing them <span className="font-bold text-yellow-300">$12,000+ in lost revenue</span> per incident. Without proper monitoring, you're gambling with your business every single day. KloudFox pays for itself <span className="font-bold text-yellow-300">80X OVER</span> with just one prevented outage!
           </p>
-          <button 
-            onClick={handleAppSumoRedirect}
-            className="cta-button bg-white text-orange-500 hover:bg-yellow-100"
-          >
-            Stop Flying Blind — Get Protected Now for $29
-          </button>
+          <div className="flex justify-center">
+            <button 
+              onClick={handleAppSumoRedirect}
+              className="cta-button bg-white text-orange-500 hover:bg-yellow-100"
+            >
+              Stop Flying Blind — Get Protected Now for $29
+            </button>
+          </div>
           <p className="mt-4 text-sm">60 Days Money Back Guarantee • No Questions Asked</p>
         </div>
       </div>
