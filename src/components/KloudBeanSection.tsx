@@ -1,4 +1,3 @@
-
 import { Server, Globe, Zap, Shield, Database } from "lucide-react";
 import { Button } from "./ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -149,19 +148,19 @@ const KloudBeanSection = () => {
         {/* Trusted by section with properly aligned logos */}
         <div className="mt-20">
           <h3 className="text-2xl font-bold text-center mb-12">Trusted By Smart Companies</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-60">
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-01.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-02.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-03.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-04.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-05.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-06.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-07.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-08.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-09.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-10.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-11.svg" alt="Customer Logo" className="h-12 object-contain" />
-            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-12.svg" alt="Customer Logo" className="h-12 object-contain" />
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-12 opacity-60">
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-01.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-02.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-03.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-04.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-05.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-06.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-07.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-08.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-09.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-10.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-11.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-14.svg" alt="Customer Logo" className="h-10 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
           </div>
         </div>
       </div>

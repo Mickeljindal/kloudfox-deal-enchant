@@ -47,14 +47,14 @@ const Index = () => {
       
       <section className="bg-white py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">{t('trustedBy')}</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-4 md:gap-8 items-center opacity-60">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12">{t('trustedBy')}</h2>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-12 opacity-60">
             {customerLogos.map((logo, index) => (
-              <div key={index} className="h-8 md:h-12 flex items-center justify-center">
+              <div key={index} className="flex items-center justify-center h-12 md:h-16">
                 <img 
                   src={logo} 
                   alt={`Customer Logo ${index + 1}`} 
-                  className="max-h-6 md:max-h-10 max-w-full object-contain"
+                  className="max-h-8 md:max-h-12 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 />
               </div>
             ))}
