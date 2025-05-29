@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
@@ -20,19 +19,7 @@ const Index = () => {
   };
 
   const customerLogos = [
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-01.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-02.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-03.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-04.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-05.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-06.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-07.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-08.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-09.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-10.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-11.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-12.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-14.svg"
+    "/lovable-uploads/107c1ad1-dc8d-404b-9e4c-f9f45a33948e.png"
   ];
   
   return (
@@ -48,16 +35,12 @@ const Index = () => {
       <section className="bg-white py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">{t('trustedBy')}</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-4 md:gap-8 items-center opacity-60">
-            {customerLogos.map((logo, index) => (
-              <div key={index} className="h-8 md:h-12 flex items-center justify-center">
-                <img 
-                  src={logo} 
-                  alt={`Customer Logo ${index + 1}`} 
-                  className="max-h-6 md:max-h-10 max-w-full object-contain"
-                />
-              </div>
-            ))}
+          <div className="flex justify-center items-center">
+            <img 
+              src={customerLogos[0]} 
+              alt="Trusted by Smart Companies" 
+              className="max-w-full h-auto object-contain"
+            />
           </div>
         </div>
       </section>

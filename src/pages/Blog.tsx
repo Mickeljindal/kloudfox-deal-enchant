@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -12,9 +11,9 @@ const Blog = () => {
       excerpt: "Discover everything you need to know about website monitoring, from basic uptime checks to advanced performance monitoring techniques that ensure your website never goes down.",
       date: "2024-11-15",
       category: "Website Monitoring",
-      readTime: "8 min read",
+      readTime: "12 min read",
       author: "KloudFox Team",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       featured: true
     },
     {
@@ -23,9 +22,9 @@ const Blog = () => {
       excerpt: "Learn about the hidden costs of website downtime and how proper monitoring can save your business thousands of dollars in lost revenue and reputation damage.",
       date: "2024-11-10",
       category: "Business Impact",
-      readTime: "6 min read",
+      readTime: "8 min read",
       author: "Sarah Johnson",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
     },
     {
       slug: "ssl-certificate-monitoring-guide",
@@ -33,40 +32,210 @@ const Blog = () => {
       excerpt: "Understand the importance of SSL certificate monitoring and how to prevent security warnings from driving away your customers and damaging your SEO rankings.",
       date: "2024-11-05",
       category: "SSL Security",
-      readTime: "5 min read",
+      readTime: "7 min read",
       author: "Mike Chen",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
     },
     {
-      slug: "the-importance-of-website-performance",
-      title: "The Importance of Website Performance for User Experience",
-      excerpt: "Explore how website performance impacts user experience, conversion rates, and SEO rankings. Learn optimization techniques that boost your bottom line.",
+      slug: "performance-monitoring-best-practices",
+      title: "Website Performance Monitoring: Best Practices for 2024",
+      excerpt: "Explore advanced techniques for monitoring website performance, including Core Web Vitals optimization and real user monitoring strategies.",
       date: "2024-10-30",
       category: "Performance",
-      readTime: "7 min read",
+      readTime: "10 min read",
       author: "Alex Rodriguez",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
     },
     {
-      slug: "how-to-choose-a-monitoring-tool",
-      title: "How to Choose the Right Website Monitoring Tool for Your Business",
-      excerpt: "A comprehensive guide to selecting the perfect monitoring tool that fits your business needs, budget, and technical requirements for optimal website performance.",
+      slug: "choosing-monitoring-tool-2024",
+      title: "How to Choose the Right Website Monitoring Tool in 2024",
+      excerpt: "A comprehensive guide to selecting the perfect monitoring solution that fits your business needs, budget, and technical requirements.",
       date: "2024-10-25",
       category: "Guides",
       readTime: "9 min read",
       author: "Emma Wilson",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
     },
     {
-      slug: "best-practices-for-website-security",
-      title: "Essential Website Security Best Practices for 2024",
-      excerpt: "Learn critical security practices to protect your website against cyber threats, data breaches, and malicious attacks that could destroy your business reputation.",
+      slug: "website-security-monitoring-2024",
+      title: "Essential Website Security Monitoring Practices for 2024",
+      excerpt: "Learn critical security monitoring practices to protect your website against cyber threats, data breaches, and malicious attacks.",
       date: "2024-10-20",
       category: "Security",
-      readTime: "10 min read",
+      readTime: "11 min read",
       author: "David Kim",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
     },
+    {
+      slug: "api-monitoring-comprehensive-guide",
+      title: "API Monitoring: A Comprehensive Guide for Modern Applications",
+      excerpt: "Master API monitoring with advanced techniques to ensure your web services remain reliable and performant for your users.",
+      date: "2024-10-15",
+      category: "API Monitoring",
+      readTime: "13 min read",
+      author: "Rachel Torres",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "mobile-app-monitoring-strategies",
+      title: "Mobile App Performance Monitoring: Essential Strategies",
+      excerpt: "Discover how to monitor mobile applications effectively, ensuring optimal user experience across all devices and platforms.",
+      date: "2024-10-10",
+      category: "Mobile Monitoring",
+      readTime: "9 min read",
+      author: "James Park",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "ecommerce-website-monitoring",
+      title: "E-commerce Website Monitoring: Protecting Your Revenue Stream",
+      excerpt: "Learn specialized monitoring techniques for e-commerce sites to prevent cart abandonment and maximize sales conversions.",
+      date: "2024-10-05",
+      category: "E-commerce",
+      readTime: "10 min read",
+      author: "Lisa Chen",
+      image: "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "database-monitoring-techniques",
+      title: "Database Performance Monitoring: Advanced Techniques",
+      excerpt: "Explore comprehensive database monitoring strategies to ensure optimal performance and prevent costly downtime.",
+      date: "2024-09-30",
+      category: "Database",
+      readTime: "12 min read",
+      author: "Michael Brown",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "cloud-infrastructure-monitoring",
+      title: "Cloud Infrastructure Monitoring: AWS, Azure, and GCP",
+      excerpt: "Master cloud monitoring across major platforms with best practices for AWS, Microsoft Azure, and Google Cloud Platform.",
+      date: "2024-09-25",
+      category: "Cloud Monitoring",
+      readTime: "14 min read",
+      author: "Jennifer Lopez",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "real-user-monitoring-rum-guide",
+      title: "Real User Monitoring (RUM): Complete Implementation Guide",
+      excerpt: "Implement Real User Monitoring to understand actual user experiences and optimize your website's performance accordingly.",
+      date: "2024-09-20",
+      category: "RUM",
+      readTime: "11 min read",
+      author: "Kevin Wang",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "synthetic-monitoring-vs-real-user",
+      title: "Synthetic Monitoring vs Real User Monitoring: Which to Choose?",
+      excerpt: "Compare synthetic and real user monitoring approaches to determine the best strategy for your website monitoring needs.",
+      date: "2024-09-15",
+      category: "Monitoring Strategy",
+      readTime: "8 min read",
+      author: "Amanda Foster",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "website-speed-optimization-2024",
+      title: "Website Speed Optimization: Advanced Techniques for 2024",
+      excerpt: "Boost your website's loading speed with cutting-edge optimization techniques that improve user experience and SEO rankings.",
+      date: "2024-09-10",
+      category: "Optimization",
+      readTime: "15 min read",
+      author: "Robert Kim",
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "incident-response-monitoring",
+      title: "Incident Response and Monitoring: Building Resilient Systems",
+      excerpt: "Create effective incident response procedures that minimize downtime and maintain business continuity during outages.",
+      date: "2024-09-05",
+      category: "Incident Management",
+      readTime: "13 min read",
+      author: "Sarah Mitchell",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "cdn-performance-monitoring",
+      title: "CDN Performance Monitoring: Optimizing Global Content Delivery",
+      excerpt: "Monitor and optimize your Content Delivery Network to ensure fast, reliable content delivery worldwide.",
+      date: "2024-08-30",
+      category: "CDN",
+      readTime: "10 min read",
+      author: "Daniel Rodriguez",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "server-monitoring-best-practices",
+      title: "Server Monitoring Best Practices: Linux and Windows",
+      excerpt: "Comprehensive server monitoring techniques for both Linux and Windows environments to ensure optimal performance.",
+      date: "2024-08-25",
+      category: "Server Monitoring",
+      readTime: "12 min read",
+      author: "Christine Adams",
+      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "monitoring-microservices-architecture",
+      title: "Monitoring Microservices Architecture: Distributed System Challenges",
+      excerpt: "Navigate the complexities of monitoring microservices with strategies for distributed tracing and service mesh monitoring.",
+      date: "2024-08-20",
+      category: "Microservices",
+      readTime: "14 min read",
+      author: "Thomas Wilson",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "website-uptime-sla-monitoring",
+      title: "Website Uptime SLA Monitoring: Meeting Service Level Agreements",
+      excerpt: "Ensure you meet your uptime commitments with comprehensive SLA monitoring and reporting strategies.",
+      date: "2024-08-15",
+      category: "SLA",
+      readTime: "9 min read",
+      author: "Maria Garcia",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "log-monitoring-analysis-guide",
+      title: "Log Monitoring and Analysis: Turning Data into Insights",
+      excerpt: "Transform your log data into actionable insights with advanced monitoring and analysis techniques.",
+      date: "2024-08-10",
+      category: "Log Analysis",
+      readTime: "11 min read",
+      author: "Andrew Thompson",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "network-monitoring-infrastructure",
+      title: "Network Monitoring for Modern Infrastructure",
+      excerpt: "Monitor your network infrastructure effectively with tools and techniques that ensure reliable connectivity.",
+      date: "2024-08-05",
+      category: "Network",
+      readTime: "10 min read",
+      author: "Nancy Lee",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "monitoring-automation-devops",
+      title: "Monitoring Automation in DevOps: CI/CD Integration",
+      excerpt: "Integrate monitoring into your DevOps pipeline for automated detection and resolution of performance issues.",
+      date: "2024-07-30",
+      category: "DevOps",
+      readTime: "13 min read",
+      author: "Steven Clark",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      slug: "cost-optimization-monitoring",
+      title: "Cost Optimization Through Strategic Monitoring",
+      excerpt: "Reduce operational costs while maintaining high performance through intelligent monitoring and resource optimization.",
+      date: "2024-07-25",
+      category: "Cost Optimization",
+      readTime: "8 min read",
+      author: "Patricia Davis",
+      image: "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    }
   ];
 
   const featuredPost = blogPosts.find(post => post.featured);
