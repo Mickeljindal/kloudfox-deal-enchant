@@ -1,7 +1,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Globe, Clock, Shield, Zap, Bell, BarChart3, CheckCircle, AlertTriangle } from "lucide-react";
+import { Globe, Clock, Shield, Zap, Bell, BarChart3, CheckCircle, AlertTriangle, Info } from "lucide-react";
 
 const WebsiteMonitoring = () => {
   return (
@@ -146,34 +146,60 @@ const WebsiteMonitoring = () => {
                 {[
                   {
                     title: "Real-time Uptime Monitoring",
-                    description: "Get notified within 40 seconds when your website goes down from any of our global monitoring locations."
+                    description: "Get notified within 40 seconds when your website goes down from any of our global monitoring locations.",
+                    standard: true
                   },
                   {
                     title: "Performance Tracking",
-                    description: "Monitor page load times and identify slow pages that are hurting your conversion rates."
+                    description: "Monitor page load times and identify slow pages that are hurting your conversion rates.",
+                    standard: true
                   },
                   {
                     title: "SSL Certificate Monitoring",
-                    description: "Never let an expired SSL certificate damage your SEO rankings or scare away customers."
+                    description: "Never let an expired SSL certificate damage your SEO rankings or scare away customers.",
+                    standard: true
                   },
                   {
                     title: "Content Change Detection",
-                    description: "Instantly detect unauthorized changes to your website content or potential security breaches."
+                    description: "Instantly detect unauthorized changes to your website content or potential security breaches.",
+                    standard: true
                   },
                   {
                     title: "Multi-Channel Alerts",
-                    description: "Receive alerts via email, SMS, phone calls, Slack, Discord, and more communication channels."
+                    description: "Receive alerts via email, SMS, phone calls, Slack, Discord, and more communication channels.",
+                    standard: true
                   },
                   {
-                    title: "Detailed Analytics",
-                    description: "Get comprehensive uptime reports and performance analytics to optimize your website."
+                    title: "CPU & Resource Monitoring",
+                    description: "Advanced server resource monitoring and performance analytics for comprehensive infrastructure oversight.",
+                    standard: false
                   }
                 ].map((feature, index) => (
-                  <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                  <div key={index} className={`bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow relative ${!feature.standard ? 'border-orange-200 bg-orange-50/30' : 'border-gray-200'}`}>
+                    {!feature.standard && (
+                      <div className="absolute top-3 right-3">
+                        <span className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full font-medium">Enterprise</span>
+                      </div>
+                    )}
                     <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                     <p className="text-gray-600">{feature.description}</p>
                   </div>
                 ))}
+              </div>
+              
+              {/* Subtle Disclaimer */}
+              <div className="mt-8 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                <div className="flex items-start">
+                  <Info className="h-5 w-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <div className="text-sm text-blue-800">
+                    <p className="mb-2">
+                      <span className="font-medium">Feature Availability Note:</span> KloudFox retail plans include comprehensive website monitoring, uptime tracking, SSL monitoring, and alerting capabilities as detailed in our pricing page. 
+                    </p>
+                    <p>
+                      Certain advanced infrastructure monitoring features (including but not limited to CPU monitoring, detailed server analytics, and custom enterprise integrations) are available exclusively through our enterprise custom solutions and are not included in standard subscription plans. Please review our <a href="/pricing" className="underline hover:text-blue-900">pricing page</a> for complete feature availability details before purchase.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
