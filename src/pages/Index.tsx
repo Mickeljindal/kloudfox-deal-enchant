@@ -12,9 +12,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CustomerLogosCarousel from "@/components/CustomerLogosCarousel";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDynamicCodes } from "@/hooks/useDynamicCodes";
 
 const Index = () => {
   const { t, language } = useLanguage();
+  const { codesLeft, purchased } = useDynamicCodes();
   
   const handleAppSumoRedirect = () => {
     window.open('https://appsumo.com/products/kloudfox/', '_blank');
@@ -129,12 +131,12 @@ const Index = () => {
             <div className="inline-block bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-6 md:mb-8">
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold">352</div>
+                  <div className="text-3xl md:text-4xl font-bold text-yellow-300">{purchased}</div>
                   <div className="text-sm text-white/70">{t('purchased')}</div>
                 </div>
                 <div className="hidden sm:block h-12 w-px bg-white/20"></div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold">48</div>
+                  <div className="text-3xl md:text-4xl font-bold text-orange-300">{codesLeft}</div>
                   <div className="text-sm text-white/70">{t('codesLeft')}</div>
                 </div>
                 <div className="hidden sm:block h-12 w-px bg-white/20"></div>

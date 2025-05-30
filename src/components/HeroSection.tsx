@@ -1,11 +1,13 @@
 
-import { ArrowRight, AlertTriangle } from "lucide-react";
+import { ArrowRight, AlertTriangle, LogIn } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "./ui/button";
+import { useDynamicCodes } from "@/hooks/useDynamicCodes";
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const { codesLeft, purchased } = useDynamicCodes();
   
   // Set end date to 7 days from now for the countdown
   const endDate = new Date();
@@ -61,15 +63,16 @@ const HeroSection = () => {
             <Button 
               asChild
               variant="outline" 
-              className="bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20"
+              className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30 transition-all duration-300 group shadow-lg hover:shadow-xl"
             >
-              <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer">
-                Login to Dashboard
+              <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <LogIn className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                Access Dashboard
               </a>
             </Button>
             <Button 
               asChild
-              className="bg-green-600 hover:bg-green-700 text-white"
+              className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <a href="https://watch.kloudfox.com/register" target="_blank" rel="noopener noreferrer">
                 Start Free Trial
@@ -81,7 +84,7 @@ const HeroSection = () => {
             <div className="flex items-center justify-center space-x-2">
               <div className="p-1 rounded-full bg-green-400 animate-pulse"></div>
               <span className="text-white text-sm">
-                <span className="font-bold">{t('codesLeft')}</span> • <span className="font-bold text-yellow-300">{t('purchased')}</span>
+                <span className="font-bold text-orange-300">{codesLeft} codes left</span> • <span className="font-bold text-yellow-300">{purchased} purchased</span>
               </span>
             </div>
           </div>
