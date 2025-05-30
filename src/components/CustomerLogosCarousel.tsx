@@ -27,7 +27,7 @@ const CustomerLogosCarousel = () => {
             <img 
               src={logo} 
               alt={`Customer Logo ${index + 1}`} 
-              className="h-12 max-w-32 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              className="h-12 max-w-32 object-contain transition-all duration-300 hover:scale-110"
             />
           </div>
         ))}
@@ -37,7 +37,7 @@ const CustomerLogosCarousel = () => {
             <img 
               src={logo} 
               alt={`Customer Logo ${index + 1}`} 
-              className="h-12 max-w-32 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              className="h-12 max-w-32 object-contain transition-all duration-300 hover:scale-110"
             />
           </div>
         ))}

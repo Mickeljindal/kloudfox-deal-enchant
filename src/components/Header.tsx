@@ -75,7 +75,7 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button asChild variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white">
+            <Button asChild variant="outline" className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white">
               <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer">
                 Login
               </a>
@@ -134,7 +134,7 @@ const Header = () => {
                 Contact
               </Link>
               <div className="space-y-2 pt-4 border-t border-gray-800">
-                <Button asChild variant="outline" className="w-full border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white">
+                <Button asChild variant="outline" className="w-full border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white">
                   <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer">
                     Login
                   </a>
