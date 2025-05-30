@@ -128,6 +128,19 @@
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-pulse-scale {
   animation: pulse-scale 2s infinite;
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }
