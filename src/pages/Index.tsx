@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
@@ -19,7 +18,7 @@ const Index = () => {
   const { codesLeft, purchased } = useDynamicCodes();
   
   const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.com/products/kloudfox/', '_blank');
+    window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
   };
   
   return (

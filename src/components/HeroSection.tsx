@@ -1,4 +1,3 @@
-
 import { ArrowRight, AlertTriangle, LogIn, CheckCircle, Star } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -14,7 +13,7 @@ const HeroSection = () => {
   endDate.setDate(endDate.getDate() + 3);
 
   const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.com/products/kloudfox/', '_blank');
+    window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
   };
 
   return (

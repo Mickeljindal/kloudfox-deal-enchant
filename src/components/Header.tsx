@@ -10,7 +10,7 @@ const Header = () => {
   const location = useLocation();
 
   const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.com/products/kloudfox/', '_blank');
+    window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
   };
 
   const productLinks = [
@@ -28,7 +28,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
             <img 
-              src="https://kloudfox.com/wp-content/uploads/2024/05/KloudFox-Logo-Light.svg" 
+              src="https://watch.kloudfox.com/assets/images/logo/kloudfox_logo.svg" 
               alt="KloudFox Logo" 
               className="h-8"
             />

@@ -15,6 +15,10 @@ interface ValueComparisonProps {
 }
 
 const ValueComparison = ({ features, totalValue, dealPrice, savings, onButtonClick }: ValueComparisonProps) => {
+  const handleAppSumoRedirect = () => {
+    window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
+  };
+
   return (
     <div className="price-card">
       <div className="absolute top-0 right-0 bg-red-500 text-white font-bold py-1 px-4 transform translate-y-4 -translate-x-4 rotate-12 text-sm">
@@ -55,7 +59,7 @@ const ValueComparison = ({ features, totalValue, dealPrice, savings, onButtonCli
       
       <div className="flex justify-center">
         <button 
-          onClick={onButtonClick}
+          onClick={onButtonClick || handleAppSumoRedirect}
           className="cta-button w-full relative overflow-hidden group"
         >
           <span className="relative z-10">Get AppSumo Deal Now - Only $29!</span>
