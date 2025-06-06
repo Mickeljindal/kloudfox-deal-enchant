@@ -36,6 +36,12 @@ const EmailCampaigns = ({ type, campaignId }: EmailCampaignProps) => {
                       <p style="margin-bottom: 20px;">
                         At 3:47 AM last Tuesday, your biggest client's website went down for 6 hours.
                       </p>
+                      
+                      <div style="text-align: center; margin: 25px 0;">
+                        <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80" alt="Website Down" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <p style="margin-top: 10px; font-style: italic; color: #666; font-size: 13px;">Your clients expect 24/7 uptime. Are you delivering?</p>
+                      </div>
+                      
                       <p style="margin-bottom: 20px;">
                         <strong>The damage?</strong> $47,000 in lost revenue. 892 frustrated customers. And one very angry client questioning your services.
                       </p>
@@ -64,10 +70,39 @@ const EmailCampaigns = ({ type, campaignId }: EmailCampaignProps) => {
                         <li style="margin-bottom: 8px;">Provide professional status pages to build client confidence</li>
                       </ul>
                       
+                      <div style="background-color: #f7fafc; border-radius: 8px; padding: 20px; margin: 30px 0; border: 1px dashed #cbd5e0;">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td width="60%" valign="middle">
+                              <h3 style="color: #e53e3e; margin: 0 0 10px 0; font-size: 20px;">LIFETIME DEAL - NEVER PAY AGAIN</h3>
+                              <p style="margin: 0 0 15px 0;">For a limited time on AppSumo:</p>
+                              <ul style="padding-left: 20px; margin-bottom: 15px;">
+                                <li style="margin-bottom: 5px;">✓ <strong>Unlimited</strong> website monitoring</li>
+                                <li style="margin-bottom: 5px;">✓ <strong>Lifetime</strong> access, one payment</li>
+                                <li style="margin-bottom: 5px;">✓ <strong>89% OFF</strong> regular pricing</li>
+                              </ul>
+                            </td>
+                            <td width="40%" valign="middle" style="text-align: center;">
+                              <img src="https://appsumo.com/static/images/appsumo-2022-logo.svg" alt="AppSumo" style="height: 50px; margin-bottom: 10px;">
+                              <div style="font-size: 22px; font-weight: bold; color: #333;">
+                                <span style="text-decoration: line-through; color: #888; font-size: 18px;">$348/yr</span> 
+                                <span style="color: #e53e3e;">$29</span>
+                              </div>
+                              <p style="margin: 5px 0 0 0; font-size: 14px; font-weight: bold; color: #333;">ONE-TIME PAYMENT</p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      
                       <div style="text-align: center; margin: 30px 0;">
                         <a href="https://appsumo.8odi.net/MAoPn2" style="background: linear-gradient(135deg, #38a169 0%, #25855a 100%); color: white; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; display: inline-block;">
                           Protect Your Agency's Reputation (89% OFF)
                         </a>
+                      </div>
+                      
+                      <div style="text-align: center; margin: 25px 0;">
+                        <img src="https://watch.kloudfox.com/assets/images/logo/kloudfox_logo.svg" alt="KloudFox Dashboard" style="max-width: 80%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <p style="margin-top: 10px; font-style: italic; color: #666; font-size: 13px;">KloudFox monitors 50,000+ websites for agencies worldwide</p>
                       </div>
                       
                       <p style="margin-bottom: 20px;">
@@ -88,6 +123,9 @@ const EmailCampaigns = ({ type, campaignId }: EmailCampaignProps) => {
                     <td style="padding: 20px 30px; background-color: #f7fafc; border-top: 1px solid #e2e8f0; text-align: center;">
                       <p style="margin: 0; font-size: 12px; color: #666;">
                         This limited-time offer expires soon. Join 10,000+ websites already protected.
+                      </p>
+                      <p style="margin: 10px 0 0 0; font-size: 12px;">
+                        <a href="https://discord.gg/HX66cv3G" style="color: #3182ce; text-decoration: none;">Join our Discord community</a> for exclusive tips and support.
                       </p>
                     </td>
                   </tr>
@@ -118,16 +156,28 @@ What if you could:
 • Track website performance across all your clients
 • Provide professional status pages to build client confidence
 
-KloudFox monitors 50,000+ websites for agencies worldwide. Now available for a limited time at 89% off through AppSumo.
+-----------------------------------
+🔥 LIFETIME DEAL - NEVER PAY AGAIN 🔥
+Available now on AppSumo:
+✓ UNLIMITED website monitoring
+✓ LIFETIME access, one payment
+✓ 89% OFF regular pricing
+
+Regular price: $348/yr
+TODAY ONLY: $29 ONE-TIME PAYMENT
+-----------------------------------
 
 Get KloudFox (89% OFF): https://appsumo.8odi.net/MAoPn2
+
+KloudFox monitors 50,000+ websites for agencies worldwide. Now available for a limited time at 89% off through AppSumo.
 
 Don't wait for the next outage to hurt your client relationships.
 
 Best regards,
 The KloudFox Team
 
-This limited-time offer expires soon. Join 10,000+ websites already protected.`
+This limited-time offer expires soon. Join 10,000+ websites already protected.
+Join our Discord community for exclusive tips and support: https://discord.gg/HX66cv3G`
     },
 
     'dev-team-horror': {
@@ -153,6 +203,11 @@ This limited-time offer expires soon. Join 10,000+ websites already protected.`
                   </tr>
                   <tr>
                     <td style="padding: 30px; color: #e0e0e0;">
+                      <div style="text-align: center; margin: 25px 0;">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="Developer Error" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #404040;">
+                        <p style="margin-top: 10px; font-style: italic; color: #999; font-size: 13px;">That feeling when production goes down at 3 AM</p>
+                      </div>
+
                       <div style="background-color: #1a1a1a; padding: 20px; border-radius: 8px; border-left: 4px solid #ff6b6b; margin-bottom: 25px; font-family: monospace;">
                         <p style="margin: 0; color: #ff6b6b; font-size: 14px;">[3:17 AM] CRITICAL ERROR:</p>
                         <p style="margin: 5px 0 0 0; color: #ffffff;">Production server unresponsive</p>
@@ -200,10 +255,39 @@ This limited-time offer expires soon. Join 10,000+ websites already protected.`
                         <p style="margin: 0; color: #90ee90;">✓ SMS/Slack alerts configured</p>
                       </div>
                       
+                      <div style="background-color: #25252d; border-radius: 8px; padding: 20px; margin: 30px 0; border: 1px solid #404040;">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td width="60%" valign="middle">
+                              <h3 style="color: #ff6b6b; margin: 0 0 10px 0; font-size: 20px;">DEVELOPER LIFETIME DEAL</h3>
+                              <p style="margin: 0 0 15px 0; color: #cccccc;">From AppSumo's hottest deal:</p>
+                              <ul style="padding-left: 20px; margin-bottom: 15px; color: #cccccc;">
+                                <li style="margin-bottom: 5px;">✓ <strong style="color: #ffffff;">Unlimited</strong> API endpoint monitoring</li>
+                                <li style="margin-bottom: 5px;">✓ <strong style="color: #ffffff;">One-time</strong> payment, forever access</li>
+                                <li style="margin-bottom: 5px;">✓ <strong style="color: #ffffff;">Instant</strong> Slack/Discord alerts</li>
+                              </ul>
+                            </td>
+                            <td width="40%" valign="middle" style="text-align: center;">
+                              <img src="https://appsumo.com/static/images/appsumo-2022-logo.svg" alt="AppSumo" style="height: 50px; margin-bottom: 10px;">
+                              <div style="font-size: 22px; font-weight: bold; color: #ffffff;">
+                                <span style="text-decoration: line-through; color: #888; font-size: 18px;">$348/yr</span> 
+                                <span style="color: #ff6b6b;">$29</span>
+                              </div>
+                              <p style="margin: 5px 0 0 0; font-size: 14px; font-weight: bold; color: #cccccc;">LIFETIME ACCESS</p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      
                       <div style="text-align: center; margin: 30px 0;">
                         <a href="https://appsumo.8odi.net/MAoPn2" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%); color: white; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; display: inline-block;">
                           Get KloudFox (Developer Special - $29)
                         </a>
+                      </div>
+                      
+                      <div style="text-align: center; margin: 25px 0;">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80" alt="Developer Working" style="max-width: 90%; height: auto; border-radius: 8px; border: 1px solid #404040;">
+                        <p style="margin-top: 10px; font-style: italic; color: #999; font-size: 13px;">Sleep better knowing your systems are monitored 24/7</p>
                       </div>
                       
                       <p style="margin-bottom: 20px;">
@@ -220,6 +304,9 @@ This limited-time offer expires soon. Join 10,000+ websites already protected.`
                     <td style="padding: 20px 30px; background-color: #1a1a1a; border-top: 1px solid #404040; text-align: center;">
                       <p style="margin: 0; font-size: 12px; color: #888;">
                         Limited time: Lifetime deal for developers. Usually $29/month, now just $29 forever.
+                      </p>
+                      <p style="margin: 10px 0 0 0; font-size: 12px;">
+                        <a href="https://discord.gg/HX66cv3G" style="color: #4ecdc4; text-decoration: none;">Join our developer Discord</a> for implementation help and tips.
                       </p>
                     </td>
                   </tr>
@@ -258,14 +345,25 @@ $ curl -X POST "https://api.kloudfox.com/monitors" \\
 ✓ 40-second monitoring interval active  
 ✓ SMS/Slack alerts configured
 
-Skip the 3 AM panic attacks. KloudFox monitors your sites every 40 seconds and alerts you before your users (or boss) notice anything.
+--------------------------------------
+🔥 DEVELOPER LIFETIME DEAL ON APPSUMO 🔥
+✓ UNLIMITED API endpoint monitoring
+✓ ONE-TIME payment, forever access
+✓ INSTANT Slack/Discord alerts
+
+Regular price: $348/yr
+TODAY ONLY: $29 LIFETIME ACCESS
+--------------------------------------
 
 Get KloudFox (Developer Special): https://appsumo.8odi.net/MAoPn2
+
+Skip the 3 AM panic attacks. KloudFox monitors your sites every 40 seconds and alerts you before your users (or boss) notice anything.
 
 Happy coding,
 The KloudFox Team
 
-Limited time: Lifetime deal for developers. Usually $29/month, now just $29 forever.`
+Limited time: Lifetime deal for developers. Usually $29/month, now just $29 forever.
+Join our developer Discord for implementation help and tips: https://discord.gg/HX66cv3G`
     },
 
     'ecommerce-urgency': {
@@ -721,6 +819,7 @@ The KloudFox Team
   if (type === 'html') {
     return (
       <div 
+        className="email-html-content"
         dangerouslySetInnerHTML={{ __html: campaign.html }}
         style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}
       />
@@ -728,16 +827,19 @@ The KloudFox Team
   }
 
   return (
-    <div style={{ 
-      fontFamily: 'monospace', 
-      whiteSpace: 'pre-wrap', 
-      padding: '20px',
-      backgroundColor: '#f5f5f5',
-      border: '1px solid #ddd',
-      borderRadius: '8px',
-      maxWidth: '800px',
-      margin: '0 auto'
-    }}>
+    <div 
+      className="email-text-content"
+      style={{ 
+        fontFamily: 'monospace', 
+        whiteSpace: 'pre-wrap', 
+        padding: '20px',
+        backgroundColor: '#f5f5f5',
+        border: '1px solid #ddd',
+        borderRadius: '8px',
+        maxWidth: '800px',
+        margin: '0 auto'
+      }}
+    >
       <h3>Subject: {campaign.subject}</h3>
       <hr />
       {campaign.text}
