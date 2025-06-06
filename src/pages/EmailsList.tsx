@@ -30,13 +30,13 @@ const EmailsList = () => {
       id: 'saas-founder-panic',
       title: 'SaaS Founder Panic Moment',
       description: 'The moment when a SaaS founder realizes their app is down',
-      subject: '💔 "We Just Lost Our Biggest Enterprise Client" — A SaaS Founder's Nightmare'
+      subject: "💔 \"We Just Lost Our Biggest Enterprise Client\" — A SaaS Founder's Nightmare"
     },
     {
       id: 'freelancer-reputation',
       title: 'Freelancer Reputation Guardian',
       description: 'How to protect your reputation as a freelance developer',
-      subject: '⭐ Your Client's Website Crashed at 3AM (And You Were the Hero)'
+      subject: "⭐ Your Client's Website Crashed at 3AM (And You Were the Hero)"
     },
     {
       id: 'startup-growth-killer',
@@ -48,7 +48,7 @@ const EmailsList = () => {
       id: 'enterprise-compliance',
       title: 'Enterprise Compliance Risk',
       description: 'How downtime affects compliance and creates legal exposure',
-      subject: '⚠️ Your Organization's Legal Exposure Increases Every Minute Your Site Is Down'
+      subject: "⚠️ Your Organization's Legal Exposure Increases Every Minute Your Site Is Down"
     },
     {
       id: 'marketing-team-nightmare',
@@ -66,7 +66,7 @@ const EmailsList = () => {
       id: 'blogger-revenue-loss',
       title: 'Blogger Revenue Loss Alert',
       description: 'How website downtime is silently stealing your ad revenue',
-      subject: '💸 Bloggers: You're Losing Ad Revenue Every Time Your Site Goes Down'
+      subject: "💸 Bloggers: You're Losing Ad Revenue Every Time Your Site Goes Down"
     }
   ];
 
