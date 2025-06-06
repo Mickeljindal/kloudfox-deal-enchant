@@ -1,3 +1,4 @@
+
 import { ArrowRight } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
@@ -19,6 +20,10 @@ const Index = () => {
   
   const handleAppSumoRedirect = () => {
     window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
+  };
+
+  const handleDiscordJoin = () => {
+    window.open('https://discord.gg/HX66cv3G', '_blank');
   };
   
   return (
@@ -147,12 +152,19 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
             <button 
               onClick={handleAppSumoRedirect}
               className="cta-button text-lg md:text-xl px-8 md:px-10 py-4 md:py-5 animate-pulse-scale"
             >
               {t('stopFlying')} <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 inline" />
+            </button>
+            
+            <button 
+              onClick={handleDiscordJoin}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Join Discord Community 🚀
             </button>
           </div>
           
