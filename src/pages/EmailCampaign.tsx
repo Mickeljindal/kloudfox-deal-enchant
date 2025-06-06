@@ -1,7 +1,7 @@
 
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import EmailCampaigns from '@/components/EmailCampaigns';
-import { Copy } from 'lucide-react';
+import { Copy, ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
@@ -76,6 +76,9 @@ const EmailCampaign = () => {
         <p>The requested email campaign could not be found.</p>
         <p>Valid campaigns: {validCampaigns.join(', ')}</p>
         <p>Valid types: html, text</p>
+        <Link to="/emails" className="text-blue-600 hover:text-blue-800 font-medium mt-4 inline-block">
+          Back to Email Campaigns
+        </Link>
       </div>
     );
   }
@@ -83,9 +86,17 @@ const EmailCampaign = () => {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa', padding: '20px' }}>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">
-          {type === 'html' ? 'HTML Email Preview' : 'Text Email Preview'}
-        </h1>
+        <div className="flex items-center">
+          <Link to="/emails" className="text-gray-600 hover:text-gray-900 mr-4">
+            <div className="flex items-center">
+              <ArrowLeft size={16} />
+              <span className="ml-1">All Emails</span>
+            </div>
+          </Link>
+          <h1 className="text-2xl font-bold">
+            {type === 'html' ? 'HTML Email Preview' : 'Text Email Preview'}
+          </h1>
+        </div>
         <Button onClick={handleCopy} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700">
           <Copy size={16} />
           <span>{copyButtonText}</span>

@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 import CustomerLogosCarousel from "@/components/CustomerLogosCarousel";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useDynamicCodes } from "@/hooks/useDynamicCodes";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const { t, language } = useLanguage();
@@ -168,9 +169,17 @@ const Index = () => {
             </button>
           </div>
           
-          <p className="mt-6 text-white/80 text-sm md:text-base">
-            {t('fixAllProblems')}
-          </p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <p className="text-white/80 text-sm md:text-base">
+              {t('fixAllProblems')}
+            </p>
+            <Link 
+              to="/emails" 
+              className="text-white hover:text-yellow-200 font-medium flex items-center bg-white/10 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-white/20"
+            >
+              Access Email Templates <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
       

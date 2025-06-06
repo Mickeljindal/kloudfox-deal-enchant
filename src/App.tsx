@@ -22,6 +22,7 @@ import Integrations from "./pages/Integrations";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import EmailCampaign from "./pages/EmailCampaign";
+import EmailsList from "./pages/EmailsList";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/integrations" element={<Integrations />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/emails" element={<EmailsList />} />
             <Route path="/emails/:campaignId/:type" element={<EmailCampaign />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
