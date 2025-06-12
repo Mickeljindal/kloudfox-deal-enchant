@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Check, AlertTriangle } from "lucide-react";
@@ -6,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const Pricing = () => {
   const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.com/products/kloudfox/', '_blank');
+    window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
   };
 
   const plans = [

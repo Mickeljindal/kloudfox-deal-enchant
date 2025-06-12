@@ -39,7 +39,7 @@ const alternatives = [
 
 const PricingSection = () => {
   const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.com/products/kloudfox/', '_blank');
+    window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
   };
 
   return (
