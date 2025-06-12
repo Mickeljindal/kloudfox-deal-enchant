@@ -125,19 +125,24 @@ const Pricing = () => {
                 Get KloudFox for LIFE at just <span className="font-bold text-3xl">$29</span> (Originally $85/month)
               </p>
               
-              {/* Deal limitations */}
+              {/* Deal features */}
               <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-4">
                 <div className="flex items-start gap-2 mb-2">
                   <AlertTriangle className="h-5 w-5 text-yellow-300 mt-0.5 flex-shrink-0" />
                   <div className="text-left">
-                    <p className="font-semibold mb-1">$29 Deal Includes:</p>
+                    <p className="font-semibold mb-1">AppSumo Tier 1 Deal Includes:</p>
                     <ul className="text-sm space-y-1 opacity-90">
-                      <li>• Up to 25 monitors (similar to Basic plan)</li>
-                      <li>• 1-minute check intervals</li>
-                      <li>• Email & SMS alerts</li>
-                      <li>• SSL monitoring</li>
-                      <li>• Status pages</li>
-                      <li>• <span className="font-bold">Note: Multi-location geo checks NOT included</span></li>
+                      <li>• <span className="font-bold">150 monitors</span> (much more than Basic plan!)</li>
+                      <li>• <span className="font-bold">20 status pages</span></li>
+                      <li>• <span className="font-bold">10 users</span></li>
+                      <li>• <span className="font-bold">40-second load time checks</span></li>
+                      <li>• SSL monitoring & HTTPS ping checks</li>
+                      <li>• Email alerts & unlimited push notifications</li>
+                      <li>• 50 subscribers to updates</li>
+                      <li>• 2,000 AI-driven alert optimization requests/month</li>
+                      <li>• Incident management & custom subdomain</li>
+                      <li>• Unlimited current and future integrations</li>
+                      <li>• <span className="font-bold text-yellow-300">Note: Multi-location geo checks NOT included</span></li>
                     </ul>
                   </div>
                 </div>
