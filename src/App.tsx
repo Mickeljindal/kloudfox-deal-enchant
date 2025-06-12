@@ -14,7 +14,6 @@ import CookiePolicy from "./pages/CookiePolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import DataProcessingAgreement from "./pages/DataProcessingAgreement";
 import WebsiteMonitoring from "./pages/WebsiteMonitoring";
-import ServerMonitoring from "./pages/ServerMonitoring";
 import StatusPage from "./pages/StatusPage";
 import IncidentManagement from "./pages/IncidentManagement";
 import SSLMonitoring from "./pages/SSLMonitoring";
@@ -46,7 +45,6 @@ const App = () => (
             <Route path="/refund-policy" element={<RefundPolicy />} />
             <Route path="/data-processing-agreement" element={<DataProcessingAgreement />} />
             <Route path="/website-monitoring" element={<WebsiteMonitoring />} />
-            <Route path="/server-monitoring" element={<ServerMonitoring />} />
             <Route path="/status-page" element={<StatusPage />} />
             <Route path="/incident-management" element={<IncidentManagement />} />
             <Route path="/ssl-monitoring" element={<SSLMonitoring />} />

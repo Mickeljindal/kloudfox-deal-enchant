@@ -1,7 +1,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Check } from "lucide-react";
+import { Check, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Pricing = () => {
@@ -54,6 +54,7 @@ const Pricing = () => {
         "Up to 100 Monitors",
         "All Status Pages",
         "40-second checks",
+        "Multi-location geo checks",
         "Priority Support",
         "All integrations",
         "Custom branding"
@@ -123,6 +124,25 @@ const Pricing = () => {
               <p className="text-lg mb-4">
                 Get KloudFox for LIFE at just <span className="font-bold text-3xl">$29</span> (Originally $85/month)
               </p>
+              
+              {/* Deal limitations */}
+              <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-4">
+                <div className="flex items-start gap-2 mb-2">
+                  <AlertTriangle className="h-5 w-5 text-yellow-300 mt-0.5 flex-shrink-0" />
+                  <div className="text-left">
+                    <p className="font-semibold mb-1">$29 Deal Includes:</p>
+                    <ul className="text-sm space-y-1 opacity-90">
+                      <li>• Up to 25 monitors (similar to Basic plan)</li>
+                      <li>• 1-minute check intervals</li>
+                      <li>• Email & SMS alerts</li>
+                      <li>• SSL monitoring</li>
+                      <li>• Status pages</li>
+                      <li>• <span className="font-bold">Note: Multi-location geo checks NOT included</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
               <div className="flex justify-center">
                 <Button 
                   onClick={handleAppSumoRedirect}

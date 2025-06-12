@@ -15,7 +15,6 @@ const Header = () => {
 
   const productLinks = [
     { name: "Website Monitoring", href: "/website-monitoring" },
-    { name: "Server Monitoring", href: "/server-monitoring" },
     { name: "SSL Monitoring", href: "/ssl-monitoring" },
     { name: "Status Pages", href: "/status-page" },
     { name: "Incident Management", href: "/incident-management" },
