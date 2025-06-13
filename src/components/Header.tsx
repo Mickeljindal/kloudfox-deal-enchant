@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
             <img 
-              src="https://watch.kloudfox.com/assets/images/logo/kloudfox_logo.svg" 
+              src="/lovable-uploads/b5c94c8f-8b5c-4d46-89bb-c353f06e28ca.png" 
               alt="KloudFox Logo" 
               className="h-8"
             />
