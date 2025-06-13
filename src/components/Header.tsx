@@ -88,7 +88,7 @@ const Header = () => {
               onClick={handleAppSumoRedirect}
               className="bg-orange-500 hover:bg-orange-600"
             >
-              Get Deal $29
+              AppSumo Deal $29
             </Button>
           </div>
 
@@ -147,7 +147,7 @@ const Header = () => {
                   onClick={handleAppSumoRedirect}
                   className="w-full bg-orange-500 hover:bg-orange-600"
                 >
-                  Get Deal $29
+                  AppSumo Deal $29
                 </Button>
               </div>
             </div>
