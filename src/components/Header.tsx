@@ -9,9 +9,6 @@ const Header = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const location = useLocation();
 
-  const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
-  };
 
   const productLinks = [
     { name: "Website Monitoring", href: "/website-monitoring" },
@@ -84,12 +81,6 @@ const Header = () => {
                 Free Trial
               </a>
             </Button>
-            <Button 
-              onClick={handleAppSumoRedirect}
-              className="bg-orange-500 hover:bg-orange-600"
-            >
-              AppSumo Deal $29
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -142,12 +133,6 @@ const Header = () => {
                   <a href="https://watch.kloudfox.com/register" target="_blank" rel="noopener noreferrer">
                     Free Trial
                   </a>
-                </Button>
-                <Button 
-                  onClick={handleAppSumoRedirect}
-                  className="w-full bg-orange-500 hover:bg-orange-600"
-                >
-                  AppSumo Deal $29
                 </Button>
               </div>
             </div>
