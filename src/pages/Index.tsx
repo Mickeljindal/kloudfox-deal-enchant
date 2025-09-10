@@ -56,36 +56,43 @@ const Index = () => {
       
       <FAQSection />
       
-      <section className="py-16 md:py-20 bg-blue-600 text-white">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-            {t('readyToStart')}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Ready to Protect Your Business?
           </h2>
-          <p className="text-lg md:text-xl mb-8 md:mb-10 max-w-3xl mx-auto">
-            {t('startMonitoring')}
+          <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-white/90">
+            Join thousands of businesses that never worry about website downtime. Start monitoring in minutes.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
             <button 
               onClick={handleGetStarted}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-bold text-lg md:text-xl px-8 md:px-10 py-4 md:py-5 rounded-lg shadow-lg transition-all"
+              className="bg-white text-blue-600 hover:bg-gray-100 font-bold text-lg px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover-scale"
             >
-              {t('getStarted')} <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 inline" />
+              Start Free Trial <ArrowRight className="ml-2 h-5 w-5 inline" />
             </button>
             
             <button 
               onClick={handleDiscordJoin}
-              className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg transition-all"
+              className="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover-scale"
             >
-              {t('joinDiscord')} 🚀
+              Join Community 🚀
             </button>
           </div>
           
-          <div className="mt-8 flex justify-center items-center">
-            <div className="bg-blue-700 rounded-lg p-4">
-              <p className="text-white text-sm md:text-base">
-                ✅ {t('freeTrial')} • ✅ {t('noCard')} • ✅ {t('setupTime')}
-              </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8 text-sm">
+            <div className="flex items-center text-green-300">
+              <span className="w-2 h-2 bg-green-300 rounded-full mr-2"></span>
+              Free 60-day trial
+            </div>
+            <div className="flex items-center text-green-300">
+              <span className="w-2 h-2 bg-green-300 rounded-full mr-2"></span>
+              No credit card required
+            </div>
+            <div className="flex items-center text-green-300">
+              <span className="w-2 h-2 bg-green-300 rounded-full mr-2"></span>
+              5-minute setup
             </div>
           </div>
         </div>
