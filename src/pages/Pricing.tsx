@@ -4,9 +4,6 @@ import { Check, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Pricing = () => {
-  const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.8odi.net/MAoPn2', '_blank');
-  };
 
   const plans = [
     {
@@ -117,46 +114,6 @@ const Pricing = () => {
               All plans come with a 60-day money-back guarantee
             </p>
 
-            {/* Special AppSumo Deal Banner */}
-            <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg p-6 mb-12 max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold mb-2">🔥 Limited Time AppSumo Deal!</h2>
-              <p className="text-lg mb-4">
-                Get KloudFox for LIFE at just <span className="font-bold text-3xl">$29</span> (Originally $85/month)
-              </p>
-              
-              {/* Deal features */}
-              <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-4">
-                <div className="flex items-start gap-2 mb-2">
-                  <AlertTriangle className="h-5 w-5 text-yellow-300 mt-0.5 flex-shrink-0" />
-                  <div className="text-left">
-                    <p className="font-semibold mb-1">AppSumo Tier 1 Deal Includes:</p>
-                    <ul className="text-sm space-y-1 opacity-90">
-                      <li>• <span className="font-bold">150 monitors</span> (much more than Basic plan!)</li>
-                      <li>• <span className="font-bold">20 status pages</span></li>
-                      <li>• <span className="font-bold">10 users</span></li>
-                      <li>• <span className="font-bold">40-second load time checks</span></li>
-                      <li>• SSL monitoring & HTTPS ping checks</li>
-                      <li>• Email alerts & unlimited push notifications</li>
-                      <li>• 50 subscribers to updates</li>
-                      <li>• 2,000 AI-driven alert optimization requests/month</li>
-                      <li>• Incident management & custom subdomain</li>
-                      <li>• Unlimited current and future integrations</li>
-                      <li>• <span className="font-bold text-yellow-300">Note: Multi-location geo checks NOT included</span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex justify-center">
-                <Button 
-                  onClick={handleAppSumoRedirect}
-                  className="bg-white text-orange-500 hover:bg-gray-100 font-bold py-3 px-8"
-                >
-                  Get Lifetime Deal for $29
-                </Button>
-              </div>
-              <p className="text-sm mt-2 opacity-90">60 Days Money Back Guarantee • No Questions Asked</p>
-            </div>
 
             <div className="flex justify-center mb-8">
               <div className="bg-gray-100 rounded-lg p-1 flex">
