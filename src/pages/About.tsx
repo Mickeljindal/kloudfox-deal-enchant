@@ -207,7 +207,7 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500 text-white">
+        <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Protect Your Website?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -219,20 +219,20 @@ const About = () => {
                 href="https://watch.kloudfox.com/register"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white text-orange-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
               >
                 Start Free Trial
               </a>
               <a 
-                href="https://appsumo.com/products/kloudfox/"
+                href="https://watch.kloudfox.com/login"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-bold hover:bg-yellow-300 transition-colors"
+                className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-lg font-bold hover:bg-white/20 transition-colors"
               >
-                Get Lifetime Deal - $29
+                Login to Dashboard
               </a>
             </div>
-            <p className="mt-4 text-sm opacity-90">60 Days Money Back Guarantee • No Questions Asked</p>
+            <p className="mt-4 text-sm opacity-90">60 Days Money Back Guarantee • No Setup Fees</p>
           </div>
         </section>
       </div>
