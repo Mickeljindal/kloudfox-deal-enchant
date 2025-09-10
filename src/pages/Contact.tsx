@@ -77,9 +77,6 @@ const Contact = () => {
     });
   };
 
-  const handleAppSumoRedirect = () => {
-    window.open('https://appsumo.com/products/kloudfox/', '_blank');
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -195,18 +192,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
-                <h3 className="text-xl font-bold mb-4 text-blue-900">AppSumo Lifetime Deal</h3>
-                <p className="text-blue-800 mb-4">
-                  Get KloudFox for life at just $29! This exclusive deal won't last forever.
-                </p>
-                <Button 
-                  onClick={handleAppSumoRedirect}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white"
-                >
-                  Get AppSumo Deal
-                </Button>
-              </div>
             </div>
           </div>
         </div>
