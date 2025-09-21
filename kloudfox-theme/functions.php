@@ -221,6 +221,9 @@ function kloudfox_scripts() {
 	// Enqueue main theme script
 	wp_enqueue_script( 'kloudfox-script', KLOUDFOX_THEME_URI . '/assets/js/main.js', array( 'jquery' ), KLOUDFOX_VERSION, true );
 
+	// Enqueue theme script
+	wp_enqueue_script( 'kloudfox-theme', KLOUDFOX_THEME_URI . '/assets/js/theme.js', array( 'jquery' ), KLOUDFOX_VERSION, true );
+
 	// Localize script for AJAX
 	wp_localize_script( 'kloudfox-script', 'kloudfox_ajax', array(
 		'ajax_url' => admin_url( 'admin-ajax.php' ),
