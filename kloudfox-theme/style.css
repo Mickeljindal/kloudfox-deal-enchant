@@ -1,0 +1,432 @@
+/*
+Theme Name: KloudFox
+Description: Professional website monitoring and server management WordPress theme with modern design, responsive layout, and advanced customization options. Perfect for SaaS companies, tech startups, and monitoring services.
+Author: KloudFox Team
+Version: 1.0.0
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kloudfox
+Domain Path: /languages
+Tags: business, portfolio, responsive, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, block-styles, wide-blocks
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* CSS Variables for Theme Customization */
+:root {
+  /* Color Palette */
+  --kf-primary: hsl(217, 91%, 60%);
+  --kf-primary-dark: hsl(217, 91%, 50%);
+  --kf-secondary: hsl(142, 71%, 45%);
+  --kf-accent: hsl(43, 96%, 56%);
+  --kf-background: hsl(0, 0%, 100%);
+  --kf-surface: hsl(210, 40%, 98%);
+  --kf-text: hsl(222, 84%, 5%);
+  --kf-text-muted: hsl(215, 16%, 47%);
+  --kf-border: hsl(214, 32%, 91%);
+  --kf-shadow: hsl(222, 84%, 5%, 0.1);
+  
+  /* Typography */
+  --kf-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --kf-font-size-base: 16px;
+  --kf-font-size-sm: 14px;
+  --kf-font-size-lg: 18px;
+  --kf-font-size-xl: 20px;
+  --kf-font-size-2xl: 24px;
+  --kf-font-size-3xl: 30px;
+  --kf-font-size-4xl: 36px;
+  --kf-line-height-tight: 1.25;
+  --kf-line-height-normal: 1.5;
+  --kf-line-height-relaxed: 1.75;
+  
+  /* Spacing */
+  --kf-spacing-xs: 0.25rem;
+  --kf-spacing-sm: 0.5rem;
+  --kf-spacing-md: 1rem;
+  --kf-spacing-lg: 1.5rem;
+  --kf-spacing-xl: 2rem;
+  --kf-spacing-2xl: 3rem;
+  --kf-spacing-3xl: 4rem;
+  
+  /* Layout */
+  --kf-container-max-width: 1200px;
+  --kf-border-radius: 8px;
+  --kf-border-radius-lg: 12px;
+  --kf-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --kf-background: hsl(222, 84%, 5%);
+    --kf-surface: hsl(222, 84%, 8%);
+    --kf-text: hsl(210, 40%, 98%);
+    --kf-text-muted: hsl(215, 20%, 65%);
+    --kf-border: hsl(215, 28%, 17%);
+    --kf-shadow: hsl(0, 0%, 0%, 0.3);
+  }
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--kf-font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--kf-font-family);
+  font-size: var(--kf-font-size-base);
+  line-height: var(--kf-line-height-normal);
+  color: var(--kf-text);
+  background-color: var(--kf-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container and Layout */
+.kf-container {
+  max-width: var(--kf-container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--kf-spacing-md);
+}
+
+.kf-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(-1 * var(--kf-spacing-md));
+}
+
+.kf-col {
+  flex: 1;
+  padding: 0 var(--kf-spacing-md);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: var(--kf-line-height-tight);
+  margin-bottom: var(--kf-spacing-lg);
+  color: var(--kf-text);
+}
+
+h1 { font-size: var(--kf-font-size-4xl); }
+h2 { font-size: var(--kf-font-size-3xl); }
+h3 { font-size: var(--kf-font-size-2xl); }
+h4 { font-size: var(--kf-font-size-xl); }
+h5 { font-size: var(--kf-font-size-lg); }
+h6 { font-size: var(--kf-font-size-base); }
+
+p {
+  margin-bottom: var(--kf-spacing-lg);
+  color: var(--kf-text-muted);
+}
+
+a {
+  color: var(--kf-primary);
+  text-decoration: none;
+  transition: var(--kf-transition);
+}
+
+a:hover, a:focus {
+  color: var(--kf-primary-dark);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.kf-button {
+  display: inline-block;
+  padding: var(--kf-spacing-md) var(--kf-spacing-xl);
+  font-size: var(--kf-font-size-base);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--kf-border-radius);
+  cursor: pointer;
+  transition: var(--kf-transition);
+  background: var(--kf-primary);
+  color: white;
+}
+
+.kf-button:hover {
+  background: var(--kf-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px var(--kf-shadow);
+}
+
+.kf-button--secondary {
+  background: transparent;
+  color: var(--kf-primary);
+  border-color: var(--kf-primary);
+}
+
+.kf-button--secondary:hover {
+  background: var(--kf-primary);
+  color: white;
+}
+
+/* Header Styles */
+.site-header {
+  background: var(--kf-background);
+  border-bottom: 1px solid var(--kf-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.site-header .kf-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--kf-spacing-md);
+  padding-bottom: var(--kf-spacing-md);
+}
+
+.site-logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Navigation */
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: var(--kf-spacing-xl);
+}
+
+.main-navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--kf-spacing-lg);
+}
+
+.main-navigation a {
+  font-weight: 500;
+  color: var(--kf-text);
+  padding: var(--kf-spacing-sm) 0;
+  transition: var(--kf-transition);
+}
+
+.main-navigation a:hover {
+  color: var(--kf-primary);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--kf-primary), var(--kf-secondary));
+  color: white;
+  padding: var(--kf-spacing-3xl) 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  color: white;
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: var(--kf-spacing-lg);
+}
+
+.hero-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--kf-font-size-lg);
+  max-width: 600px;
+  margin: 0 auto var(--kf-spacing-xl);
+}
+
+/* Content Sections */
+.content-section {
+  padding: var(--kf-spacing-3xl) 0;
+}
+
+.content-section:nth-child(even) {
+  background: var(--kf-surface);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--kf-spacing-2xl);
+}
+
+.section-subtitle {
+  color: var(--kf-text-muted);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Feature Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--kf-spacing-xl);
+  margin-top: var(--kf-spacing-2xl);
+}
+
+.feature-card {
+  background: var(--kf-background);
+  padding: var(--kf-spacing-xl);
+  border-radius: var(--kf-border-radius-lg);
+  box-shadow: 0 4px 6px var(--kf-shadow);
+  text-align: center;
+  transition: var(--kf-transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px var(--kf-shadow);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--kf-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--kf-spacing-lg);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--kf-text);
+  color: white;
+  padding: var(--kf-spacing-3xl) 0 var(--kf-spacing-xl);
+}
+
+.footer-widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--kf-spacing-xl);
+  margin-bottom: var(--kf-spacing-xl);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--kf-spacing-lg);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --kf-font-size-4xl: 28px;
+    --kf-font-size-3xl: 24px;
+    --kf-spacing-3xl: 2rem;
+  }
+  
+  .site-header .kf-container {
+    flex-direction: column;
+    gap: var(--kf-spacing-md);
+  }
+  
+  .main-navigation ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .kf-row {
+    flex-direction: column;
+  }
+  
+  .hero-section {
+    padding: var(--kf-spacing-2xl) 0;
+  }
+}
+
+/* WordPress Specific Styles */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.alignwide {
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+}
+
+.alignfull {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: auto;
+  max-width: 1000%;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
+.wp-caption-text {
+  text-align: center;
+  font-size: var(--kf-font-size-sm);
+  color: var(--kf-text-muted);
+  margin-top: var(--kf-spacing-sm);
+}
+
+/* Block Editor Styles */
+.wp-block-button__link {
+  background: var(--kf-primary);
+  color: white;
+  border-radius: var(--kf-border-radius);
+  padding: var(--kf-spacing-md) var(--kf-spacing-xl);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--kf-transition);
+}
+
+.wp-block-button__link:hover {
+  background: var(--kf-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1.5em;
+  z-index: 999999;
+  text-decoration: underline;
+}
+
+.skip-link:focus {
+  background: var(--kf-background);
+  color: var(--kf-text);
+  left: 6px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Print Styles */
+@media print {
+  .site-header,
+  .site-footer,
+  .main-navigation {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
