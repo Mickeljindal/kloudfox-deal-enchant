@@ -191,7 +191,7 @@ const About = () => {
               <div className="grid md:grid-cols-3 gap-8 mt-12">
                 <div>
                   <h3 className="text-xl font-bold mb-4">Founded</h3>
-                  <p className="text-gray-300">2020</p>
+                  <p className="text-gray-300">2024</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-4">Headquarters</h3>
