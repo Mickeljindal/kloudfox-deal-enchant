@@ -2,7 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
-import KloudBeanSection from "@/components/KloudBeanSection";
+
 import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
@@ -45,7 +45,7 @@ const Index = () => {
       
       <FeatureSection />
 
-      <KloudBeanSection />
+      
 
       <MobileAppSection />
       

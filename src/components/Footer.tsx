@@ -18,9 +18,6 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Professional website monitoring and uptime tracking. Never miss downtime again.
             </p>
-            <p className="text-sm text-gray-500">
-              A KloudBean Company
-            </p>
           </div>
 
           {/* Product Features */}
