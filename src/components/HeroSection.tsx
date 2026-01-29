@@ -40,16 +40,22 @@ const HeroSection = () => {
             <div className="text-green-300 text-xs md:text-sm font-medium">✓ Trusted by 10,000+ websites</div>
           </div>
           
+          {/* AI Badge */}
+          <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-full px-4 py-2 mb-4">
+            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+            <span className="text-green-300 text-sm font-medium">AI-Powered Anomaly Detection</span>
+          </div>
+          
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white mb-4 md:mb-6 leading-tight px-2">
             <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-              Monitor Your Website
+              AI-Powered Monitoring
             </span>
             <br />
-            <span className="text-white">Never Miss Downtime</span>
+            <span className="text-white">Predict & Prevent Outages</span>
           </h1>
           
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-            Get instant alerts when your website goes down. <span className="font-bold text-blue-300">Professional monitoring</span> that keeps your business running smoothly. <span className="font-bold text-white">Never be the last to know!</span>
+            Our <span className="font-bold text-green-300">AI-powered anomaly detection</span> predicts infrastructure failures before they happen. <span className="font-bold text-blue-300">Machine learning</span> that learns your patterns and alerts you to problems <span className="font-bold text-white">before customers notice.</span>
           </p>
           
           {/* Social proof numbers */}

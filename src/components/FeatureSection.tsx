@@ -1,50 +1,77 @@
 
-import { Bell, Globe, Shield, Clock, Zap, Layers, TrendingUp, AlertTriangle } from "lucide-react";
+import { Bell, Globe, Shield, Clock, Zap, Layers, TrendingUp, AlertTriangle, Brain, Cpu, Activity, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const FeatureSection = () => {
   const { t } = useLanguage();
 
+  const aiFeatures = [
+    {
+      icon: <Brain className="h-8 w-8" />,
+      title: "AI-Powered Anomaly Detection",
+      description: "Our machine learning algorithms analyze millions of data points to detect unusual patterns and predict failures before they cause downtime. Trained on thousands of infrastructure scenarios.",
+      savings: "$15,000",
+      color: "from-purple-500 to-pink-600",
+      badge: "NVIDIA AI"
+    },
+    {
+      icon: <Activity className="h-8 w-8" />,
+      title: "Predictive Failure Analysis",
+      description: "Using advanced neural networks, KloudFox learns your infrastructure's normal behavior and alerts you to deviations that historically precede outages. Prevent problems hours before they happen.",
+      savings: "$25,000",
+      color: "from-blue-500 to-cyan-600",
+      badge: "ML Core"
+    },
+    {
+      icon: <BarChart3 className="h-8 w-8" />,
+      title: "Intelligent Pattern Recognition",
+      description: "GPU-accelerated pattern matching identifies correlations across your entire infrastructure stack. Spot cascading failures and root causes that traditional monitoring misses.",
+      savings: "$8,000",
+      color: "from-green-500 to-emerald-600",
+      badge: "GPU Accelerated"
+    },
+  ];
+
   const features = [
     {
       icon: <Globe className="h-8 w-8" />,
-      title: "Never Miss a Customer-Losing Outage Again",
-      description: "While your competitors' sites go down unnoticed for hours, you'll catch EVERY issue within seconds. Our global monitoring network watches your site from 4 continents, alerting you before customers start complaining or abandoning your brand.",
+      title: "Global AI Monitoring Network",
+      description: "AI-powered monitoring from 4 continents with intelligent routing. Our ML models optimize check intervals based on your site's behavior patterns for maximum efficiency.",
       savings: "$2,400",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <Bell className="h-8 w-8" />,
-      title: "Stop Losing $200+ Per Minute of Downtime",
-      description: "The average business loses $200-$500 every minute their site is down. KloudFox sends instant alerts to your phone, Slack, and email, so you can fix issues in seconds instead of hours—saving thousands in lost revenue and reputation damage.",
+      title: "Smart Alert Prioritization",
+      description: "AI-driven alert scoring eliminates noise and false positives. Our models learn what matters to your business and prioritize alerts based on potential revenue impact.",
       savings: "$12,000",
       color: "from-orange-500 to-red-500"
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      title: "Prevent the Google Ranking Disaster",
-      description: "An expired SSL certificate doesn't just scare away customers with browser warnings—it can TANK your hard-earned Google rankings overnight. We alert you days before expiration, preventing the SEO nightmare that your competitors keep experiencing.",
+      title: "Predictive SSL Monitoring",
+      description: "Machine learning predicts certificate issues before expiration. AI analyzes certificate chains and security configurations to prevent SEO and trust disasters.",
       savings: "$5,000",
       color: "from-green-500 to-emerald-600"
     },
     {
       icon: <Clock className="h-8 w-8" />,
-      title: "Eliminate the '5-Minute Blindspot'",
-      description: "Basic tools only check your site every 5 minutes—leaving huge windows where customers see errors while you remain clueless. Our 40-second monitoring cycle catches even brief outages that other tools completely miss, protecting your reputation 24/7.",
+      title: "Adaptive Check Intervals",
+      description: "Our AI dynamically adjusts monitoring frequency based on historical patterns. During high-risk periods, checks increase automatically to catch issues faster.",
       savings: "$800",
       color: "from-purple-500 to-indigo-600"
     },
     {
       icon: <Layers className="h-8 w-8" />,
-      title: "Turn Angry Customers into Loyal Fans",
-      description: "When outages inevitably happen, most businesses leave customers frustrated and in the dark. Your branded status pages will keep customers informed with professional updates, turning potential negative reviews into appreciation for your transparency.",
+      title: "Intelligent Status Pages",
+      description: "AI-generated incident summaries and automatic status updates. Our models analyze incidents and create professional customer communications automatically.",
       savings: "$3,200",
       color: "from-cyan-500 to-blue-600"
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: "End the 'Technical Nightmare' Forever",
-      description: "While your competitors struggle with complex enterprise solutions that require IT teams to manage, you'll be up and running in 5 minutes with zero technical skills. Just enter your URL and start protecting your business instantly.",
+      title: "Zero-Config AI Setup",
+      description: "Our AI learns your infrastructure automatically—no complex configuration needed. Just connect your services and let machine learning do the heavy lifting.",
       savings: "$1,500",
       color: "from-yellow-500 to-orange-500"
     }
@@ -53,6 +80,53 @@ const FeatureSection = () => {
   return (
     <div id="features" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
+        {/* AI Technology Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full font-medium text-sm mb-4">
+            <Cpu className="w-4 h-4 mr-2" />
+            POWERED BY ARTIFICIAL INTELLIGENCE
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-gray-900">AI-Powered</span>
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> Infrastructure Intelligence</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Leveraging GPU-accelerated machine learning to predict and prevent outages before they impact your business
+          </p>
+        </div>
+
+        {/* AI Core Features */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {aiFeatures.map((feature, index) => (
+            <div 
+              key={index} 
+              className="group bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden"
+            >
+              {/* Glow effect */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
+              
+              {/* AI Badge */}
+              <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                {feature.badge}
+              </div>
+              
+              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${feature.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                {feature.icon}
+              </div>
+              
+              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-gray-100 transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+              
+              <div className="mt-4 flex items-center text-green-400 text-sm font-medium">
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                Saves {feature.savings}+ annually
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div className="text-center mb-16">
           <div className="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full font-medium text-sm mb-4">
             CRITICAL PROBLEMS WE SOLVE
@@ -62,7 +136,7 @@ const FeatureSection = () => {
             <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent"> Revenue Killers</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            These "hidden disasters" are silently costing your business thousands. See how we prevent each one:
+            AI-powered solutions that prevent these "hidden disasters" silently costing your business thousands:
           </p>
         </div>
         

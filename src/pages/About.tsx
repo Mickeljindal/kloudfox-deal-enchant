@@ -1,7 +1,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Shield, Globe, Clock, Users, CheckCircle, TrendingUp, Award, Zap } from "lucide-react";
+import { Shield, Globe, Clock, Users, CheckCircle, TrendingUp, Award, Zap, Brain, Cpu, Activity } from "lucide-react";
 
 const About = () => {
   return (
@@ -11,9 +11,13 @@ const About = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-20">
           <div className="container mx-auto px-4 text-center">
+            <div className="inline-flex items-center bg-green-500/20 border border-green-400/30 rounded-full px-4 py-2 mb-6">
+              <Cpu className="w-4 h-4 text-green-400 mr-2" />
+              <span className="text-green-300 text-sm font-medium">AI-Powered Infrastructure Monitoring</span>
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About KloudFox</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              We're on a mission to eliminate website downtime and protect businesses from losing customers due to undetected outages.
+              We're on a mission to eliminate website downtime using AI-powered anomaly detection that predicts and prevents outages before they impact your business.
             </p>
             <div className="flex justify-center">
               <img 
@@ -83,11 +87,50 @@ const About = () => {
                   KloudFox was born from a simple but critical observation: <strong>75% of businesses experience website outages they never detect</strong>, costing them an average of <strong>$12,000+ per incident</strong> in lost revenue.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  We witnessed countless businesses losing customers, revenue, and reputation simply because they didn't know their websites were down. Traditional monitoring solutions were either too expensive, too complex, or missed critical regional outages.
+                  Traditional monitoring is reactive—it alerts you <em>after</em> customers are already affected. We asked: <strong>What if AI could predict failures before they happen?</strong>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  That's why we built KloudFox with <strong>AI-powered anomaly detection</strong> at its core. Our machine learning models analyze patterns across millions of data points to identify issues hours before they cause outages.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  That's why we created KloudFox - to be the early warning system that prevents these disasters, ensuring businesses never lose customers to problems they could have fixed if they only knew about them.
+                  Founded in 2024, we're building the future of predictive infrastructure monitoring—where businesses never lose customers to problems that could have been prevented.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Technology Section */}
+        <section className="py-20 bg-gradient-to-br from-gray-900 to-purple-900">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center bg-purple-500/20 border border-purple-400/30 rounded-full px-4 py-2 mb-4">
+                <Brain className="w-4 h-4 text-purple-400 mr-2" />
+                <span className="text-purple-300 text-sm font-medium">Our AI Technology</span>
+              </div>
+              <h2 className="text-3xl font-bold text-white mb-4">Powered by Machine Learning</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Our AI-powered platform uses advanced machine learning to predict and prevent infrastructure failures.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-500/30 rounded-xl p-8 text-center">
+                <Brain className="h-12 w-12 text-purple-400 mx-auto mb-6" />
+                <h3 className="text-xl font-bold text-white mb-4">Anomaly Detection</h3>
+                <p className="text-gray-400">LSTM neural networks identify unusual patterns before they cause outages</p>
+              </div>
+              
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-blue-500/30 rounded-xl p-8 text-center">
+                <Activity className="h-12 w-12 text-blue-400 mx-auto mb-6" />
+                <h3 className="text-xl font-bold text-white mb-4">Predictive Analysis</h3>
+                <p className="text-gray-400">ML models trained on millions of failure scenarios predict issues hours ahead</p>
+              </div>
+              
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-green-500/30 rounded-xl p-8 text-center">
+                <Cpu className="h-12 w-12 text-green-400 mx-auto mb-6" />
+                <h3 className="text-xl font-bold text-white mb-4">GPU Accelerated</h3>
+                <p className="text-gray-400">Real-time processing of millions of data points for instant predictions</p>
               </div>
             </div>
           </div>
@@ -100,21 +143,21 @@ const About = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+                <Brain className="h-12 w-12 text-purple-600 mx-auto mb-6" />
+                <h3 className="text-xl font-bold mb-4">AI-Powered Predictions</h3>
+                <p className="text-gray-600">Machine learning predicts failures before they happen, giving you time to prevent outages.</p>
+              </div>
+
+              <div className="bg-white p-8 rounded-xl shadow-lg text-center">
                 <Clock className="h-12 w-12 text-blue-600 mx-auto mb-6" />
-                <h3 className="text-xl font-bold mb-4">Lightning Fast Detection</h3>
-                <p className="text-gray-600">40-second check intervals mean we detect issues before your customers do, giving you time to fix problems instantly.</p>
+                <h3 className="text-xl font-bold mb-4">40-Second Detection</h3>
+                <p className="text-gray-600">Industry-fastest check intervals mean we detect issues before your customers do.</p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-lg text-center">
                 <Globe className="h-12 w-12 text-green-600 mx-auto mb-6" />
-                <h3 className="text-xl font-bold mb-4">Global Coverage</h3>
-                <p className="text-gray-600">Monitor from 4 continents to catch regional outages that single-location tools miss completely.</p>
-              </div>
-
-              <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                <CheckCircle className="h-12 w-12 text-purple-600 mx-auto mb-6" />
-                <h3 className="text-xl font-bold mb-4">Complete Protection</h3>
-                <p className="text-gray-600">Website monitoring, SSL certificate tracking, status pages, and incident management all in one platform.</p>
+                <h3 className="text-xl font-bold mb-4">Global AI Network</h3>
+                <p className="text-gray-600">Monitor from 4 continents with AI that learns regional patterns and catches local outages.</p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-lg text-center">
