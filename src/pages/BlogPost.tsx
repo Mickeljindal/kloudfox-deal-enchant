@@ -144,7 +144,7 @@ const BlogPost = () => {
                     <p>Subscribe to our newsletter to be notified when this comprehensive guide is published. In the meantime, explore our other articles for valuable insights on website monitoring and performance optimization.</p>
                     
                     <h3>Need Immediate Help?</h3>
-                    <p>If you need assistance with website monitoring right now, our KloudBean platform offers immediate solutions for uptime monitoring, performance tracking, and alert management.</p>
+                    <p>If you need assistance with website monitoring right now, our KloudFox platform offers immediate solutions for uptime monitoring, performance tracking, and alert management.</p>
                   ` }}
                 />
                 
@@ -152,11 +152,11 @@ const BlogPost = () => {
                 <div className="mt-12 p-8 bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-xl">
                   <h3 className="text-2xl font-bold mb-4">Ready to Monitor Your Website?</h3>
                   <p className="text-lg mb-6 text-gray-700">
-                    Don't let website downtime cost your business. Start monitoring with KloudBean today and protect your online presence 24/7.
+                    Don't let website downtime cost your business. Start monitoring with KloudFox today and protect your online presence 24/7.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <a 
-                      href="https://watch.kloudbean.com/register" 
+                      href="https://watch.kloudfox.com/register" 
                       className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors inline-block text-center font-medium"
                     >
                       Start Free Trial

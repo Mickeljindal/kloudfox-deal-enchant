@@ -83,7 +83,7 @@ const About = () => {
                   KloudFox was born from a simple but critical observation: <strong>75% of businesses experience website outages they never detect</strong>, costing them an average of <strong>$12,000+ per incident</strong> in lost revenue.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  As part of the KloudBean family, we witnessed countless businesses losing customers, revenue, and reputation simply because they didn't know their websites were down. Traditional monitoring solutions were either too expensive, too complex, or missed critical regional outages.
+                  We witnessed countless businesses losing customers, revenue, and reputation simply because they didn't know their websites were down. Traditional monitoring solutions were either too expensive, too complex, or missed critical regional outages.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   That's why we created KloudFox - to be the early warning system that prevents these disasters, ensuring businesses never lose customers to problems they could have fixed if they only knew about them.
@@ -183,9 +183,9 @@ const About = () => {
         <section className="py-20 bg-gray-900 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-8">Part of the KloudBean Family</h2>
+              <h2 className="text-3xl font-bold mb-8">About KloudFox</h2>
               <p className="text-xl text-gray-300 mb-8">
-                KloudFox is proudly developed by KloudBean, a leading provider of managed cloud infrastructure and hosting solutions trusted by thousands of businesses worldwide.
+                KloudFox is a leading website monitoring platform trusted by thousands of businesses worldwide.
               </p>
               
               <div className="grid md:grid-cols-3 gap-8 mt-12">
