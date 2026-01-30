@@ -19,6 +19,11 @@ import {
   Activity,
   Rocket
 } from "lucide-react";
+import CompetitorSlide from "@/components/pitch-deck/CompetitorSlide";
+import RevenueProjectionsSlide from "@/components/pitch-deck/RevenueProjectionsSlide";
+import BusinessModelSlide from "@/components/pitch-deck/BusinessModelSlide";
+import RoadmapSlide from "@/components/pitch-deck/RoadmapSlide";
+import TeamSlide from "@/components/pitch-deck/TeamSlide";
 
 const PitchDeck = () => {
   return (
@@ -304,6 +309,15 @@ const PitchDeck = () => {
         </div>
       </section>
 
+      {/* Competitor Analysis Slide */}
+      <CompetitorSlide />
+
+      {/* Business Model Slide */}
+      <BusinessModelSlide />
+
+      {/* Revenue Projections Slide */}
+      <RevenueProjectionsSlide />
+
       {/* Traction Slide */}
       <section className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
@@ -381,6 +395,12 @@ const PitchDeck = () => {
           </div>
         </div>
       </section>
+
+      {/* Roadmap Slide */}
+      <RoadmapSlide />
+
+      {/* Team Slide */}
+      <TeamSlide />
 
       {/* Ask Slide */}
       <section className="py-20 bg-gradient-to-br from-purple-900 via-gray-900 to-gray-900">
