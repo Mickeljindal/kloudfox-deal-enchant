@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { 
   Brain, 
   TrendingUp, 
@@ -14,7 +14,9 @@ import {
   DollarSign,
   Clock,
   Server,
-  BarChart3
+  BarChart3,
+  Download,
+  Loader2
 } from "lucide-react";
 import CompetitorSlide from "@/components/pitch-deck/CompetitorSlide";
 import RevenueProjectionsSlide from "@/components/pitch-deck/RevenueProjectionsSlide";
@@ -23,11 +25,42 @@ import RoadmapSlide from "@/components/pitch-deck/RoadmapSlide";
 import TeamSlide from "@/components/pitch-deck/TeamSlide";
 
 const PitchDeck = () => {
+  const [isGenerating, setIsGenerating] = useState(false);
+
   useEffect(() => {
     document.body.style.background = "#0a0a0f";
     return () => {
       document.body.style.background = "";
     };
+  }, []);
+
+  const handleDownloadPDF = useCallback(async () => {
+    setIsGenerating(true);
+    try {
+      const html2pdf = (await import("html2pdf.js")).default;
+      const element = document.querySelector(".pitch-deck-content");
+      if (!element) return;
+      
+      const opt = {
+        margin: 0,
+        filename: "KloudFox-NVIDIA-Inception-PitchDeck.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { 
+          scale: 2, 
+          useCORS: true, 
+          backgroundColor: "#0a0a0f",
+          scrollY: 0,
+        },
+        jsPDF: { unit: "in", format: [19.2, 10.8], orientation: "landscape" },
+        pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+      };
+
+      await html2pdf().set(opt).from(element).save();
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+    } finally {
+      setIsGenerating(false);
+    }
   }, []);
 
   return (
@@ -40,12 +73,24 @@ const PitchDeck = () => {
             alt="KloudFox" 
             className="h-8"
           />
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-white/40 tracking-[0.3em] uppercase">NVIDIA Inception</span>
-            <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="flex items-center gap-4">
+            <button
+              onClick={handleDownloadPDF}
+              disabled={isGenerating}
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full px-5 py-2 text-sm font-medium text-white transition-all disabled:opacity-50"
+            >
+              {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
+              {isGenerating ? "Generating..." : "Download PDF"}
+            </button>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-white/40 tracking-[0.3em] uppercase">NVIDIA Inception</span>
+              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            </div>
           </div>
         </div>
       </header>
+
+      <div className="pitch-deck-content">
 
       {/* Hero - Slide 1 */}
       <section className="min-h-screen flex items-center justify-center relative pt-20">
@@ -490,6 +535,7 @@ const PitchDeck = () => {
           </div>
         </div>
       </footer>
+      </div>{/* end pitch-deck-content */}
     </div>
   );
 };
