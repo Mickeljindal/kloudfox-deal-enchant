@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
 import { 
   Brain, 
   TrendingUp, 
@@ -26,6 +26,7 @@ import TeamSlide from "@/components/pitch-deck/TeamSlide";
 
 const PitchDeck = () => {
   const [isGenerating, setIsGenerating] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.style.background = "#0a0a0f";
@@ -35,27 +36,41 @@ const PitchDeck = () => {
   }, []);
 
   const handleDownloadPDF = useCallback(async () => {
+    if (!contentRef.current) return;
     setIsGenerating(true);
     try {
-      const html2pdf = (await import("html2pdf.js")).default;
-      const element = document.querySelector(".pitch-deck-content");
-      if (!element) return;
-      
-      const opt = {
-        margin: 0,
-        filename: "KloudFox-NVIDIA-Inception-PitchDeck.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { 
-          scale: 2, 
-          useCORS: true, 
-          backgroundColor: "#0a0a0f",
-          scrollY: 0,
-        },
-        jsPDF: { unit: "in", format: [19.2, 10.8], orientation: "landscape" },
-        pagebreak: { mode: ["avoid-all", "css", "legacy"] },
-      };
+      const html2canvas = (await import("html2canvas")).default;
+      const { jsPDF } = await import("jspdf");
 
-      await html2pdf().set(opt).from(element).save();
+      const canvas = await html2canvas(contentRef.current, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: "#0a0a0f",
+        logging: false,
+        windowWidth: contentRef.current.scrollWidth,
+      });
+
+      const imgData = canvas.toDataURL("image/jpeg", 0.95);
+      const pdf = new jsPDF("p", "mm", "a4");
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = pdfWidth;
+      const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+
+      let position = 0;
+      let heightLeft = imgHeight;
+
+      pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pdfHeight;
+
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pdfHeight;
+      }
+
+      pdf.save("KloudFox-NVIDIA-Inception-PitchDeck.pdf");
     } catch (err) {
       console.error("PDF generation failed:", err);
     } finally {
@@ -90,7 +105,7 @@ const PitchDeck = () => {
         </div>
       </header>
 
-      <div className="pitch-deck-content">
+      <div ref={contentRef}>
 
       {/* Hero - Slide 1 */}
       <section className="min-h-screen flex items-center justify-center relative pt-20">
