@@ -36,21 +36,41 @@ const PitchDeck = () => {
   }, []);
 
   const handleDownloadPDF = useCallback(async () => {
-    if (!contentRef.current) return;
+    if (!contentRef.current) {
+      console.error("PDF: contentRef is null");
+      return;
+    }
     setIsGenerating(true);
+    console.log("PDF: starting generation");
     try {
       const html2canvas = (await import("html2canvas")).default;
       const { jsPDF } = await import("jspdf");
+      console.log("PDF: libraries loaded");
 
-      const canvas = await html2canvas(contentRef.current, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: "#0a0a0f",
-        logging: false,
-        windowWidth: contentRef.current.scrollWidth,
+      // Temporarily hide elements that break html2canvas (blur filters, etc.)
+      const blurElements = contentRef.current.querySelectorAll('[class*="blur"]');
+      blurElements.forEach((el) => {
+        (el as HTMLElement).style.display = "none";
       });
 
-      const imgData = canvas.toDataURL("image/jpeg", 0.95);
+      const canvas = await html2canvas(contentRef.current, {
+        scale: 1.5,
+        useCORS: true,
+        backgroundColor: "#0a0a0f",
+        logging: true,
+        allowTaint: true,
+        removeContainer: true,
+      });
+      console.log("PDF: canvas created", canvas.width, canvas.height);
+
+      // Restore hidden elements
+      blurElements.forEach((el) => {
+        (el as HTMLElement).style.display = "";
+      });
+
+      const imgData = canvas.toDataURL("image/jpeg", 0.9);
+      console.log("PDF: image data length", imgData.length);
+
       const pdf = new jsPDF("p", "mm", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
@@ -70,9 +90,14 @@ const PitchDeck = () => {
         heightLeft -= pdfHeight;
       }
 
+      console.log("PDF: saving file");
       pdf.save("KloudFox-NVIDIA-Inception-PitchDeck.pdf");
+      console.log("PDF: save called successfully");
     } catch (err) {
       console.error("PDF generation failed:", err);
+      // Fallback: use browser print
+      alert("PDF generation encountered an issue. Opening print dialog as fallback - select 'Save as PDF' in the print dialog.");
+      window.print();
     } finally {
       setIsGenerating(false);
     }
