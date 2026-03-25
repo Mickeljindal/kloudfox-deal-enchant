@@ -1,5 +1,5 @@
 
-import { ArrowRight, LogIn, CheckCircle, Star } from "lucide-react";
+import { ArrowRight, Play, Shield, Zap, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "./ui/button";
 
@@ -15,102 +15,71 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="pt-16 md:pt-20 pb-16 md:pb-20 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 md:top-20 left-5 md:left-10 w-20 md:w-32 h-20 md:h-32 rounded-full bg-blue-500/20 blur-2xl md:blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-5 md:bottom-10 right-5 md:right-10 w-40 md:w-64 h-40 md:h-64 rounded-full bg-purple-500/20 blur-2xl md:blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 md:w-96 h-60 md:h-96 rounded-full bg-blue-400/10 blur-2xl md:blur-3xl animate-pulse delay-500"></div>
-      </div>
+    <div className="relative min-h-[90vh] flex items-center bg-[#0a0a1a] overflow-hidden">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 dot-pattern opacity-30" />
+      
+      {/* Gradient orbs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[hsl(230,80%,56%)]/20 blur-[120px]" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-[hsl(160,84%,39%)]/15 blur-[120px]" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+      <div className="container mx-auto px-4 relative z-10 py-20 md:py-32">
+        <div className="max-w-4xl mx-auto text-center">
           
-          {/* Trust badges */}
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 mb-6">
-            <div className="flex items-center text-yellow-300">
-              <Star className="w-4 md:w-5 h-4 md:h-5 fill-current" />
-              <Star className="w-4 md:w-5 h-4 md:h-5 fill-current" />
-              <Star className="w-4 md:w-5 h-4 md:h-5 fill-current" />
-              <Star className="w-4 md:w-5 h-4 md:h-5 fill-current" />
-              <Star className="w-4 md:w-5 h-4 md:h-5 fill-current" />
-              <span className="ml-2 text-white/90 text-xs md:text-sm">4.9/5 from 2,847 users</span>
-            </div>
-            <div className="text-white/70 text-sm hidden md:block">|</div>
-            <div className="text-green-300 text-xs md:text-sm font-medium">✓ Trusted by 10,000+ websites</div>
+          {/* Pill badge */}
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8 animate-fade-up">
+            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+            <span className="text-white/70 text-sm font-medium">AI-Powered Infrastructure Intelligence</span>
           </div>
           
-          {/* AI Badge */}
-          <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-full px-4 py-2 mb-4">
-            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-            <span className="text-green-300 text-sm font-medium">AI-Powered Anomaly Detection</span>
-          </div>
-          
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white mb-4 md:mb-6 leading-tight px-2">
-            <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-              AI-Powered Monitoring
-            </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            Know before your
             <br />
-            <span className="text-white">Predict & Prevent Outages</span>
+            <span className="bg-gradient-to-r from-[hsl(230,80%,65%)] via-[hsl(200,90%,60%)] to-[hsl(160,84%,50%)] bg-clip-text text-transparent">
+              customers do
+            </span>
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-            Our <span className="font-bold text-green-300">AI-powered anomaly detection</span> predicts infrastructure failures before they happen. <span className="font-bold text-blue-300">Machine learning</span> that learns your patterns and alerts you to problems <span className="font-bold text-white">before customers notice.</span>
+          <p className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            AI-powered monitoring that predicts outages before they happen. 
+            Protect your revenue with intelligent anomaly detection across your entire stack.
           </p>
           
-          {/* Social proof numbers */}
-          <div className="grid grid-cols-3 gap-2 md:flex md:justify-center md:items-center md:space-x-8 mb-8 px-4">
-            <div className="text-center">
-              <div className="text-xl md:text-3xl font-bold text-blue-300">$127K+</div>
-              <div className="text-white/70 text-xs md:text-sm">Revenue Protected</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl md:text-3xl font-bold text-green-300">2,847</div>
-              <div className="text-white/70 text-xs md:text-sm">Happy Customers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl md:text-3xl font-bold text-purple-300">99.9%</div>
-              <div className="text-white/70 text-xs md:text-sm">Uptime</div>
-            </div>
-          </div>
-          
           {/* CTA Buttons */}
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-4 mb-8 px-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-14 animate-fade-up" style={{ animationDelay: '0.3s' }}>
             <Button 
               onClick={handleGetStarted}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
+              size="lg"
+              className="bg-gradient-to-r from-[hsl(230,80%,56%)] to-[hsl(260,70%,58%)] hover:from-[hsl(230,80%,50%)] hover:to-[hsl(260,70%,52%)] text-white font-semibold text-base px-8 py-6 rounded-xl shadow-lg shadow-[hsl(230,80%,56%)]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[hsl(230,80%,56%)]/30 hover:-translate-y-0.5 w-full sm:w-auto"
             >
-              Start Free Trial <ArrowRight className="ml-2 h-5 w-5 inline" />
+              Start Free — 60 Day Trial <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
             <Button 
               onClick={handleLogin}
               variant="outline" 
-              className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 transition-all duration-300 shadow-lg w-full md:w-auto"
+              size="lg"
+              className="bg-white/5 backdrop-blur-sm text-white border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 font-medium text-base px-8 py-6 rounded-xl w-full sm:w-auto"
             >
-              <LogIn className="mr-2 h-4 w-4" />
-              Login to Dashboard
+              <Play className="mr-2 h-4 w-4" />
+              See It In Action
             </Button>
           </div>
 
-          {/* Trust indicators */}
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 mb-6 px-4">
-            <div className="flex items-center text-green-300 text-xs md:text-sm">
-              <CheckCircle className="w-3 md:w-4 h-3 md:h-4 mr-1" />
-              60-Day Money Back Guarantee
+          {/* Trust row */}
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-white/40 text-sm animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-emerald-400/70" />
+              <span>No credit card required</span>
             </div>
-            <div className="flex items-center text-green-300 text-xs md:text-sm">
-              <CheckCircle className="w-3 md:w-4 h-3 md:h-4 mr-1" />
-              No Setup Fees
+            <div className="flex items-center gap-2">
+              <Zap className="w-4 h-4 text-amber-400/70" />
+              <span>Setup in under 5 minutes</span>
             </div>
-            <div className="flex items-center text-green-300 text-xs md:text-sm">
-              <CheckCircle className="w-3 md:w-4 h-3 md:h-4 mr-1" />
-              5 Minutes Setup
+            <div className="flex items-center gap-2">
+              <Globe className="w-4 h-4 text-blue-400/70" />
+              <span>Monitor from 4 continents</span>
             </div>
-          </div>
-
-          <div className="text-white/60 text-xs md:text-sm px-4">
-            <p>Join thousands of smart business owners who never worry about website downtime</p>
           </div>
         </div>
       </div>

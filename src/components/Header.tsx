@@ -9,7 +9,6 @@ const Header = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const location = useLocation();
 
-
   const productLinks = [
     { name: "Website Monitoring", href: "/website-monitoring" },
     { name: "SSL Monitoring", href: "/ssl-monitoring" },
@@ -19,34 +18,34 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gray-900 shadow-sm border-b border-gray-800 sticky top-0 z-50">
+    <header className="bg-[#0a0a1a]/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/b5c94c8f-8b5c-4d46-89bb-c353f06e28ca.png" 
               alt="KloudFox Logo" 
-              className="h-8"
+              className="h-7"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-1">
             <div className="relative">
               <button
                 onClick={() => setIsProductsOpen(!isProductsOpen)}
-                className="flex items-center text-white hover:text-orange-400 font-medium transition-colors"
+                className="flex items-center text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors"
               >
                 Features
-                <ChevronDown className="ml-1 h-4 w-4" />
+                <ChevronDown className="ml-1 h-3.5 w-3.5" />
               </button>
               {isProductsOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-lg border border-gray-700 py-2 z-50">
+                <div className="absolute top-full left-0 mt-1 w-56 bg-[#141420] rounded-xl shadow-2xl border border-white/10 py-2 z-50">
                   {productLinks.map((link) => (
                     <Link
                       key={link.name}
                       to={link.href}
-                      className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors"
+                      className="block px-4 py-2.5 text-sm text-white/60 hover:bg-white/5 hover:text-white transition-colors"
                       onClick={() => setIsProductsOpen(false)}
                     >
                       {link.name}
@@ -55,30 +54,30 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <Link to="/pricing" className="text-white hover:text-orange-400 font-medium transition-colors">
+            <Link to="/pricing" className="text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
               Pricing
             </Link>
-            <Link to="/blog" className="text-white hover:text-orange-400 font-medium transition-colors">
+            <Link to="/blog" className="text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
               Blog
             </Link>
-            <Link to="/about" className="text-white hover:text-orange-400 font-medium transition-colors">
-              About Us
+            <Link to="/about" className="text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+              About
             </Link>
-            <Link to="/contact" className="text-white hover:text-orange-400 font-medium transition-colors">
+            <Link to="/contact" className="text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
               Contact
             </Link>
           </nav>
 
           {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button asChild variant="outline" className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white">
+          <div className="hidden md:flex items-center space-x-3">
+            <Button asChild variant="ghost" size="sm" className="text-white/70 hover:text-white hover:bg-white/5">
               <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer">
-                Login
+                Log in
               </a>
             </Button>
-            <Button asChild className="bg-green-600 hover:bg-green-700">
+            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-lg px-5">
               <a href="https://watch.kloudfox.com/register" target="_blank" rel="noopener noreferrer">
-                Free Trial
+                Start Free Trial
               </a>
             </Button>
           </div>
@@ -86,53 +85,47 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-white/70"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800">
-            <div className="space-y-4">
-              <div>
-                <div className="font-medium text-white mb-2">Features</div>
-                <div className="space-y-2 pl-4">
-                  {productLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      to={link.href}
-                      className="block text-gray-300 hover:text-orange-400 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
+          <div className="md:hidden py-4 border-t border-white/5">
+            <div className="space-y-1">
+              <div className="mb-2">
+                <div className="text-xs font-semibold text-white/40 uppercase tracking-wider px-3 mb-2">Features</div>
+                {productLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="block px-3 py-2 text-sm text-white/60 hover:text-white transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
               </div>
-              <Link to="/pricing" className="block text-white hover:text-orange-400 font-medium transition-colors">
+              <Link to="/pricing" className="block px-3 py-2 text-sm text-white/70 hover:text-white font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Pricing
               </Link>
-              <Link to="/blog" className="block text-white hover:text-orange-400 font-medium transition-colors">
+              <Link to="/blog" className="block px-3 py-2 text-sm text-white/70 hover:text-white font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Blog
               </Link>
-              <Link to="/about" className="block text-white hover:text-orange-400 font-medium transition-colors">
-                About Us
+              <Link to="/about" className="block px-3 py-2 text-sm text-white/70 hover:text-white font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
+                About
               </Link>
-              <Link to="/contact" className="block text-white hover:text-orange-400 font-medium transition-colors">
+              <Link to="/contact" className="block px-3 py-2 text-sm text-white/70 hover:text-white font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Contact
               </Link>
-              <div className="space-y-2 pt-4 border-t border-gray-800">
-                <Button asChild variant="outline" className="w-full border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white">
-                  <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer">
-                    Login
-                  </a>
+              <div className="pt-4 space-y-2 border-t border-white/5 mt-2">
+                <Button asChild variant="ghost" className="w-full justify-center text-white/70 hover:text-white">
+                  <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer">Log in</a>
                 </Button>
-                <Button asChild className="w-full bg-green-600 hover:bg-green-700">
-                  <a href="https://watch.kloudfox.com/register" target="_blank" rel="noopener noreferrer">
-                    Free Trial
-                  </a>
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white">
+                  <a href="https://watch.kloudfox.com/register" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
                 </Button>
               </div>
             </div>

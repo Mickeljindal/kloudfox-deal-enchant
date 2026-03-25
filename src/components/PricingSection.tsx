@@ -1,5 +1,5 @@
 
-import { Check, Star, Shield, Zap, Globe, Users, Clock, TrendingUp } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PricingSection = () => {
@@ -9,172 +9,141 @@ const PricingSection = () => {
 
   const plans = [
     {
-      name: "Intro",
+      name: "Free",
       price: "$0",
-      period: "Free forever",
-      description: "Perfect for starting out",
+      period: "forever",
+      description: "For personal projects",
       features: [
         "5 Monitors",
-        "1 Status Page", 
-        "5 minute checks",
+        "1 Status Page",
+        "5 minute intervals",
         "Email alerts",
-        "SSL monitoring"
+        "SSL monitoring",
       ],
-      cta: "Free Signup",
-      popular: false
+      cta: "Get Started Free",
+      popular: false,
     },
     {
       name: "Basic",
       price: "$25",
       period: "/month",
-      description: "Great for small businesses",
+      description: "For small businesses",
       features: [
         "25 Monitors",
         "5 Status Pages",
-        "1 minute checks", 
+        "1 minute intervals",
         "Email & SMS alerts",
         "SSL monitoring",
-        "Zapier integration"
+        "Zapier integration",
       ],
-      cta: "Choose Plan",
-      popular: false
+      cta: "Start Free Trial",
+      popular: false,
     },
     {
-      name: "Popular",
-      price: "$85", 
+      name: "Pro",
+      price: "$85",
       period: "/month",
-      description: "Best for growing businesses",
+      description: "For growing teams",
       features: [
         "Everything in Basic",
-        "Up to 50 Users",
-        "Up to 100 Monitors",
-        "All Status Pages",
-        "40-second checks",
-        "Multi-location geo checks",
-        "Priority Support", 
+        "Up to 50 team members",
+        "100 Monitors",
+        "40-second intervals",
+        "Multi-location checks",
+        "Priority support",
         "All integrations",
-        "Custom branding"
+        "Custom branding",
       ],
-      cta: "Choose Plan",
-      popular: true
+      cta: "Start Free Trial",
+      popular: true,
     },
     {
-      name: "Enterprise", 
+      name: "Enterprise",
       price: "$170",
       period: "/month",
       description: "For large organizations",
       features: [
-        "Everything in Popular",
-        "Priority Support",
-        "All features",
-        "Unlimited Users",
-        "All Status Pages", 
-        "Unlimited integrations",
-        "Custom SLA"
+        "Everything in Pro",
+        "Unlimited monitors",
+        "Unlimited team members",
+        "All status pages",
+        "Custom SLA",
+        "Dedicated support",
+        "SSO & SAML",
       ],
-      cta: "Choose Plan",
-      popular: false
-    }
+      cta: "Contact Sales",
+      popular: false,
+    },
   ];
 
   return (
-    <div className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Choose the right plan for your business
+          <span className="inline-block text-sm font-semibold text-primary tracking-wider uppercase mb-3">
+            Pricing
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
+            Simple, transparent <span className="gradient-text">pricing</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            All plans come with a 60-day money-back guarantee
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            Start free, upgrade when you need to. All plans include a 60-day money-back guarantee.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <div 
+            <div
               key={index}
-              className={`bg-white rounded-lg border-2 p-6 relative ${
-                plan.popular ? 'border-blue-500 shadow-lg' : 'border-gray-200'
+              className={`relative bg-card rounded-2xl border p-7 flex flex-col transition-all duration-300 hover:shadow-lg ${
+                plan.popular
+                  ? "border-primary shadow-lg shadow-primary/10 scale-[1.02]"
+                  : "border-border hover:border-primary/20"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Popular
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-semibold">
+                    Most Popular
                   </span>
                 </div>
               )}
-              
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                <div className="mb-2">
-                  <span className="text-3xl font-bold">{plan.price}</span>
-                  <span className="text-gray-600">{plan.period}</span>
+
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-foreground mb-1">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
+                  <span className="text-muted-foreground text-sm">{plan.period}</span>
                 </div>
-                <p className="text-gray-600">{plan.description}</p>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <Check className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <Button 
+              <Button
                 onClick={handleGetStarted}
-                className={`w-full ${
-                  plan.popular ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-800 hover:bg-gray-900'
+                variant={plan.popular ? "default" : "outline"}
+                className={`w-full rounded-xl ${
+                  plan.popular
+                    ? "bg-primary hover:bg-primary/90 text-white"
+                    : "border-border text-foreground hover:bg-muted"
                 }`}
               >
                 {plan.cta}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           ))}
         </div>
-
-        <div className="bg-gradient-to-r from-slate-900 to-blue-900 rounded-2xl p-8 md:p-12 text-white text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">
-            Why Choose KloudFox?
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="text-center">
-              <div className="bg-white/10 rounded-xl p-4 mb-4 inline-block">
-                <Shield className="w-8 h-8 text-blue-300" />
-              </div>
-              <h4 className="font-bold text-lg mb-2">99.9% Uptime</h4>
-              <p className="text-white/80">Reliable monitoring you can trust</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-white/10 rounded-xl p-4 mb-4 inline-block">
-                <Zap className="w-8 h-8 text-yellow-300" />
-              </div>
-              <h4 className="font-bold text-lg mb-2">Fast Alerts</h4>
-              <p className="text-white/80">Get notified within seconds</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-white/10 rounded-xl p-4 mb-4 inline-block">
-                <Users className="w-8 h-8 text-green-300" />
-              </div>
-              <h4 className="font-bold text-lg mb-2">Expert Support</h4>
-              <p className="text-white/80">24/7 customer support team</p>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Button 
-              onClick={handleGetStarted}
-              className="bg-white text-slate-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-xl"
-            >
-              Start Free Trial
-            </Button>
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
