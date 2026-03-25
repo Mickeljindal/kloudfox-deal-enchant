@@ -1,6 +1,4 @@
 
-import React from 'react';
-
 const CustomerLogosCarousel = () => {
   const customerLogos = [
     "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-01.svg",
@@ -14,29 +12,18 @@ const CustomerLogosCarousel = () => {
     "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-09.svg",
     "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-10.svg",
     "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-11.svg",
-    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-12.svg"
+    "https://www.kloudbean.com/wp-content/uploads/2024/12/kloudbean-suite-customers-logos-12.svg",
   ];
 
   return (
     <div className="overflow-hidden whitespace-nowrap">
       <div className="inline-flex animate-scroll">
-        {/* First set of logos */}
-        {customerLogos.map((logo, index) => (
-          <div key={`first-${index}`} className="flex items-center justify-center mx-8 flex-shrink-0">
-            <img 
-              src={logo} 
-              alt={`Customer Logo ${index + 1}`} 
-              className="h-12 max-w-32 object-contain transition-all duration-300 hover:scale-110"
-            />
-          </div>
-        ))}
-        {/* Duplicate set for seamless loop */}
-        {customerLogos.map((logo, index) => (
-          <div key={`second-${index}`} className="flex items-center justify-center mx-8 flex-shrink-0">
-            <img 
-              src={logo} 
-              alt={`Customer Logo ${index + 1}`} 
-              className="h-12 max-w-32 object-contain transition-all duration-300 hover:scale-110"
+        {[...customerLogos, ...customerLogos].map((logo, index) => (
+          <div key={index} className="flex items-center justify-center mx-10 flex-shrink-0">
+            <img
+              src={logo}
+              alt={`Customer Logo`}
+              className="h-8 md:h-10 max-w-28 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
             />
           </div>
         ))}
