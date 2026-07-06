@@ -1,0 +1,72 @@
+name: Daily blog post
+
+# Publishes one new blog post per day at 07:00 UTC (02:00 US Eastern).
+#
+# Modes:
+#   - With OPENAI_API_KEY or ANTHROPIC_API_KEY secret set: the generator asks the
+#     model to write a full post following the topic's outline.
+#   - Without any AI key: the generator falls back to a structured template so
+#     the blog keeps publishing daily regardless.
+#
+# Also regenerates sitemap.xml and rss.xml so search engines pick up the new post.
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force publish even if today's post already exists (1 = yes)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-blog
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate daily post
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          AUTHOR: ${{ vars.BLOG_AUTHOR || 'Kloudfox Team' }}
+          FORCE: ${{ github.event.inputs.force || '0' }}
+        run: node scripts/generate-daily-post.mjs
+
+      - name: Regenerate sitemap and RSS
+        run: |
+          node scripts/generate-sitemap.mjs
+          node scripts/generate-rss.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "kloudfox-bot"
+          git config user.email "bot@kloudfox.com"
+          git add content/topics.json content/blog/ public/sitemap.xml public/rss.xml
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            TODAY=$(date -u +%Y-%m-%d)
+            git commit -m "blog: daily post ($TODAY)"
+            git push
+          fi

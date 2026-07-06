@@ -1,104 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KloudFox - Professional Website Monitoring & Uptime Tracking</title>
-    <meta name="description" content="Monitor your website's uptime, performance, and security with KloudFox. Get instant alerts, 40-second checks, and 99.9% reliability. Trusted by 10,000+ websites worldwide." />
-    <meta name="keywords" content="website monitoring, uptime monitoring, server monitoring, SSL monitoring, website performance, downtime alerts, KloudFox" />
-    <meta name="author" content="KloudFox" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://kloudfox.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kloudfox.com" />
-    <meta property="og:title" content="KloudFox - Professional Website Monitoring & Uptime Tracking" />
-    <meta property="og:description" content="Monitor your website's uptime, performance, and security with KloudFox. Get instant alerts, 40-second checks, and 99.9% reliability. Trusted by 10,000+ websites worldwide." />
-    <meta property="og:image" content="https://kloudfox.com/images/kloudfox-social-share.jpg" />
-    <meta property="og:site_name" content="KloudFox" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://kloudfox.com" />
-    <meta name="twitter:title" content="KloudFox - Professional Website Monitoring & Uptime Tracking" />
-    <meta name="twitter:description" content="Monitor your website's uptime, performance, and security with KloudFox. Get instant alerts, 40-second checks, and 99.9% reliability." />
-    <meta name="twitter:image" content="https://kloudfox.com/images/kloudfox-social-share.jpg" />
-    <meta name="twitter:site" content="@kloudfox" />
-    <meta name="twitter:creator" content="@kloudfox" />
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#1A1F2C" />
-    <meta name="msapplication-TileColor" content="#1A1F2C" />
+    <!-- Sensible defaults; react-helmet-async overrides per route -->
+    <title>Kloudfox — AI-powered website monitoring that predicts outages</title>
+    <meta name="description" content="Kloudfox monitors your websites, APIs, and SSL certificates every 40 seconds from four continents. AI anomaly detection, smart alerts, and status pages in one clean platform." />
+    <meta name="theme-color" content="#050510" />
+    <meta name="color-scheme" content="dark light" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "nmnm1v916u");
-    </script>
-    
-    <!-- Structured Data -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Discoverability -->
+    <link rel="canonical" href="https://kloudfox.com/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Kloudfox blog" href="/rss.xml" />
+    <link rel="me" href="https://twitter.com/kloudfox" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/lovable-uploads/eca8e4b3-e57a-4e31-9a4f-635c8901e628.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/eca8e4b3-e57a-4e31-9a4f-635c8901e628.png" />
+
+    <!-- Default Open Graph & Twitter (overridden by react-helmet-async per page) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kloudfox" />
+    <meta property="og:title" content="Kloudfox — AI-powered website monitoring" />
+    <meta property="og:description" content="40-second checks, multi-region probes, SSL monitoring, status pages. Free forever plan." />
+    <meta property="og:url" content="https://kloudfox.com/" />
+    <meta property="og:image" content="https://kloudfox.com/og/default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@kloudfox" />
+
+    <!-- Baseline organization JSON-LD (per-page structured data is injected by <SEO />) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "KloudFox",
-      "applicationCategory": "WebApplication",
-      "description": "Professional website monitoring and uptime tracking service with instant alerts and comprehensive performance analytics.",
+      "@type": "Organization",
+      "name": "Kloudfox",
       "url": "https://kloudfox.com",
-      "operatingSystem": "Web Browser",
-      "offers": {
-        "@type": "Offer",
-        "price": "29",
-        "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "500"
-      }
+      "logo": "https://kloudfox.com/lovable-uploads/b5c94c8f-8b5c-4d46-89bb-c353f06e28ca.png",
+      "sameAs": [
+        "https://twitter.com/kloudfox",
+        "http://linkedin.com/company/kloudfox",
+        "https://www.instagram.com/thekloudfox/",
+        "https://www.facebook.com/profile.php?id=61559311342847"
+      ]
     }
     </script>
-
-    <!-- Favicon -->
-    <link rel="icon" href="/lovable-uploads/eca8e4b3-e57a-4e31-9a4f-635c8901e628.png" type="image/png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/eca8e4b3-e57a-4e31-9a4f-635c8901e628.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/eca8e4b3-e57a-4e31-9a4f-635c8901e628.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/lovable-uploads/eca8e4b3-e57a-4e31-9a4f-635c8901e628.png" />
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/664fb5de981b6c564773bcb7/1hujlss4g';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s1.onload = function() {
-      // Tawk.to loaded successfully
-      if (typeof Tawk_API !== 'undefined') {
-        Tawk_API.onLoad = function() {
-          console.log('Tawk.to chat widget loaded');
-        };
-      }
-    };
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
   </body>
 </html>

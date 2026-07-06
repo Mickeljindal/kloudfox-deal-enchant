@@ -1,0 +1,772 @@
+{
+  "_description": "Topic queue for scripts/generate-daily-post.mjs. Order = publish order.",
+  "topics": [
+    {
+      "slug": "monitor-checkout-endpoints-that-matter",
+      "title": "How to monitor the checkout endpoints that actually matter",
+      "description": "A step-by-step guide to setting up meaningful checkout monitoring — the kind that catches soft failures instead of just 200-that-lies responses.",
+      "category": "Guides",
+      "tags": ["checkout", "monitoring", "revenue"],
+      "angle": "The specific probes, assertions, and cadence for e-commerce checkout paths.",
+      "keywords": "checkout monitoring, ecommerce uptime, revenue monitoring",
+      "outline": [
+        "Why generic HTTP 200 checks aren't enough for checkout",
+        "The three signals that matter most",
+        "Setting up a multi-step synthetic monitor",
+        "Alert routing for a revenue-critical path",
+        "Real numbers from an outage we watched"
+      ]
+    },
+    {
+      "slug": "api-monitoring-vs-uptime-monitoring",
+      "title": "API monitoring vs uptime monitoring: pick the right approach",
+      "description": "They sound similar but solve different problems. Here's how to pick the right monitoring depth for your API surface area.",
+      "category": "Fundamentals",
+      "tags": ["api", "monitoring", "uptime"],
+      "angle": "Distinguishing API monitoring from surface uptime for SaaS teams.",
+      "keywords": "api monitoring, uptime monitoring, saas",
+      "outline": ["What each actually measures", "When each is enough", "How to combine them", "A cost-benefit table"]
+    },
+    {
+      "slug": "how-to-choose-a-status-page-vendor",
+      "title": "How to choose a status page vendor: 8 questions that reveal the truth",
+      "description": "Status page vendors all promise the same things. These are the questions that separate serious tools from marketing pages.",
+      "category": "Status Pages",
+      "tags": ["status-page", "vendor", "evaluation"],
+      "angle": "A checklist for evaluating status page tools honestly.",
+      "keywords": "status page, status page comparison, status.io alternative",
+      "outline": ["Custom domain honestly", "Subscriber deliverability", "Component modeling flexibility", "PIR / postmortem workflow", "Pricing traps"]
+    },
+    {
+      "slug": "dns-monitoring-the-forgotten-layer",
+      "title": "DNS monitoring: the forgotten layer that kills uptime",
+      "description": "DNS is invisible until it isn't. Here's what to monitor at the DNS layer and why traditional uptime tools miss it.",
+      "category": "Monitoring",
+      "tags": ["dns", "monitoring", "infrastructure"],
+      "angle": "The specific DNS signals every SaaS should watch.",
+      "keywords": "dns monitoring, dns uptime, dns outage",
+      "outline": ["What DNS actually does", "The four failure modes", "How to probe DNS from multiple resolvers", "Real DNS incidents we've observed"]
+    },
+    {
+      "slug": "mttr-mtta-what-they-mean",
+      "title": "MTTA and MTTR: what they mean and why yours is probably wrong",
+      "description": "The two metrics on every SRE dashboard, defined precisely and measured honestly. Most teams' numbers are optimistic.",
+      "category": "Metrics",
+      "tags": ["mtta", "mttr", "sre", "metrics"],
+      "angle": "Formal definitions and honest measurement of on-call velocity metrics.",
+      "keywords": "mtta, mttr, incident metrics, sre metrics",
+      "outline": ["Formal definitions", "The common measurement mistake", "How to instrument correctly", "Benchmarks by industry"]
+    },
+    {
+      "slug": "runbooks-that-actually-help",
+      "title": "Runbooks that actually help at 3 a.m.",
+      "description": "Every incident calls out the runbook, and every runbook is either too long or too vague. Here's the structure that works.",
+      "category": "Incidents",
+      "tags": ["runbook", "on-call", "incidents"],
+      "angle": "How to structure runbooks so sleepy on-call engineers can actually use them.",
+      "keywords": "runbook template, on-call runbook",
+      "outline": ["Why most runbooks fail", "The 3-part structure", "Automation opportunities", "Maintenance rhythm"]
+    },
+    {
+      "slug": "content-assertions-catching-200-that-lies",
+      "title": "Content assertions: catching the 200 that lies",
+      "description": "Your endpoint returns 200. Your users see an empty page. Here's how content assertions turn silent failures into real alerts.",
+      "category": "Monitoring",
+      "tags": ["assertions", "monitoring", "soft-fail"],
+      "angle": "Practical setup of content assertions across HTML and JSON responses.",
+      "keywords": "content assertion, http assertion, synthetic monitoring",
+      "outline": ["Why 200 status codes lie", "Assertion shapes", "Common pitfalls", "Setting up asserts in Kloudfox"]
+    },
+    {
+      "slug": "on-call-rotation-schedules",
+      "title": "On-call rotation schedules that don't burn out your engineers",
+      "description": "Weekly, follow-the-sun, or something else? A practical framework for setting up on-call rotations for teams of 4-40 engineers.",
+      "category": "On-Call",
+      "tags": ["on-call", "team", "sre"],
+      "angle": "Sustainable on-call rotation patterns by team size.",
+      "keywords": "on-call rotation, on-call schedule, on-call burnout",
+      "outline": ["Four common patterns", "Trade-offs of each", "The compensation question", "Compassionate escalation"]
+    },
+    {
+      "slug": "alert-fatigue-diagnosis-cure",
+      "title": "Alert fatigue: how to diagnose it, and how to fix it",
+      "description": "If your on-call has learned to mute the tool, you have alert fatigue. Here's the diagnostic process and the specific tuning that fixes it.",
+      "category": "Alerts",
+      "tags": ["alert-fatigue", "on-call", "tuning"],
+      "angle": "Actionable steps for teams drowning in noise.",
+      "keywords": "alert fatigue, monitoring noise, alert tuning",
+      "outline": ["Signs you have it", "The numeric health check", "The four tuning levers", "Weekly review rhythm"]
+    },
+    {
+      "slug": "kubernetes-application-monitoring",
+      "title": "Kubernetes application monitoring beyond the pod status",
+      "description": "Pod restarts and CrashLoopBackoff are lagging indicators. The monitoring that actually protects your users is at the ingress and app layer.",
+      "category": "Kubernetes",
+      "tags": ["kubernetes", "monitoring", "cloud-native"],
+      "angle": "External synthetic monitoring for K8s apps.",
+      "keywords": "kubernetes monitoring, k8s uptime, ingress monitoring",
+      "outline": ["Where pod metrics fall short", "The three layers to monitor", "Ingress-level probes", "Correlating with kubectl output"]
+    },
+    {
+      "slug": "monitoring-a-static-site",
+      "title": "Monitoring a static site — yes, it needs it too",
+      "description": "Static hosting failures are real. Here's why 'it's on Vercel/Netlify' isn't a monitoring plan, and what a minimal setup looks like.",
+      "category": "Guides",
+      "tags": ["static-site", "vercel", "netlify"],
+      "angle": "Practical monitoring for JAMstack / static-hosted sites.",
+      "keywords": "static site monitoring, netlify uptime, vercel monitoring",
+      "outline": ["The failure modes of static hosts", "The three-monitor minimum", "Custom domain SSL", "Alerting cheaply"]
+    },
+    {
+      "slug": "monitoring-webhooks-you-send",
+      "title": "Monitoring the webhooks *you* send — a guide for API providers",
+      "description": "If you deliver webhooks to customers, you're on the hook for their reliability. Here's how to monitor delivery, retries, and dead-letter queues.",
+      "category": "APIs",
+      "tags": ["webhooks", "api", "delivery"],
+      "angle": "Provider-side webhook reliability monitoring.",
+      "keywords": "webhook monitoring, webhook delivery, api provider",
+      "outline": ["The four failure surfaces", "Delivery latency SLOs", "Dead-letter dashboards", "Customer-facing status transparency"]
+    },
+    {
+      "slug": "monitoring-third-party-apis",
+      "title": "Monitoring third-party APIs your app depends on",
+      "description": "Stripe, Twilio, Segment — when they hiccup, you break. Here's how to monitor external dependencies without becoming their support desk.",
+      "category": "Monitoring",
+      "tags": ["third-party", "api", "dependency"],
+      "angle": "External-dependency monitoring done right.",
+      "keywords": "third-party monitoring, api dependency, stripe outage",
+      "outline": ["The dependency graph", "Circuit-breaker signals", "Alert routing so you don't page for their outages", "Status-page aggregators"]
+    },
+    {
+      "slug": "vercel-versus-netlify-uptime",
+      "title": "Vercel vs Netlify uptime: what the last 12 months tell us",
+      "description": "A grounded look at real-world availability of the two dominant JAMstack hosts, based on public status page data and monitoring history.",
+      "category": "Comparisons",
+      "tags": ["vercel", "netlify", "uptime"],
+      "angle": "Data-driven comparison of Vercel and Netlify's operational track records.",
+      "keywords": "vercel uptime, netlify uptime, jamstack reliability",
+      "outline": ["Methodology", "Aggregate uptime", "Incident severity mix", "Recovery velocity", "Verdict for different workloads"]
+    },
+    {
+      "slug": "how-often-should-status-page-be-updated",
+      "title": "How often should you update the status page during an incident?",
+      "description": "Silence between updates reads as 'we don't know what's happening.' Here's the cadence that keeps customers calm without over-committing.",
+      "category": "Communication",
+      "tags": ["status-page", "communication", "incidents"],
+      "angle": "The right update rhythm during an incident.",
+      "keywords": "status page updates, incident communication",
+      "outline": ["The 15-minute rule", "How to write when nothing has changed", "Post-resolution follow-ups", "Templates you can steal"]
+    },
+    {
+      "slug": "the-uptime-calculator",
+      "title": "The uptime calculator: what 99.9% actually buys you",
+      "description": "Convert any 'nines' target into concrete minutes, hours, and days of allowed downtime. Plus what it takes to actually hit each level.",
+      "category": "Fundamentals",
+      "tags": ["uptime", "sla", "calculator"],
+      "angle": "Practical conversion of uptime nines into human-scale downtime budgets.",
+      "keywords": "uptime calculator, sla calculator, nines uptime",
+      "outline": ["The math", "What each nine costs to hit", "The mid-tier sweet spot", "Marketing traps"]
+    },
+    {
+      "slug": "slack-alert-templates-that-work",
+      "title": "Slack alert templates that on-call engineers actually read",
+      "description": "Most Slack alerts are unreadable at 3 a.m. Here are the templates we use, and the specific fields that reduce time-to-action.",
+      "category": "Alerts",
+      "tags": ["slack", "alerts", "templates"],
+      "angle": "Concrete Slack alert format patterns.",
+      "keywords": "slack alert format, incident slack template",
+      "outline": ["The five must-have fields", "Emoji as signal, not decoration", "Threading vs new messages", "Muting patterns"]
+    },
+    {
+      "slug": "monitoring-graphql-apis",
+      "title": "Monitoring GraphQL APIs: the shape of things",
+      "description": "GraphQL surfaces one endpoint but a thousand behaviors. Here's how to monitor a GraphQL API without drowning in per-query alerts.",
+      "category": "APIs",
+      "tags": ["graphql", "api", "monitoring"],
+      "angle": "GraphQL-specific monitoring patterns.",
+      "keywords": "graphql monitoring, apollo monitoring, graphql uptime",
+      "outline": ["The introspection health check", "Golden query sampling", "Persisted-query monitoring", "Error taxonomy"]
+    },
+    {
+      "slug": "http2-http3-monitoring",
+      "title": "HTTP/2, HTTP/3, and QUIC: what to monitor as protocols evolve",
+      "description": "Newer protocols have their own failure modes. Here's what a modern monitoring setup should test at the transport layer.",
+      "category": "Protocols",
+      "tags": ["http2", "http3", "quic"],
+      "angle": "Transport-layer coverage in modern monitoring.",
+      "keywords": "http/3 monitoring, quic monitoring, protocol testing",
+      "outline": ["Why protocol coverage matters", "The QUIC handshake gotchas", "Fallback validation", "CDN-specific quirks"]
+    },
+    {
+      "slug": "monitoring-during-a-migration",
+      "title": "Monitoring during a cloud migration: what to watch and when",
+      "description": "The riskiest weeks of the year for uptime are the ones during a migration. Here's the monitoring plan that catches regressions early.",
+      "category": "Migrations",
+      "tags": ["migration", "cloud", "monitoring"],
+      "angle": "Migration-specific monitoring playbook.",
+      "keywords": "cloud migration monitoring, migration uptime",
+      "outline": ["Pre-migration baselines", "During-migration parallel monitoring", "Cutover validation", "Post-migration soak time"]
+    },
+    {
+      "slug": "monitoring-a-monorepo",
+      "title": "Monitoring apps deployed from a monorepo",
+      "description": "Multi-service repos need multi-service monitoring. Here's how to structure monitors, tags, and dashboards to match the shape of your monorepo.",
+      "category": "Practices",
+      "tags": ["monorepo", "monitoring", "architecture"],
+      "angle": "Structuring monitoring for monorepos.",
+      "keywords": "monorepo monitoring, monorepo observability",
+      "outline": ["Tags as a mental model", "Ownership routing", "Deploy-linked alerts", "PR-scoped previews"]
+    },
+    {
+      "slug": "why-status-io-alternatives",
+      "title": "Looking for a status.io alternative? Here's an honest comparison",
+      "description": "status.io is one of the older names in status pages. Here's how newer options — including Kloudfox — stack up in 2026.",
+      "category": "Comparisons",
+      "tags": ["status.io", "alternatives", "status-page"],
+      "angle": "Honest evaluation of status.io alternatives.",
+      "keywords": "status.io alternative, status page comparison",
+      "outline": ["What status.io does well", "Where it feels dated", "Modern alternatives", "Migration cost"]
+    },
+    {
+      "slug": "pingdom-alternative-2026",
+      "title": "Pingdom alternatives worth considering in 2026",
+      "description": "Pingdom is a mature but expensive tool. Here are the alternatives that offer similar depth without the enterprise price tag.",
+      "category": "Comparisons",
+      "tags": ["pingdom", "alternatives"],
+      "angle": "Honest look at Pingdom alternatives.",
+      "keywords": "pingdom alternative, uptime monitoring alternative",
+      "outline": ["The Pingdom price problem", "Four viable alternatives", "Feature parity", "Migration walkthrough"]
+    },
+    {
+      "slug": "uptimerobot-alternatives-serious-teams",
+      "title": "UptimeRobot alternatives for teams that outgrew it",
+      "description": "UptimeRobot is great for a personal blog. Here's what to move to when 5-minute checks stop being enough.",
+      "category": "Comparisons",
+      "tags": ["uptimerobot", "alternatives"],
+      "angle": "Post-UptimeRobot upgrade paths.",
+      "keywords": "uptimerobot alternative, better uptime monitoring",
+      "outline": ["Signs you've outgrown UptimeRobot", "The three good next steps", "Setup effort", "Cost delta"]
+    },
+    {
+      "slug": "better-uptime-alternative",
+      "title": "Better Uptime alternative? Here's how the market has shifted",
+      "description": "Better Uptime pioneered a lot of what modern monitoring looks like. Here's how it compares to newer challengers in 2026.",
+      "category": "Comparisons",
+      "tags": ["better-uptime", "alternatives"],
+      "angle": "Better Uptime vs newer competitors.",
+      "keywords": "better uptime alternative, betterstack alternative",
+      "outline": ["What Better Uptime got right", "Where competitors have caught up", "Pricing and packaging", "Migration guide"]
+    },
+    {
+      "slug": "monitoring-a-nextjs-app",
+      "title": "Monitoring a Next.js app end-to-end",
+      "description": "Next.js apps have unique failure surfaces — ISR, edge functions, middleware. Here's how to monitor each of them properly.",
+      "category": "Frameworks",
+      "tags": ["nextjs", "monitoring", "react"],
+      "angle": "Next.js-specific monitoring guide.",
+      "keywords": "nextjs monitoring, next.js uptime",
+      "outline": ["The four failure surfaces", "ISR revalidation checks", "Edge function probes", "Middleware assertions"]
+    },
+    {
+      "slug": "cloudflare-workers-monitoring",
+      "title": "Monitoring Cloudflare Workers in production",
+      "description": "Workers run at 300+ edge locations. Traditional monitoring doesn't fit. Here's how to actually watch a Workers deployment.",
+      "category": "Edge",
+      "tags": ["cloudflare", "workers", "edge"],
+      "angle": "Practical monitoring for Cloudflare Workers.",
+      "keywords": "cloudflare workers monitoring, edge monitoring",
+      "outline": ["Why regional probes matter more here", "Wrangler tail vs synthetic checks", "Alerting on error rate spikes", "Cost of over-monitoring"]
+    },
+    {
+      "slug": "aws-lambda-cold-start-monitoring",
+      "title": "Monitoring AWS Lambda cold starts and tail latency",
+      "description": "The p50 latency of a Lambda looks great. The p99 tells a different story. Here's how to monitor Lambda where it actually breaks.",
+      "category": "AWS",
+      "tags": ["aws", "lambda", "cold-start"],
+      "angle": "Lambda tail-latency monitoring.",
+      "keywords": "aws lambda monitoring, lambda cold start",
+      "outline": ["Why p50 lies", "Instrumenting p99 correctly", "Cold-start-aware alerting", "Provisioned concurrency trade-offs"]
+    },
+    {
+      "slug": "cloudflare-outage-history",
+      "title": "What Cloudflare outages tell us about depending on the edge",
+      "description": "Every big CDN has had a bad day. Here's what recent Cloudflare incidents teach about resilient architectures.",
+      "category": "Incidents",
+      "tags": ["cloudflare", "cdn", "resilience"],
+      "angle": "Lessons from CDN outages.",
+      "keywords": "cloudflare outage, cdn resilience",
+      "outline": ["The five patterns", "Multi-CDN vs single-CDN", "Fallback strategies", "What your monitoring should catch"]
+    },
+    {
+      "slug": "sla-vs-slo-vs-sli",
+      "title": "SLA vs SLO vs SLI: the three-letter soup, decoded",
+      "description": "SLIs, SLOs, and SLAs are related but distinct. Here's the clearest explanation with a working example.",
+      "category": "Fundamentals",
+      "tags": ["sla", "slo", "sli", "reliability"],
+      "angle": "Clear definitions with examples.",
+      "keywords": "sla slo sli, reliability metrics",
+      "outline": ["The three definitions", "How they relate", "Setting realistic SLOs", "Reporting up"]
+    },
+    {
+      "slug": "monitoring-metrics-your-cfo-cares-about",
+      "title": "The three monitoring metrics your CFO actually cares about",
+      "description": "Availability, MTTR, and cost-per-incident. How to report on monitoring in a way the finance side of the org understands.",
+      "category": "Business",
+      "tags": ["reporting", "metrics", "cfo"],
+      "angle": "Business-facing metrics from technical monitoring.",
+      "keywords": "monitoring metrics, cfo reporting, ops reporting",
+      "outline": ["The three metrics", "How to instrument each", "Presenting them", "Common misinterpretations"]
+    },
+    {
+      "slug": "postmortem-writing-workshop",
+      "title": "Writing a postmortem in 30 minutes: a workshop",
+      "description": "The step-by-step drill our team uses to keep postmortems under 30 minutes to draft, without sacrificing quality.",
+      "category": "Incidents",
+      "tags": ["postmortem", "workshop"],
+      "angle": "Time-boxed postmortem writing practice.",
+      "keywords": "postmortem writing, incident retrospective",
+      "outline": ["The pre-write questions", "The five-part structure", "Where to be brief", "The re-read pass"]
+    },
+    {
+      "slug": "incident-severity-levels",
+      "title": "Incident severity levels: how to define P0 through P4",
+      "description": "Every team eventually reinvents severity levels. Here are the definitions that work across most SaaS companies.",
+      "category": "Incidents",
+      "tags": ["severity", "process"],
+      "angle": "Reusable incident severity definitions.",
+      "keywords": "incident severity, p0 p1 p2 p3 p4",
+      "outline": ["The dimensions", "Concrete definitions", "How to categorize gray areas", "Escalation matrix"]
+    },
+    {
+      "slug": "monitoring-a-marketplace-two-sided",
+      "title": "Monitoring a two-sided marketplace",
+      "description": "Buyers and sellers experience different failure modes. Here's how to structure monitoring for a marketplace product.",
+      "category": "Product",
+      "tags": ["marketplace", "monitoring"],
+      "angle": "Two-sided marketplace monitoring.",
+      "keywords": "marketplace monitoring, two-sided platform",
+      "outline": ["The four surfaces to monitor", "Buyer vs seller SLOs", "Match-quality signals", "Payment flow depth"]
+    },
+    {
+      "slug": "monitoring-authentication-flows",
+      "title": "Monitoring authentication flows without exposing credentials",
+      "description": "Login and OAuth flows deserve deep monitoring — but not at the cost of storing test credentials in your monitor.",
+      "category": "Security",
+      "tags": ["auth", "monitoring", "security"],
+      "angle": "Safe patterns for monitoring auth flows.",
+      "keywords": "authentication monitoring, oauth monitoring",
+      "outline": ["The credential storage trap", "Ephemeral test users", "OAuth flow probes", "Rate-limit-friendly cadence"]
+    },
+    {
+      "slug": "monitor-your-own-monitoring",
+      "title": "Who watches the watchmen? Monitoring your monitoring",
+      "description": "Meta-monitoring — making sure your monitor itself works. The specific setup that catches the vendor-in-the-loop failure mode.",
+      "category": "Reliability",
+      "tags": ["meta", "reliability"],
+      "angle": "How to monitor the monitor.",
+      "keywords": "monitor the monitor, meta monitoring",
+      "outline": ["Why this matters", "The dead-man's switch pattern", "Independent secondary probes", "Alert if quiet for X minutes"]
+    },
+    {
+      "slug": "monitoring-a-mobile-app-backend",
+      "title": "Monitoring the backend behind your mobile app",
+      "description": "Mobile clients hit your API in patterns different from browsers. Here's how to make sure your monitoring reflects real mobile usage.",
+      "category": "Mobile",
+      "tags": ["mobile", "backend", "api"],
+      "angle": "Mobile-app-specific backend monitoring.",
+      "keywords": "mobile backend monitoring, app api uptime",
+      "outline": ["The mobile traffic shape", "Battery/network-aware probes", "Regional weighting", "App store health as a leading indicator"]
+    },
+    {
+      "slug": "monitoring-for-startups-lean",
+      "title": "Lean monitoring for a two-person startup",
+      "description": "You don't need Datadog when there are two of you. The minimum viable monitoring stack for a very small SaaS.",
+      "category": "Startups",
+      "tags": ["startup", "lean", "minimal"],
+      "angle": "MVP monitoring stack for tiny teams.",
+      "keywords": "startup monitoring, lean sre, minimal monitoring",
+      "outline": ["The three things you must have", "The four things you can defer", "Cost target", "When to graduate"]
+    },
+    {
+      "slug": "signing-webhooks-hmac",
+      "title": "Signing outgoing webhooks with HMAC — a step-by-step",
+      "description": "If you send webhooks to customers, you should sign them. Here's the exact HMAC-SHA256 pattern with sample verification code.",
+      "category": "Security",
+      "tags": ["webhooks", "hmac", "security"],
+      "angle": "Practical HMAC webhook signing implementation.",
+      "keywords": "webhook signing, hmac signing, secure webhooks",
+      "outline": ["Why signing matters", "The header contract", "Sample sending code", "Sample verifying code"]
+    },
+    {
+      "slug": "chaos-engineering-monitoring",
+      "title": "Chaos engineering for teams that don't have an SRE",
+      "description": "Chaos engineering doesn't require a huge budget or a dedicated team. Here's how to run useful chaos experiments alongside your monitoring.",
+      "category": "Reliability",
+      "tags": ["chaos", "engineering", "reliability"],
+      "angle": "Right-sized chaos engineering.",
+      "keywords": "chaos engineering, chaos monkey",
+      "outline": ["What chaos actually proves", "Three low-risk experiments to start with", "Instrumenting them", "Reading the results"]
+    },
+    {
+      "slug": "monitoring-database-connection-pool",
+      "title": "Monitoring your database connection pool — the sneakiest bottleneck",
+      "description": "The database is up. The API is up. And yet requests are timing out. Nine times out of ten, it's the connection pool.",
+      "category": "Databases",
+      "tags": ["database", "connection-pool", "postgres"],
+      "angle": "Connection pool monitoring specifics.",
+      "keywords": "database connection pool, pgbouncer monitoring",
+      "outline": ["The failure signature", "Metrics that matter", "Alert thresholds", "The three-pool pattern"]
+    },
+    {
+      "slug": "monitoring-redis-queue-depth",
+      "title": "Monitoring Redis queue depth for background jobs",
+      "description": "Background workers silently falling behind is one of the most common invisible outages. Here's how to spot it before customers do.",
+      "category": "Databases",
+      "tags": ["redis", "queue", "background-jobs"],
+      "angle": "Queue depth as a leading indicator.",
+      "keywords": "redis queue monitoring, sidekiq monitoring, background job",
+      "outline": ["Why queue depth alerts fail", "The velocity metric", "Alert on the derivative", "Auto-scaling responses"]
+    },
+    {
+      "slug": "monitoring-elasticsearch-cluster-health",
+      "title": "Monitoring Elasticsearch cluster health without living in Kibana",
+      "description": "Yellow status can be fine. Red status can be misleading. Here's the real dashboard shortlist for ES cluster health.",
+      "category": "Databases",
+      "tags": ["elasticsearch", "opensearch"],
+      "angle": "Practical ES cluster monitoring.",
+      "keywords": "elasticsearch monitoring, opensearch health",
+      "outline": ["What the colors really mean", "The four metrics that matter", "Alerting rules that scale", "Recovery playbooks"]
+    },
+    {
+      "slug": "monitoring-third-party-outages-blameless",
+      "title": "Handling third-party outages blamelessly — for your customers",
+      "description": "When Stripe or Twilio has a bad day, your customers still call you. Here's how to communicate honestly without throwing partners under the bus.",
+      "category": "Communication",
+      "tags": ["third-party", "communication", "incidents"],
+      "angle": "Communicating third-party outages to customers.",
+      "keywords": "third-party outage communication, vendor outage",
+      "outline": ["The blameless language pattern", "Status-page components for dependencies", "Automated dependency notices", "Post-incident etiquette"]
+    },
+    {
+      "slug": "browser-based-synthetic-monitoring",
+      "title": "Browser-based synthetic monitoring: when it's worth the cost",
+      "description": "Headless browser probes catch what HTTP checks miss. But they're 5-20x more expensive. Here's when they pay for themselves.",
+      "category": "Monitoring",
+      "tags": ["synthetic", "browser", "playwright"],
+      "angle": "ROI analysis of browser-based monitoring.",
+      "keywords": "browser synthetic monitoring, playwright monitoring",
+      "outline": ["What HTTP monitoring misses", "The five journeys worth browser-probing", "Cadence trade-offs", "Cost math"]
+    },
+    {
+      "slug": "monitoring-slow-queries-postgres",
+      "title": "Catching slow Postgres queries before they hurt uptime",
+      "description": "A slow query today is a P1 tomorrow. Here's how to instrument, alert on, and automatically capture regressions in query performance.",
+      "category": "Databases",
+      "tags": ["postgres", "performance"],
+      "angle": "Postgres slow-query monitoring.",
+      "keywords": "postgres slow query, query monitoring",
+      "outline": ["pg_stat_statements essentials", "Alerting on p99 regressions", "Auto-capture and playback", "Index-recommender loops"]
+    },
+    {
+      "slug": "shipping-under-a-status-page",
+      "title": "Shipping fast under a public status page",
+      "description": "A public status page changes deployment culture. Here's how the highest-shipping teams still move fast while committing to visible reliability.",
+      "category": "Culture",
+      "tags": ["deployment", "culture"],
+      "angle": "Shipping culture with a public status page.",
+      "keywords": "status page culture, ship fast reliability",
+      "outline": ["The cultural trade-off", "Feature flags as safety net", "Post-deploy soak monitoring", "The 'always-in-progress' status update"]
+    },
+    {
+      "slug": "monitoring-ipv6",
+      "title": "Monitoring IPv6 — the layer half the internet still fails at",
+      "description": "IPv6 support is easy to add and easy to break. Here's what to monitor to make sure your IPv6 story stays healthy.",
+      "category": "Networking",
+      "tags": ["ipv6", "networking"],
+      "angle": "IPv6-specific monitoring.",
+      "keywords": "ipv6 monitoring, dual-stack monitoring",
+      "outline": ["Why IPv6 breaks silently", "Dual-stack probe requirements", "Regional weight", "Failure signatures"]
+    },
+    {
+      "slug": "csv-import-export-monitoring",
+      "title": "Monitoring CSV import and export flows in your app",
+      "description": "Uploaded files, background workers, and long-running exports create failure surfaces most monitoring misses. Here's what to instrument.",
+      "category": "Guides",
+      "tags": ["csv", "import", "export"],
+      "angle": "Import/export flow monitoring.",
+      "keywords": "csv import monitoring, file upload uptime",
+      "outline": ["The three failure surfaces", "Worker queue integration", "Progress-based assertions", "User-facing status transparency"]
+    },
+    {
+      "slug": "monitoring-a-payment-flow",
+      "title": "Monitoring a payment flow without processing real charges",
+      "description": "You want to monitor checkout without racking up test charges. Here's the pattern that gives you 90% of the confidence for 1% of the cost.",
+      "category": "Payments",
+      "tags": ["payments", "stripe", "monitoring"],
+      "angle": "Zero-charge payment flow monitoring.",
+      "keywords": "payment flow monitoring, stripe test monitoring",
+      "outline": ["Test-mode vs prod-mode", "The signup + intent pattern", "Where to stop before charge", "Auth-only probes"]
+    },
+    {
+      "slug": "monitoring-ai-endpoints-latency",
+      "title": "Monitoring AI/LLM endpoints when latency is inherently variable",
+      "description": "LLM endpoints have wildly variable latency. Here's how to monitor them without paging on every long completion.",
+      "category": "AI",
+      "tags": ["ai", "llm", "monitoring"],
+      "angle": "AI endpoint monitoring for variable latency.",
+      "keywords": "llm monitoring, ai latency, ai uptime",
+      "outline": ["Why traditional latency SLOs fail", "Token-based latency", "Streaming considerations", "Rate-limit awareness"]
+    },
+    {
+      "slug": "monitoring-a-video-streaming-service",
+      "title": "Monitoring a video streaming service without watching hours of playback",
+      "description": "Streaming has unique failure modes — CDN gaps, bandwidth issues, DRM handshakes. Here's how to synthetic-probe without huge bandwidth costs.",
+      "category": "Streaming",
+      "tags": ["video", "streaming", "cdn"],
+      "angle": "Efficient synthetic monitoring for streaming.",
+      "keywords": "video streaming monitoring, hls monitoring",
+      "outline": ["The five layers of streaming", "Manifest-level probes", "DRM handshake checks", "Bandwidth-conscious cadence"]
+    },
+    {
+      "slug": "monitoring-shopify-store-uptime",
+      "title": "Monitoring Shopify store uptime beyond Shopify's own dashboard",
+      "description": "Shopify's status is one thing; your store being up is another. Here's how to add the missing layer of monitoring for merchants.",
+      "category": "Ecommerce",
+      "tags": ["shopify", "ecommerce", "monitoring"],
+      "angle": "Merchant-side Shopify monitoring.",
+      "keywords": "shopify store monitoring, shopify uptime",
+      "outline": ["The four Shopify-specific failure modes", "Storefront vs checkout probes", "Theme regression detection", "Third-party app risk"]
+    },
+    {
+      "slug": "monitoring-wordpress-large-sites",
+      "title": "Monitoring a large WordPress site: uptime is only the first layer",
+      "description": "WordPress at scale needs monitoring at four different layers. Here's the setup that catches plugin regressions, cache stampedes, and admin lockouts.",
+      "category": "Ecommerce",
+      "tags": ["wordpress", "cms"],
+      "angle": "Multi-layer WordPress monitoring.",
+      "keywords": "wordpress monitoring, wordpress uptime",
+      "outline": ["The four layers", "wp-admin as canary", "Cache stampede signatures", "Plugin-regression triage"]
+    },
+    {
+      "slug": "monitoring-a-headless-cms",
+      "title": "Monitoring a headless CMS-driven site — where things go wrong",
+      "description": "Contentful, Sanity, and friends decouple content from delivery. That's a feature until the CDN cache goes bad. Here's how to monitor.",
+      "category": "CMS",
+      "tags": ["headless-cms", "jamstack"],
+      "angle": "Headless-CMS-specific monitoring.",
+      "keywords": "headless cms monitoring, contentful uptime",
+      "outline": ["The three failure modes", "Cache-warm probes", "Preview vs production distinction", "Webhook-triggered health checks"]
+    },
+    {
+      "slug": "understanding-p99-latency",
+      "title": "Understanding p99 latency: why the tail wags the dog",
+      "description": "Your p50 latency is fine. Your p99 is a horror show. Here's why the tail matters and how to attack it.",
+      "category": "Performance",
+      "tags": ["latency", "p99", "performance"],
+      "angle": "Practical p99 latency understanding.",
+      "keywords": "p99 latency, tail latency, percentile latency",
+      "outline": ["Why averages lie", "How to instrument p99 correctly", "The four common causes", "Alerting on the tail"]
+    },
+    {
+      "slug": "monitoring-cron-scheduled-jobs",
+      "title": "Monitoring cron and scheduled jobs — the invisible category",
+      "description": "A job that fails to run is worse than a job that fails loudly. Here's how to monitor scheduled work reliably.",
+      "category": "Jobs",
+      "tags": ["cron", "scheduled-jobs"],
+      "angle": "Reliable scheduled-job monitoring.",
+      "keywords": "cron monitoring, scheduled job monitoring, healthcheck.io alternative",
+      "outline": ["The heartbeat pattern", "Overdue detection", "Cascading job dependency", "Retry semantics"]
+    },
+    {
+      "slug": "reliability-culture-shift",
+      "title": "Building a reliability culture without a dedicated SRE team",
+      "description": "Not every company has the budget for SRE. Here's how to build the culture — and the process — without dedicated headcount.",
+      "category": "Culture",
+      "tags": ["reliability", "culture", "sre"],
+      "angle": "Reliability culture on a budget.",
+      "keywords": "reliability culture, sre without team",
+      "outline": ["The four rituals", "Postmortem cadence", "Blame-free norms", "When to hire your first SRE"]
+    },
+    {
+      "slug": "monitoring-your-marketing-site",
+      "title": "Monitoring your marketing site — the lead-gen page nobody watches",
+      "description": "Your marketing site drives revenue too. When forms break, leads vanish. Here's a minimal setup to catch it.",
+      "category": "Marketing",
+      "tags": ["marketing", "forms"],
+      "angle": "Marketing-site-specific monitoring.",
+      "keywords": "marketing site monitoring, contact form uptime",
+      "outline": ["The three form failure modes", "Lead-loss math", "Synthetic form-submits", "Alerting the right team"]
+    },
+    {
+      "slug": "monitoring-user-signup-conversion",
+      "title": "Monitoring the user signup funnel as a technical concern",
+      "description": "Signup is both a growth metric and a reliability metric. Here's how to monitor the flow so drops trigger alerts, not just reports.",
+      "category": "Product",
+      "tags": ["signup", "funnel", "conversion"],
+      "angle": "Signup funnel monitoring.",
+      "keywords": "signup funnel monitoring, conversion drop alert",
+      "outline": ["The five signup steps", "Conversion-based alerts", "Delta detection", "Culprit isolation"]
+    },
+    {
+      "slug": "monitoring-during-black-friday",
+      "title": "Monitoring during Black Friday — the yearly stress test",
+      "description": "The playbook we walk our biggest e-commerce customers through. Cadence, alerting, and communication for a peak-load week.",
+      "category": "Peak Events",
+      "tags": ["black-friday", "ecommerce", "peak"],
+      "angle": "Peak-event monitoring playbook.",
+      "keywords": "black friday monitoring, peak load",
+      "outline": ["Pre-week preparation", "Real-time cadence", "War-room rhythm", "Post-week debrief"]
+    },
+    {
+      "slug": "regional-outage-response-playbook",
+      "title": "The regional outage response playbook",
+      "description": "When a whole region goes dark, the response is different than a partial degradation. Here's the specific playbook.",
+      "category": "Playbooks",
+      "tags": ["regional-outage", "playbook"],
+      "angle": "Regional outage step-by-step.",
+      "keywords": "regional outage, aws us-east outage",
+      "outline": ["The first 60 seconds", "Multi-region readiness", "Communication cadence", "Follow-on cleanup"]
+    },
+    {
+      "slug": "monitoring-a-plugin-marketplace",
+      "title": "Monitoring a plugin or app marketplace you host",
+      "description": "Plugin marketplaces have third-party code inside your product. Monitoring must reflect that. Here's the pattern.",
+      "category": "Product",
+      "tags": ["marketplace", "plugins"],
+      "angle": "Third-party plugin marketplace monitoring.",
+      "keywords": "plugin marketplace monitoring, extension uptime",
+      "outline": ["The blast-radius question", "Plugin-scoped probes", "Store-front assertions", "Vendor SLA enforcement"]
+    },
+    {
+      "slug": "why-you-shouldnt-monitor-everything",
+      "title": "Why you shouldn't monitor everything (and how to pick)",
+      "description": "More monitors doesn't mean more reliability. Here's how to choose which surfaces are worth watching and which aren't.",
+      "category": "Practices",
+      "tags": ["strategy", "monitoring"],
+      "angle": "Strategic monitoring scope.",
+      "keywords": "what to monitor, monitoring strategy",
+      "outline": ["The cost of a monitor you don't respond to", "The five-question filter", "Deprecation rhythm", "Coverage vs signal"]
+    },
+    {
+      "slug": "monitoring-legacy-monolith",
+      "title": "Monitoring a legacy monolith without a rewrite",
+      "description": "You inherited a 15-year-old monolith. You can't rewrite it. Here's how to instrument monitoring without touching the code.",
+      "category": "Legacy",
+      "tags": ["monolith", "legacy"],
+      "angle": "Monitoring legacy systems non-invasively.",
+      "keywords": "legacy monitoring, monolith uptime",
+      "outline": ["The zero-touch approach", "External signal only", "The log-tail bridge", "Gradual instrumentation"]
+    },
+    {
+      "slug": "the-security-incident-vs-outage-decision",
+      "title": "Security incident or outage? The decision tree",
+      "description": "Some incidents are both. Some are one but not the other. Here's the decision tree we use, and the response deltas that follow.",
+      "category": "Security",
+      "tags": ["security", "incident"],
+      "angle": "Distinguishing security and reliability incidents.",
+      "keywords": "security incident, outage vs breach",
+      "outline": ["The four categories", "The eight decision questions", "Response-team differences", "Communication rules"]
+    },
+    {
+      "slug": "gpu-monitoring-ai-workloads",
+      "title": "GPU monitoring for AI workloads: what's different",
+      "description": "GPU-backed inference has failure modes CPU tools miss. Here's what to watch, and where to alert.",
+      "category": "AI",
+      "tags": ["gpu", "ai", "inference"],
+      "angle": "GPU-specific inference monitoring.",
+      "keywords": "gpu monitoring, ai inference monitoring",
+      "outline": ["The three GPU failure modes", "Memory pressure signals", "Thermal throttling", "Fallback strategies"]
+    },
+    {
+      "slug": "monitoring-b2b-vs-b2c-differences",
+      "title": "B2B vs B2C monitoring: five ways they diverge",
+      "description": "Weekend traffic, alert routing, comms channels — B2B and B2C monitoring look surprisingly different. Here's how.",
+      "category": "Fundamentals",
+      "tags": ["b2b", "b2c"],
+      "angle": "Segmentation-based monitoring differences.",
+      "keywords": "b2b monitoring, b2c monitoring",
+      "outline": ["Traffic shape", "Alert routing", "Status page tone", "Metrics that matter", "The AM/PM cadence question"]
+    },
+    {
+      "slug": "monitoring-microservices-vs-monolith",
+      "title": "Monitoring microservices vs a monolith — the trade-offs",
+      "description": "Micro-services multiply surfaces to monitor. Here's the honest trade-off analysis for each architecture.",
+      "category": "Architecture",
+      "tags": ["microservices", "monolith"],
+      "angle": "Architecture-driven monitoring trade-offs.",
+      "keywords": "microservices monitoring, monolith monitoring",
+      "outline": ["Surface area math", "Alert routing complexity", "Cost curves", "When to switch approach"]
+    },
+    {
+      "slug": "monitoring-single-page-apps-spa",
+      "title": "Monitoring single-page applications (SPAs) end-to-end",
+      "description": "SPAs shift complexity to the client. Traditional server-side monitoring misses half the failure surface. Here's the fix.",
+      "category": "Frontend",
+      "tags": ["spa", "frontend", "monitoring"],
+      "angle": "SPA-specific monitoring guide.",
+      "keywords": "spa monitoring, single-page-app uptime",
+      "outline": ["The three SPA failure surfaces", "Client-side error capture", "Route-level probes", "CDN cache freshness"]
+    },
+    {
+      "slug": "cost-of-a-monitoring-tool",
+      "title": "How much should you actually pay for monitoring?",
+      "description": "Monitoring pricing is opaque and full of upsells. Here's the honest benchmark for what a serious setup should cost.",
+      "category": "Business",
+      "tags": ["pricing", "budget"],
+      "angle": "Honest monitoring pricing benchmarks.",
+      "keywords": "monitoring cost, monitoring pricing",
+      "outline": ["The four cost buckets", "Benchmarks by team size", "Common upsell traps", "The 'value per monitor' metric"]
+    },
+    {
+      "slug": "monitoring-your-cdn-cache-hit-rate",
+      "title": "Monitoring your CDN cache-hit rate — the leading indicator",
+      "description": "Falling cache-hit rate is a leading indicator of a bad deploy, a broken cache header, or a coming latency spike. Here's how to watch it.",
+      "category": "Performance",
+      "tags": ["cdn", "cache", "performance"],
+      "angle": "Cache-hit rate as an early warning.",
+      "keywords": "cdn cache hit rate, cache monitoring",
+      "outline": ["What causes cache-hit drops", "The alert rule", "Correlated deploy detection", "Purge-storm signatures"]
+    },
+    {
+      "slug": "modelling-a-status-page-component-tree",
+      "title": "Modeling a status page component tree that customers understand",
+      "description": "The mistake most teams make: they publish their internal service graph. Here's how to model components for customers, not engineers.",
+      "category": "Status Pages",
+      "tags": ["status-page", "components", "design"],
+      "angle": "Customer-facing component tree design.",
+      "keywords": "status page components, component tree",
+      "outline": ["The engineer-vs-customer lens", "Naming components", "Grouping without over-nesting", "Testing with real users"]
+    },
+    {
+      "slug": "monitoring-during-deploys-safely",
+      "title": "Monitoring during deploys: what to suppress and what to escalate",
+      "description": "Deploys are a monitoring paradox — you don't want alert noise, but you do want to catch a bad release. Here's the balance.",
+      "category": "Deployments",
+      "tags": ["deploys", "monitoring"],
+      "angle": "Deploy-window monitoring strategy.",
+      "keywords": "deploy monitoring, canary deploy",
+      "outline": ["The suppression window", "Canary-linked alerts", "Auto-rollback triggers", "Post-deploy soak"]
+    },
+    {
+      "slug": "monitoring-a-gaming-backend",
+      "title": "Monitoring a gaming backend — real-time is a different beast",
+      "description": "Game backends have hard latency requirements, session persistence, and matchmaking. Here's how to structure monitoring for real-time gameplay.",
+      "category": "Gaming",
+      "tags": ["gaming", "real-time"],
+      "angle": "Game backend monitoring specifics.",
+      "keywords": "game backend monitoring, real-time game uptime",
+      "outline": ["The latency budget", "Session-persistence signals", "Matchmaking-queue depth", "Regional player experience"]
+    },
+    {
+      "slug": "monitoring-a-podcast-hosting-service",
+      "title": "Monitoring a podcast hosting service: bytes, feeds, and CDNs",
+      "description": "Podcast hosting has some of the strangest failure modes on the internet. Here's what we've learned watching them.",
+      "category": "Media",
+      "tags": ["podcast", "rss", "cdn"],
+      "angle": "Podcast-hosting-specific monitoring.",
+      "keywords": "podcast hosting monitoring, rss feed uptime",
+      "outline": ["The RSS feed as canary", "MP3 delivery consistency", "Third-party analytics dependency", "Show-scoped incident tracking"]
+    }
+  ],
+  "used": []
+}

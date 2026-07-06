@@ -1,131 +1,175 @@
-
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { NAV, SITE } from "@/lib/site";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [featuresOpen, setFeaturesOpen] = useState(false);
   const location = useLocation();
 
-  const productLinks = [
-    { name: "Website Monitoring", href: "/website-monitoring" },
-    { name: "SSL Monitoring", href: "/ssl-monitoring" },
-    { name: "Status Pages", href: "/status-page" },
-    { name: "Incident Management", href: "/incident-management" },
-    { name: "Integrations", href: "/integrations" },
-  ];
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 6);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+    setFeaturesOpen(false);
+  }, [location.pathname]);
 
   return (
-    <header className="bg-[#0a0a1a]/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-50">
+    <header
+      className={cn(
+        "sticky top-0 z-50 transition-all duration-300",
+        scrolled
+          ? "bg-background/70 backdrop-blur-xl border-b border-hairline/70 shadow-soft"
+          : "bg-background/40 backdrop-blur-md border-b border-transparent",
+      )}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/b5c94c8f-8b5c-4d46-89bb-c353f06e28ca.png" 
-              alt="KloudFox Logo" 
-              className="h-7"
-            />
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group" aria-label={`${SITE.name} home`}>
+            <img src={SITE.logo} alt={`${SITE.name} logo`} className="h-7 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
-            <div className="relative">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-1 text-sm">
+            {/* Features mega-menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setFeaturesOpen(true)}
+              onMouseLeave={() => setFeaturesOpen(false)}
+            >
               <button
-                onClick={() => setIsProductsOpen(!isProductsOpen)}
-                className="flex items-center text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                className={cn(
+                  "px-3 py-2 rounded-lg font-medium text-foreground/70 hover:text-foreground transition-colors flex items-center gap-1",
+                  featuresOpen && "text-foreground",
+                )}
+                aria-haspopup="menu"
+                aria-expanded={featuresOpen}
               >
                 Features
-                <ChevronDown className="ml-1 h-3.5 w-3.5" />
+                <svg
+                  className={cn("h-3.5 w-3.5 transition-transform", featuresOpen && "rotate-180")}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden
+                >
+                  <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </button>
-              {isProductsOpen && (
-                <div className="absolute top-full left-0 mt-1 w-56 bg-[#141420] rounded-xl shadow-2xl border border-white/10 py-2 z-50">
-                  {productLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      to={link.href}
-                      className="block px-4 py-2.5 text-sm text-white/60 hover:bg-white/5 hover:text-white transition-colors"
-                      onClick={() => setIsProductsOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+
+              {featuresOpen && (
+                <div className="absolute top-full left-0 pt-3 min-w-[420px]">
+                  <div className="rim-border rounded-2xl bg-card/95 backdrop-blur-xl shadow-elevated p-2 grid grid-cols-1 gap-1">
+                    {NAV.features.map((f) => (
+                      <Link
+                        key={f.href}
+                        to={f.href}
+                        className="group flex items-start gap-3 rounded-xl px-3 py-2.5 hover:bg-muted transition-colors"
+                      >
+                        <div className="flex-1">
+                          <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                            {f.name}
+                          </div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{f.desc}</div>
+                        </div>
+                        <ChevronRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all mt-1" />
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
-            <Link to="/pricing" className="text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
-              Pricing
-            </Link>
-            <Link to="/blog" className="text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
-              Blog
-            </Link>
-            <Link to="/about" className="text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
-              About
-            </Link>
-            <Link to="/contact" className="text-white/70 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
-              Contact
-            </Link>
+
+            {NAV.primary.map((item) => (
+              <NavLink
+                key={item.href}
+                to={item.href}
+                className={({ isActive }) =>
+                  cn(
+                    "px-3 py-2 rounded-lg font-medium transition-colors",
+                    isActive
+                      ? "text-foreground"
+                      : "text-foreground/70 hover:text-foreground",
+                  )
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
           </nav>
 
-          {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Button asChild variant="ghost" size="sm" className="text-white/70 hover:text-white hover:bg-white/5">
-              <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer">
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-2">
+            <Button asChild variant="ghost" size="sm" className="text-foreground/80 hover:text-foreground hover:bg-muted">
+              <a href={SITE.app.login} target="_blank" rel="noopener noreferrer">
                 Log in
               </a>
             </Button>
-            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-lg px-5">
-              <a href="https://watch.kloudfox.com/register" target="_blank" rel="noopener noreferrer">
-                Start Free Trial
+            <Button asChild size="sm" className="btn-aurora rounded-xl px-4 h-9 font-semibold">
+              <a href={SITE.app.register} target="_blank" rel="noopener noreferrer">
+                Start free
               </a>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile toggle */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-white/70"
+            onClick={() => setOpen((s) => !s)}
+            className="md:hidden p-2 -mr-2 text-foreground/80 hover:text-foreground"
+            aria-label="Toggle navigation"
+            aria-expanded={open}
           >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/5">
+        {/* Mobile drawer */}
+        {open && (
+          <div className="md:hidden py-4 border-t border-hairline/60">
             <div className="space-y-1">
-              <div className="mb-2">
-                <div className="text-xs font-semibold text-white/40 uppercase tracking-wider px-3 mb-2">Features</div>
-                {productLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className="block px-3 py-2 text-sm text-white/60 hover:text-white transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+              <div className="text-[11px] font-semibold text-muted-foreground uppercase tracking-[0.15em] px-3 pb-2 pt-3">
+                Features
               </div>
-              <Link to="/pricing" className="block px-3 py-2 text-sm text-white/70 hover:text-white font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
-                Pricing
-              </Link>
-              <Link to="/blog" className="block px-3 py-2 text-sm text-white/70 hover:text-white font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
-                Blog
-              </Link>
-              <Link to="/about" className="block px-3 py-2 text-sm text-white/70 hover:text-white font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
-                About
-              </Link>
-              <Link to="/contact" className="block px-3 py-2 text-sm text-white/70 hover:text-white font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
-                Contact
-              </Link>
-              <div className="pt-4 space-y-2 border-t border-white/5 mt-2">
-                <Button asChild variant="ghost" className="w-full justify-center text-white/70 hover:text-white">
-                  <a href="https://watch.kloudfox.com/login" target="_blank" rel="noopener noreferrer">Log in</a>
+              {NAV.features.map((f) => (
+                <Link
+                  key={f.href}
+                  to={f.href}
+                  className="block px-3 py-2 rounded-lg text-sm text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
+                >
+                  {f.name}
+                </Link>
+              ))}
+              <div className="my-2 border-t border-hairline/60" />
+              {NAV.primary.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="block px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-3 mt-2 border-t border-hairline/60 space-y-2">
+                <Button asChild variant="ghost" className="w-full justify-center">
+                  <a href={SITE.app.login} target="_blank" rel="noopener noreferrer">
+                    Log in
+                  </a>
                 </Button>
-                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white">
-                  <a href="https://watch.kloudfox.com/register" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
+                <Button asChild className="w-full btn-aurora rounded-xl font-semibold">
+                  <a href={SITE.app.register} target="_blank" rel="noopener noreferrer">
+                    Start free trial
+                  </a>
                 </Button>
               </div>
             </div>
