@@ -1,116 +1,63 @@
-import { useState, useEffect } from 'react';
-import { wordpressApi, BlogPost } from '@/services/wordpressApi';
+import { useMemo, useState } from "react";
+import {
+  BlogPost,
+  getAllPosts,
+  getFeaturedPost,
+  getPostBySlug,
+  getRelatedPosts,
+} from "@/lib/blog";
 
 interface UseBlogPostsReturn {
   posts: BlogPost[];
-  loading: boolean;
-  error: string | null;
+  loading: false;
+  error: null;
   totalPages: number;
   currentPage: number;
   setCurrentPage: (page: number) => void;
   featuredPost: BlogPost | null;
 }
 
-export const useBlogPosts = (perPage: number = 12): UseBlogPostsReturn => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [featuredPost, setFeaturedPost] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [totalPages, setTotalPages] = useState(1);
+/**
+ * Paginated list of posts, sourced from local markdown files at build time.
+ * Kept as a hook for API compatibility with pages that consume it, but the
+ * underlying data is synchronous — no loading/error states needed.
+ */
+export function useBlogPosts(perPage = 12): UseBlogPostsReturn {
+  const all = useMemo(() => getAllPosts(), []);
+  const featured = useMemo(() => getFeaturedPost() ?? null, []);
+  const nonFeatured = useMemo(
+    () => all.filter((p) => !featured || p.slug !== featured.slug),
+    [all, featured],
+  );
+
   const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.max(1, Math.ceil(nonFeatured.length / perPage));
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        // Fetch regular posts and featured posts in parallel
-        const [postsResult, featuredPosts] = await Promise.all([
-          wordpressApi.getPosts(currentPage, perPage),
-          wordpressApi.getFeaturedPosts()
-        ]);
-        
-        setPosts(postsResult.posts);
-        setTotalPages(postsResult.totalPages);
-        
-        // Set the first featured post, if any
-        if (featuredPosts.length > 0) {
-          setFeaturedPost(featuredPosts[0]);
-        }
-        
-      } catch (err) {
-        setError('Failed to load blog posts. Please try again later.');
-        console.error('Error in useBlogPosts:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPosts();
-  }, [currentPage, perPage]);
+  const paged = useMemo(() => {
+    const start = (currentPage - 1) * perPage;
+    return nonFeatured.slice(start, start + perPage);
+  }, [nonFeatured, currentPage, perPage]);
 
   return {
-    posts,
-    loading,
-    error,
+    posts: paged,
+    loading: false,
+    error: null,
     totalPages,
     currentPage,
     setCurrentPage,
-    featuredPost
+    featuredPost: featured,
   };
-};
+}
 
 interface UseSinglePostReturn {
   post: BlogPost | null;
-  loading: boolean;
-  error: string | null;
+  loading: false;
+  error: null;
   relatedPosts: BlogPost[];
 }
 
-export const useSinglePost = (slug: string): UseSinglePostReturn => {
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        const postData = await wordpressApi.getPostBySlug(slug);
-        
-        if (!postData) {
-          setError('Post not found');
-          return;
-        }
-        
-        setPost(postData);
-        
-        // Fetch related posts (latest posts excluding current one)
-        const { posts: allPosts } = await wordpressApi.getPosts(1, 6);
-        const related = allPosts.filter(p => p.slug !== slug).slice(0, 3);
-        setRelatedPosts(related);
-        
-      } catch (err) {
-        setError('Failed to load blog post. Please try again later.');
-        console.error('Error in useSinglePost:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (slug) {
-      fetchPost();
-    }
-  }, [slug]);
-
-  return {
-    post,
-    loading,
-    error,
-    relatedPosts
-  };
-};
+export function useSinglePost(slug: string): UseSinglePostReturn {
+  const post = useMemo(() => getPostBySlug(slug) ?? null, [slug]);
+  const relatedPosts = useMemo(() => (post ? getRelatedPosts(post.slug, 3) : []), [post]);
+  return { post, loading: false, error: null, relatedPosts };
+}

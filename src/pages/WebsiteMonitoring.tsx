@@ -1,259 +1,135 @@
+import {
+  Globe2,
+  Bell,
+  Activity,
+  Zap,
+  ShieldCheck,
+  BarChart3,
+  Clock,
+} from "lucide-react";
+import ProductPageTemplate, {
+  ProductPageConfig,
+} from "@/components/kf/ProductPageTemplate";
+import LiveDashboard from "@/components/kf/LiveDashboard";
+import { SITE } from "@/lib/site";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Globe, Clock, Shield, Zap, Bell, BarChart3, CheckCircle, AlertTriangle, Info } from "lucide-react";
-
-const WebsiteMonitoring = () => {
-  return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <Header />
-      
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">Website Monitoring</h1>
-            <p className="text-xl mb-8 opacity-90">
-              Monitor your website's uptime, performance, and availability 24/7 with KloudFox's advanced website monitoring solution that never sleeps.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-3">
-                <div className="text-2xl font-bold">99.9%</div>
-                <div className="text-sm opacity-80">Uptime Guarantee</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-3">
-                <div className="text-2xl font-bold">40s</div>
-                <div className="text-sm opacity-80">Check Interval</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-3">
-                <div className="text-2xl font-bold">4</div>
-                <div className="text-sm opacity-80">Global Locations</div>
-              </div>
-            </div>
-            <a 
-              href="https://watch.kloudfox.com/register" 
-              className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors inline-block"
-            >
-              Start Free Trial
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex-1 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            {/* Problem Section */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">The Hidden Cost of Website Downtime</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Every minute your website is down, you're hemorrhaging money. While you sleep peacefully, your competitors are stealing customers you'll never get back.
-              </p>
-            </div>
-
-            {/* Cost Impact */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
-                <div className="flex items-center mb-4">
-                  <AlertTriangle className="h-8 w-8 text-red-500 mr-3" />
-                  <h3 className="text-xl font-bold text-red-700">Revenue Loss</h3>
-                </div>
-                <p className="text-gray-700 mb-3">Amazon loses $66,240 every minute during downtime. What's your cost?</p>
-                <div className="text-2xl font-bold text-red-600">$200-$500/min</div>
-              </div>
-              
-              <div className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
-                <div className="flex items-center mb-4">
-                  <BarChart3 className="h-8 w-8 text-orange-500 mr-3" />
-                  <h3 className="text-xl font-bold text-orange-700">SEO Impact</h3>
-                </div>
-                <p className="text-gray-700 mb-3">Google penalizes slow and unreliable websites in search rankings.</p>
-                <div className="text-2xl font-bold text-orange-600">-15% Traffic</div>
-              </div>
-              
-              <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
-                <div className="flex items-center mb-4">
-                  <Shield className="h-8 w-8 text-yellow-500 mr-3" />
-                  <h3 className="text-xl font-bold text-yellow-700">Brand Damage</h3>
-                </div>
-                <p className="text-gray-700 mb-3">88% of users won't return after a bad experience with your website.</p>
-                <div className="text-2xl font-bold text-yellow-600">Permanent Loss</div>
-              </div>
-            </div>
-
-            {/* Why KloudFox */}
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-8 text-center">Why KloudFox is Your Website's Guardian Angel</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <Globe className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">Global Monitoring Network</h3>
-                      <p className="text-gray-600">We monitor from 4 continents to catch regional outages your competitors miss.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <Clock className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">40-Second Check Intervals</h3>
-                      <p className="text-gray-600">While others check every 5 minutes, we catch issues in seconds.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <Bell className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">Instant Multi-Channel Alerts</h3>
-                      <p className="text-gray-600">Email, SMS, phone calls, Slack, Discord - we'll reach you however you prefer.</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <Zap className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">Performance Monitoring</h3>
-                      <p className="text-gray-600">Track page load times and identify performance bottlenecks before they hurt conversions.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <Shield className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">SSL Certificate Monitoring</h3>
-                      <p className="text-gray-600">Never let an expired certificate scare away customers with security warnings.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-blue-600 mr-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">Content Monitoring</h3>
-                      <p className="text-gray-600">Detect unauthorized changes, defacements, or content theft instantly.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Features Grid */}
-            <div className="mb-16">
-              <h2 className="text-3xl font-bold mb-12 text-center">Everything You Need to Protect Your Online Business</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                  {
-                    title: "Real-time Uptime Monitoring",
-                    description: "Get notified within 40 seconds when your website goes down from any of our global monitoring locations.",
-                    standard: true
-                  },
-                  {
-                    title: "Performance Tracking",
-                    description: "Monitor page load times and identify slow pages that are hurting your conversion rates.",
-                    standard: true
-                  },
-                  {
-                    title: "SSL Certificate Monitoring",
-                    description: "Never let an expired SSL certificate damage your SEO rankings or scare away customers.",
-                    standard: true
-                  },
-                  {
-                    title: "Content Change Detection",
-                    description: "Instantly detect unauthorized changes to your website content or potential security breaches.",
-                    standard: true
-                  },
-                  {
-                    title: "Multi-Channel Alerts",
-                    description: "Receive alerts via email, SMS, phone calls, Slack, Discord, and more communication channels.",
-                    standard: true
-                  },
-                  {
-                    title: "CPU & Resource Monitoring",
-                    description: "Advanced server resource monitoring and performance analytics for comprehensive infrastructure oversight.",
-                    standard: false
-                  }
-                ].map((feature, index) => (
-                  <div key={index} className={`bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow relative ${!feature.standard ? 'border-orange-200 bg-orange-50/30' : 'border-gray-200'}`}>
-                    {!feature.standard && (
-                      <div className="absolute top-3 right-3">
-                        <span className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full font-medium">Enterprise</span>
-                      </div>
-                    )}
-                    <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Subtle Disclaimer */}
-              <div className="mt-8 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                <div className="flex items-start">
-                  <Info className="h-5 w-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
-                  <div className="text-sm text-blue-800">
-                    <p className="mb-2">
-                      <span className="font-medium">Feature Availability Note:</span> KloudFox retail plans include comprehensive website monitoring, uptime tracking, SSL monitoring, and alerting capabilities as detailed in our pricing page. 
-                    </p>
-                    <p>
-                      Certain advanced infrastructure monitoring features (including but not limited to CPU monitoring, detailed server analytics, and custom enterprise integrations) are available exclusively through our enterprise custom solutions and are not included in standard subscription plans. Please review our <a href="/pricing" className="underline hover:text-blue-900">pricing page</a> for complete feature availability details before purchase.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Proof */}
-            <div className="bg-green-50 rounded-2xl p-8 mb-16">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold mb-6">Trusted by Over 10,000 Websites Worldwide</h2>
-                <p className="text-xl text-gray-600 mb-8">
-                  Join thousands of smart business owners who never worry about website downtime anymore.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-green-600 mb-2">99.9%</div>
-                    <div className="text-gray-600">Average Uptime</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-green-600 mb-2">2.3s</div>
-                    <div className="text-gray-600">Average Response Time</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-green-600 mb-2">24/7</div>
-                    <div className="text-gray-600">Monitoring Coverage</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Section */}
-            <div className="bg-blue-600 text-white rounded-2xl p-8 text-center">
-              <h2 className="text-3xl font-bold mb-4">Don't Let Downtime Destroy Your Business</h2>
-              <p className="text-xl mb-8 opacity-90">
-                Start monitoring your website today and join thousands of businesses that never worry about downtime.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="https://watch.kloudfox.com/register" 
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors"
-                >
-                  Start Free Trial
-                </a>
-                <a 
-                  href="/pricing" 
-                  className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-colors"
-                >
-                  View Pricing
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Footer />
-    </div>
-  );
+const config: ProductPageConfig = {
+  slug: "website-monitoring",
+  eyebrow: "Website Monitoring",
+  seo: {
+    title: "Website Monitoring — 40-second global uptime checks",
+    description:
+      "Monitor your websites, APIs, and endpoints every 40 seconds from four continents. AI anomaly detection, smart alerts, and public status pages included.",
+    keywords: "website monitoring, uptime monitoring, http monitoring, api monitoring",
+  },
+  hero: {
+    heading: (
+      <>
+        See a real outage <span className="gradient-text">before your CEO does.</span>
+      </>
+    ),
+    subheading:
+      "40-second checks from four continents, AI baseline detection, and alerts that land in Slack, SMS, and PagerDuty before your customers hit refresh.",
+    primaryCta: { label: "Start free — 60-day trial", href: SITE.app.register },
+    secondaryCta: { label: "See pricing", href: "/pricing" },
+    heroVisual: <LiveDashboard />,
+  },
+  tldr:
+    "Kloudfox's website monitoring probes your endpoints every 40 seconds from 4 continents, applies AI baseline detection, and alerts your team in under 30 seconds. Free tier available. Starts at $0.",
+  features: [
+    {
+      icon: <Clock className="h-5 w-5" />,
+      title: "40-second checks",
+      description:
+        "The fastest monitoring cadence in its class. Regional or edge outages surface in seconds, not minutes.",
+    },
+    {
+      icon: <Globe2 className="h-5 w-5" />,
+      title: "Multi-continent probes",
+      description:
+        "Every URL is checked from North America, Europe, Asia, and Oceania. Kloudfox confirms real outages, not local blips.",
+    },
+    {
+      icon: <Activity className="h-5 w-5" />,
+      title: "Anomaly baselines",
+      description:
+        "AI learns normal response and error patterns per endpoint. Alerts include a deviation score so you know what's real.",
+    },
+    {
+      icon: <Bell className="h-5 w-5" />,
+      title: "Multi-channel alerts",
+      description:
+        "Slack, Discord, Email, SMS, iOS push, PagerDuty, Zapier, or any webhook. Rules by monitor or by team.",
+    },
+    {
+      icon: <ShieldCheck className="h-5 w-5" />,
+      title: "Content assertions",
+      description:
+        "Verify a keyword, JSON path, or response header exists. Catch soft failures where 200 lies.",
+    },
+    {
+      icon: <BarChart3 className="h-5 w-5" />,
+      title: "Public performance reports",
+      description:
+        "Share uptime and response history on branded status pages. Perfect for enterprise procurement conversations.",
+    },
+  ],
+  benefits: [
+    {
+      title: "Cut MTTD by 4-6x",
+      description:
+        "Teams that switch from 5-minute cadence to 40-second cadence detect incidents 4-6x faster on average.",
+    },
+    {
+      title: "Kill alert fatigue",
+      description:
+        "AI-scored anomaly detection filters transient noise. Only real, actionable events wake your on-call.",
+    },
+    {
+      title: "Show up prepared",
+      description:
+        "Ship every incident with an auto-drafted timeline, region-by-region evidence, and a status page update.",
+    },
+    {
+      title: "Never miss cert issues",
+      description:
+        "SSL expiries and chain problems ride alongside HTTP checks — no separate tool required.",
+    },
+  ],
+  quote: {
+    text: "We used to hear about downtime from customers. Now we hear about it from our watch.",
+    author: "Alex Rodriguez",
+    role: "Founder, Serif SaaS",
+  },
+  faqs: [
+    {
+      question: "How often does Kloudfox check my site?",
+      answer:
+        "Every 40 seconds on Pro and above, every 60 seconds on Basic, and every 5 minutes on the Free tier. Checks are staggered across probing regions so you get true global coverage without hammering your origin.",
+    },
+    {
+      question: "Which regions do you check from?",
+      answer:
+        "North America (US East + US West), Europe (Ireland + Frankfurt), Asia (Mumbai + Singapore), and Oceania (Sydney). More regions are added quarterly.",
+    },
+    {
+      question: "Can I monitor an API, not just a webpage?",
+      answer:
+        "Yes. Every monitor supports custom methods, headers, request bodies, and multi-step JSON assertions. It's the same primitive whether you're checking a landing page or a login endpoint.",
+    },
+    {
+      question: "How fast are alerts delivered?",
+      answer:
+        "The median time from detection to alert delivery is under 30 seconds across Slack, Discord, SMS, PagerDuty, and webhook.",
+    },
+    {
+      question: "What happens if the checker itself is down?",
+      answer:
+        "Kloudfox is deployed active-active across three cloud providers with automated failover. If any probing region goes dark, another region takes over and the customer sees no gap.",
+    },
+  ],
 };
 
-export default WebsiteMonitoring;
+export default function WebsiteMonitoring() {
+  return <ProductPageTemplate config={config} />;
+}

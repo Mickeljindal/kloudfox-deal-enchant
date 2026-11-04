@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Kloudfox</title>
+    <link>https://kloudfox.com</link>
+    <atom:link href="https://kloudfox.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Deep-dive posts on website monitoring, uptime, SSL, incident response, and everything else your on-call rotation cares about.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jul 2026 13:56:09 GMT</lastBuildDate>
+    <item>
+      <title>Multi-region monitoring: why one probe is never enough</title>
+      <link>https://kloudfox.com/blog/multi-region-monitoring-explained</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/multi-region-monitoring-explained</guid>
+      <description>Single-region monitoring hides regional outages, CDN failures, and DNS issues by design. Here&#39;s how to think about multi-region coverage and why it matters.</description>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>Monitoring</category>
+    </item>
+    <item>
+      <title>Slack vs PagerDuty for on-call: pick the right tool for your team size</title>
+      <link>https://kloudfox.com/blog/slack-vs-pagerduty-oncall</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/slack-vs-pagerduty-oncall</guid>
+      <description>Should you use Slack, PagerDuty, or both for on-call and incident routing? A practical decision framework based on team size, budget, and severity mix.</description>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>On-Call</category>
+    </item>
+    <item>
+      <title>The real cost of downtime: what an outage actually costs your SaaS</title>
+      <link>https://kloudfox.com/blog/cost-of-downtime-real-numbers</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/cost-of-downtime-real-numbers</guid>
+      <description>Beyond the hourly-revenue-lost math. A grounded look at what downtime costs a modern SaaS in tickets, churn, brand damage, and engineering time.</description>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>Business</category>
+    </item>
+    <item>
+      <title>The incident postmortem template we actually use</title>
+      <link>https://kloudfox.com/blog/incident-postmortem-template</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/incident-postmortem-template</guid>
+      <description>A copy-and-paste postmortem structure that respects your engineers&#39; time, produces real action items, and doesn&#39;t turn into blame theater.</description>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>Incidents</category>
+    </item>
+    <item>
+      <title>How to build a status page your customers actually trust</title>
+      <link>https://kloudfox.com/blog/status-pages-customers-trust</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/status-pages-customers-trust</guid>
+      <description>Status pages are one of the top three trust signals enterprise buyers check. Here&#39;s what to include, what to leave off, and how to communicate during an incident.</description>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>Status Pages</category>
+    </item>
+    <item>
+      <title>SSL certificate monitoring: what to watch, and when to panic</title>
+      <link>https://kloudfox.com/blog/ssl-monitoring-what-to-watch</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/ssl-monitoring-what-to-watch</guid>
+      <description>TLS is table stakes. Certificate expiry, chain validation, and cipher grading are the three things every serious SaaS team should monitor continuously.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>Security</category>
+    </item>
+    <item>
+      <title>40-second checks vs 5-minute checks: why cadence matters more than you think</title>
+      <link>https://kloudfox.com/blog/40-second-vs-5-minute-checks</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/40-second-vs-5-minute-checks</guid>
+      <description>Cutting your check interval from 5 minutes to 40 seconds isn&#39;t 7x better — it&#39;s the difference between finding an outage before or after your customers do.</description>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>Monitoring</category>
+    </item>
+    <item>
+      <title>Website monitoring in 2026: a full guide for SaaS teams</title>
+      <link>https://kloudfox.com/blog/website-monitoring-guide-2026</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/website-monitoring-guide-2026</guid>
+      <description>Everything a modern SaaS team needs to monitor: what to watch, how often, from where, and which alerts actually matter.</description>
+      <pubDate>Mon, 29 Jun 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>Guides</category>
+    </item>
+    <item>
+      <title>What is website uptime, really? A practical explanation for busy teams</title>
+      <link>https://kloudfox.com/blog/what-is-website-uptime</link>
+      <guid isPermaLink="true">https://kloudfox.com/blog/what-is-website-uptime</guid>
+      <description>Uptime isn&#39;t just a percentage on a status page. Here&#39;s what actually counts as &#39;up&#39;, how it&#39;s measured, and why 99.9% is not what most vendors claim.</description>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
+      <dc:creator>Kloudfox Team</dc:creator>
+      <category>Fundamentals</category>
+    </item>
+  </channel>
+</rss>

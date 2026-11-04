@@ -1,233 +1,230 @@
+import { Check, X } from "lucide-react";
+import { Fragment } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Check, AlertTriangle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import PricingSection from "@/components/PricingSection";
+import ComparisonSection from "@/components/ComparisonSection";
+import Section, { SectionHeader } from "@/components/kf/Section";
+import Aurora from "@/components/kf/Aurora";
+import Reveal from "@/components/kf/Reveal";
+import SEO, { breadcrumbJsonLd, faqJsonLd } from "@/components/SEO";
+import { cn } from "@/lib/utils";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+type PlanCell = string | boolean;
+
+/* Feature matrix across plans (Free / Basic / Pro / Enterprise) */
+const MATRIX: Array<{ group: string; rows: Array<{ name: string; values: [PlanCell, PlanCell, PlanCell, PlanCell] }> }> = [
+  {
+    group: "Monitoring",
+    rows: [
+      { name: "Monitors",                values: ["5", "25", "100", "Unlimited"] },
+      { name: "Check interval",          values: ["5 min", "1 min", "40 sec", "40 sec"] },
+      { name: "Multi-region checks",     values: [false, false, true, true] },
+      { name: "SSL & TLS monitoring",    values: [true, true, true, true] },
+      { name: "Content assertions",      values: [true, true, true, true] },
+      { name: "AI anomaly detection",    values: [false, false, true, true] },
+    ],
+  },
+  {
+    group: "Status pages",
+    rows: [
+      { name: "Status pages",            values: ["1", "5", "Unlimited", "Unlimited"] },
+      { name: "Custom domain",           values: [false, true, true, true] },
+      { name: "Subscriber notifications", values: [false, true, true, true] },
+      { name: "Custom CSS",              values: [false, false, true, true] },
+    ],
+  },
+  {
+    group: "Incidents & on-call",
+    rows: [
+      { name: "Incident timeline",       values: [true, true, true, true] },
+      { name: "On-call rotations",       values: [false, false, true, true] },
+      { name: "Escalation policies",     values: [false, false, true, true] },
+      { name: "Runbooks + war-rooms",    values: [false, false, true, true] },
+      { name: "Auto-drafted postmortems", values: [false, false, true, true] },
+    ],
+  },
+  {
+    group: "Team & integrations",
+    rows: [
+      { name: "Team members",            values: ["1", "5", "50", "Unlimited"] },
+      { name: "Slack / Discord",         values: [true, true, true, true] },
+      { name: "PagerDuty",               values: [false, true, true, true] },
+      { name: "Zapier / webhooks",       values: [false, true, true, true] },
+      { name: "SSO / SAML",              values: [false, false, false, true] },
+      { name: "Audit logs",              values: [false, false, false, true] },
+      { name: "Priority support",        values: [false, false, true, "Dedicated CSM"] },
+    ],
+  },
+];
+
+const FAQS = [
+  {
+    question: "Can I switch plans anytime?",
+    answer:
+      "Yes. Upgrades take effect immediately with prorated billing. Downgrades apply at your next renewal so you don't lose paid time.",
+  },
+  {
+    question: "Do you offer a discount for annual billing?",
+    answer: "Yes — 20% off every plan when billed annually. Enterprise annual contracts can be further customised.",
+  },
+  {
+    question: "How does the 60-day money-back guarantee work?",
+    answer:
+      "If Kloudfox doesn't save you from an incident in 60 days — or you just don't love it — email support@kloudfox.com and we refund every cent. No forms, no rebuttals.",
+  },
+  {
+    question: "Is there a free forever plan?",
+    answer: "Yes. 5 monitors, 1 status page, 5-minute checks, email alerts, and SSL monitoring — no card, no expiry.",
+  },
+  {
+    question: "Do you support non-profits or open-source projects?",
+    answer:
+      "Yes. Reach out via /contact with your project details and we'll set you up on a discounted Pro plan.",
+  },
+  {
+    question: "Can I self-host Kloudfox?",
+    answer:
+      "Not currently. Kloudfox is a SaaS. We do offer a dedicated single-tenant deployment for Enterprise customers with data-residency requirements.",
+  },
+];
+
+const PLAN_HEADERS = ["Free", "Basic", "Pro", "Enterprise"];
+
+function CellDisplay({ value, primary }: { value: PlanCell; primary?: boolean }) {
+  if (typeof value === "boolean") {
+    return value ? (
+      <Check className={cn("h-4 w-4 mx-auto", primary ? "text-emerald-400" : "text-emerald-500/80")} />
+    ) : (
+      <X className="h-4 w-4 text-muted-foreground/30 mx-auto" />
+    );
+  }
+  return <span className={cn("text-sm", primary ? "text-white font-semibold" : "text-foreground/80")}>{value}</span>;
+}
 
 const Pricing = () => {
-
-  const plans = [
-    {
-      name: "Intro",
-      price: "$0",
-      period: "Free forever",
-      description: "Perfect for starting out",
-      features: [
-        "5 Monitors",
-        "1 Status Page",
-        "5 minute checks",
-        "Email alerts",
-        "SSL monitoring"
-      ],
-      cta: "Free Signup",
-      ctaLink: "https://watch.kloudfox.com/register",
-      popular: false
-    },
-    {
-      name: "Basic",
-      price: "$25",
-      period: "/month",
-      description: "Great for small businesses",
-      features: [
-        "25 Monitors",
-        "5 Status Pages",
-        "1 minute checks",
-        "Email & SMS alerts",
-        "SSL monitoring",
-        "Zapier integration"
-      ],
-      cta: "Choose Plan",
-      ctaLink: "https://watch.kloudfox.com/register",
-      popular: false
-    },
-    {
-      name: "Popular",
-      price: "$85",
-      period: "/month",
-      description: "Best for growing businesses",
-      features: [
-        "Everything in Basic",
-        "Up to 50 Users",
-        "Up to 100 Monitors",
-        "All Status Pages",
-        "40-second checks",
-        "Multi-location geo checks",
-        "Priority Support",
-        "All integrations",
-        "Custom branding"
-      ],
-      cta: "Choose Plan",
-      ctaLink: "https://watch.kloudfox.com/register",
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      price: "$170",
-      period: "/month",
-      description: "For large organizations",
-      features: [
-        "Everything in Popular",
-        "Priority Support",
-        "All features",
-        "Unlimited Users",
-        "All Status Pages",
-        "Unlimited integrations",
-        "Custom SLA"
-      ],
-      cta: "Choose Plan",
-      ctaLink: "https://watch.kloudfox.com/register",
-      popular: false
-    }
-  ];
-
-  const comparisonFeatures = [
-    { feature: "E-mail alerts", intro: true, basic: true, popular: true, enterprise: true },
-    { feature: "Slack Alerts", intro: false, basic: true, popular: true, enterprise: true },
-    { feature: "Push notifications (iOS & Android)", intro: false, basic: true, popular: true, enterprise: true },
-    { feature: "Zapier", intro: false, basic: true, popular: true, enterprise: true },
-    { feature: "Webhooks", intro: false, basic: false, popular: true, enterprise: true },
-    { feature: "Second by second incident logging", intro: true, basic: true, popular: true, enterprise: true },
-    { feature: "Manually triggered incidents", intro: false, basic: false, popular: true, enterprise: true },
-    { feature: "Number of monitors", intro: "5", basic: "25", popular: "100", enterprise: "250" },
-    { feature: "Checks Time", intro: "5-min checks", basic: "1-min checks", popular: "40s checks", enterprise: "40s checks" },
-    { feature: "URL Ping", intro: true, basic: true, popular: true, enterprise: true },
-    { feature: "SSL monitoring", intro: false, basic: true, popular: true, enterprise: true },
-    { feature: "Multi-location & Geo-specific checks", intro: false, basic: false, popular: true, enterprise: true },
-    { feature: "Unique status pages", intro: "1", basic: "5", popular: "25", enterprise: "50" },
-    { feature: "Custom sub-domain with HTTPS", intro: true, basic: true, popular: true, enterprise: true },
-    { feature: "Customizable design", intro: true, basic: true, popular: true, enterprise: true },
-    { feature: "Public status subscriptions (E-mail & API)", intro: false, basic: false, popular: true, enterprise: true },
-    { feature: "Subscribers", intro: false, basic: false, popular: "500 subscribers", enterprise: "750 subscribers" },
-    { feature: "E-mail Support", intro: true, basic: true, popular: true, enterprise: true },
-    { feature: "Team Users", intro: "0", basic: "2", popular: "10", enterprise: "50" }
-  ];
-
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div>
+      <SEO
+        title="Pricing"
+        description="Simple, honest pricing. Free forever plan. Paid plans from $25. Every plan ships with a 60-day money-back guarantee."
+        path="/pricing"
+        jsonLd={[
+          breadcrumbJsonLd([
+            { name: "Home", url: "/" },
+            { name: "Pricing", url: "/pricing" },
+          ]),
+          faqJsonLd(FAQS),
+        ]}
+      />
+
       <Header />
-      <div className="flex-1 py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Choose the right plan that fits your business.
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              All plans come with a 60-day money-back guarantee
-            </p>
 
-
-            <div className="flex justify-center mb-8">
-              <div className="bg-gray-100 rounded-lg p-1 flex">
-                <button className="bg-white rounded px-4 py-2 font-medium">Monthly</button>
-                <button className="px-4 py-2 text-gray-600">Yearly</button>
-              </div>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[#050510] text-white">
+        <Aurora />
+        <div aria-hidden className="absolute inset-0 grid-bg opacity-30" />
+        <div className="container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20 relative z-10">
+          <Reveal className="max-w-3xl mx-auto text-center">
+            <div className="eyebrow mb-4 justify-center text-primary/90">
+              <span className="h-1 w-6 rounded-full bg-primary/60" aria-hidden />
+              Pricing
             </div>
-          </div>
+            <h1 className="text-4xl md:text-6xl font-display font-extrabold leading-[1.05] tracking-tight text-balance">
+              Priced for the team, <span className="gradient-text">not the finance department.</span>
+            </h1>
+            <p className="mt-5 text-lg text-white/60 leading-relaxed">
+              A free forever plan that actually monitors things. Paid plans that scale linearly with real usage. And a 60-day money-back guarantee on every paid tier — because we'd rather refund you than argue.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
-          {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {plans.map((plan, index) => (
-              <div 
-                key={index}
-                className={`bg-white rounded-lg border-2 p-6 relative ${
-                  plan.popular ? 'border-orange-500 shadow-lg' : 'border-gray-200'
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                  <div className="mb-2">
-                    <span className="text-3xl font-bold">{plan.price}</span>
-                    <span className="text-gray-600">{plan.period}</span>
-                  </div>
-                  <p className="text-gray-600">{plan.description}</p>
-                </div>
+      <PricingSection compact />
 
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+      {/* Feature matrix */}
+      <Section tone="default" padding="xl">
+        <SectionHeader
+          eyebrow="Feature comparison"
+          title={
+            <>
+              Everything, side by side,{" "}
+              <span className="gradient-text">no fine print.</span>
+            </>
+          }
+        />
 
-                <div className="flex justify-center">
-                  <Button 
-                    asChild 
-                    className={`w-full ${
-                      plan.popular ? 'bg-orange-500 hover:bg-orange-600' : 'bg-blue-600 hover:bg-blue-700'
-                    }`}
-                  >
-                    <a href={plan.ctaLink} target="_blank" rel="noopener noreferrer">
-                      {plan.cta}
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Plan Comparison Table */}
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Plan Comparison</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white rounded-lg shadow-lg">
-                <thead className="bg-gray-900 text-white">
-                  <tr>
-                    <th className="text-left p-4 rounded-tl-lg">Plan Comparison</th>
-                    <th className="text-center p-4">Intro</th>
-                    <th className="text-center p-4">Basic</th>
-                    <th className="text-center p-4 bg-orange-500">Popular</th>
-                    <th className="text-center p-4 rounded-tr-lg">Enterprise</th>
+        <div className="overflow-x-auto rounded-2xl border border-border bg-card/60 backdrop-blur-md shadow-soft">
+          <table className="w-full min-w-[720px] text-left">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="px-5 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-widest">Feature</th>
+                {PLAN_HEADERS.map((p, i) => (
+                  <th key={p} className={cn("px-5 py-4 text-sm font-semibold text-center", i === 2 && "bg-primary/5")}>
+                    <div className="flex items-center justify-center gap-2">
+                      {i === 2 && (
+                        <span className="rounded-full bg-primary/15 border border-primary/25 px-2 py-0.5 text-[9px] font-mono uppercase tracking-widest text-primary">
+                          Popular
+                        </span>
+                      )}
+                      {p}
+                    </div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {MATRIX.map((group) => (
+                <Fragment key={group.group}>
+                  <tr className="bg-muted/40">
+                    <td colSpan={5} className="px-5 py-2 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+                      {group.group}
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {comparisonFeatures.map((row, index) => (
-                    <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                      <td className="p-4 font-medium">{row.feature}</td>
-                      <td className="p-4 text-center">
-                        {typeof row.intro === 'boolean' ? (
-                          row.intro ? <Check className="h-5 w-5 text-green-500 mx-auto" /> : '—'
-                        ) : (
-                          row.intro
-                        )}
-                      </td>
-                      <td className="p-4 text-center">
-                        {typeof row.basic === 'boolean' ? (
-                          row.basic ? <Check className="h-5 w-5 text-green-500 mx-auto" /> : '—'
-                        ) : (
-                          row.basic
-                        )}
-                      </td>
-                      <td className="p-4 text-center bg-orange-50">
-                        {typeof row.popular === 'boolean' ? (
-                          row.popular ? <Check className="h-5 w-5 text-green-500 mx-auto" /> : '—'
-                        ) : (
-                          row.popular
-                        )}
-                      </td>
-                      <td className="p-4 text-center">
-                        {typeof row.enterprise === 'boolean' ? (
-                          row.enterprise ? <Check className="h-5 w-5 text-green-500 mx-auto" /> : '—'
-                        ) : (
-                          row.enterprise
-                        )}
-                      </td>
+                  {group.rows.map((row, i) => (
+                    <tr key={`${group.group}-${row.name}`} className={cn("border-b border-border/40 last:border-b-0", i % 2 === 0 ? "bg-background/40" : "bg-transparent")}>
+                      <td className="px-5 py-3 text-sm text-foreground/80">{row.name}</td>
+                      {row.values.map((v, idx) => (
+                        <td key={idx} className={cn("px-5 py-3 text-center", idx === 2 && "bg-primary/5")}>
+                          <CellDisplay value={v} primary={idx === 2} />
+                        </td>
+                      ))}
                     </tr>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+                </Fragment>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </div>
+      </Section>
+
+      <ComparisonSection />
+
+      {/* FAQ */}
+      <Section tone="default" padding="xl">
+        <SectionHeader eyebrow="FAQ" title="Common pricing questions." />
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-2">
+            {FAQS.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border border-border bg-card/60 backdrop-blur-md rounded-2xl px-5 md:px-6 data-[state=open]:border-primary/30">
+                <AccordionTrigger className="text-left font-semibold text-[15px] hover:no-underline py-5">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-[15px] leading-relaxed pb-5">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </Section>
+
       <Footer />
     </div>
   );

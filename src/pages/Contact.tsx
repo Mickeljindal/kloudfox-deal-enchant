@@ -1,201 +1,208 @@
+import { useState } from "react";
+import { Mail, MapPin, Send, Loader2, CheckCircle2 } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Section from "@/components/kf/Section";
+import Aurora from "@/components/kf/Aurora";
+import Reveal from "@/components/kf/Reveal";
+import SEO, { breadcrumbJsonLd, organizationJsonLd } from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { SITE } from "@/lib/site";
 
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+/**
+ * Optional server-side endpoint that accepts JSON { name, email, subject, message }
+ * and forwards to your transactional-email provider (Brevo, Resend, Postmark, etc.).
+ *
+ * The endpoint URL is read from Vite's build-time env `VITE_CONTACT_ENDPOINT`.
+ * If unset, the form falls back to a `mailto:` compose, which works everywhere
+ * and never exposes secrets in the browser bundle.
+ *
+ * A reference serverless implementation lives at `api/contact.example.ts`.
+ */
+const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
+    if (!form.name || !form.email || !form.subject) return;
 
+    if (!CONTACT_ENDPOINT) {
+      // No backend configured — open the visitor's mail client with the message pre-filled.
+      const body = `Hi Kloudfox team,\n\n${form.message}\n\n— ${form.name} (${form.email})`;
+      window.location.href = `mailto:${SITE.contact.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+      setState("sent");
+      return;
+    }
+
+    setState("sending");
     try {
-      const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'api-key': 'xsmtpsib-69d8ca4a5d456b310c538da12761961e7b51dfcb4e0adbc6a7516345a254b6a9-dsZAOTaSqKbgjFNX'
-        },
-        body: JSON.stringify({
-          sender: {
-            name: formData.name,
-            email: formData.email
-          },
-          to: [{
-            email: 'support@kloudfox.com',
-            name: 'KloudFox Support'
-          }],
-          subject: `Contact Form: ${formData.subject}`,
-          htmlContent: `
-            <h3>New Contact Form Submission</h3>
-            <p><strong>Name:</strong> ${formData.name}</p>
-            <p><strong>Email:</strong> ${formData.email}</p>
-            <p><strong>Subject:</strong> ${formData.subject}</p>
-            <p><strong>Message:</strong></p>
-            <p>${formData.message.replace(/\n/g, '<br>')}</p>
-          `
-        })
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
       });
-
-      if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for contacting us. We'll get back to you soon.",
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
+      setState("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
+      toast({ title: "Message sent", description: "We'll get back to you within one business day." });
+    } catch (err) {
+      setState("idle");
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
+        title: "Couldn't send",
+        description:
+          "Something went wrong. Please email us directly at " + SITE.contact.email,
         variant: "destructive",
       });
-    } finally {
-      setIsLoading(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div>
+      <SEO
+        title="Contact"
+        description="Get in touch with Kloudfox. Sales, support, partnerships, and press inquiries — we reply within one business day."
+        path="/contact"
+        jsonLd={[
+          breadcrumbJsonLd([
+            { name: "Home", url: "/" },
+            { name: "Contact", url: "/contact" },
+          ]),
+          organizationJsonLd(),
+        ]}
+      />
+
       <Header />
-      <div className="flex-1 py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">We're here to help you.</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Do you have any problem with KloudFox or just want to say "Hi"?
+
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[#050510] text-white">
+        <Aurora />
+        <div aria-hidden className="absolute inset-0 grid-bg opacity-40" />
+        <div className="container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20 relative z-10">
+          <Reveal className="max-w-3xl mx-auto text-center">
+            <div className="eyebrow mb-4 justify-center text-primary/90">
+              <span className="h-1 w-6 rounded-full bg-primary/60" aria-hidden />
+              Contact
+            </div>
+            <h1 className="text-4xl md:text-6xl font-display font-extrabold leading-[1.05] tracking-tight text-balance">
+              Talk to a <span className="gradient-text">real human.</span>
+            </h1>
+            <p className="mt-5 text-lg text-white/60 leading-relaxed max-w-xl mx-auto">
+              We reply within one business day. For urgent production incidents,
+              email <a className="underline underline-offset-4" href={`mailto:${SITE.contact.email}`}>{SITE.contact.email}</a>.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email address"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="What's this about?"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your message (Optional)
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us how we can help..."
-                    rows={6}
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  disabled={isLoading}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                >
-                  {isLoading ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-4 w-4" />
-                      Submit
-                    </>
-                  )}
-                </Button>
-              </form>
-            </div>
-
-            <div className="space-y-8">
-              <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h3 className="text-xl font-bold mb-6">Contact Information</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <Mail className="h-5 w-5 text-blue-600 mr-3 mt-1" />
-                    <div>
-                      <p className="font-medium">support@kloudfox.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-blue-600 mr-3 mt-1" />
-                    <div>
-                      <p>Darien, Connecticut, USA</p>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600 mt-4">
-                  KloudFox is definitively product driven by the world's premier all-in-one cloud monitoring solution. To discover more, kindly provide your discount email address, and we'll promptly reach out to you on a business day.
-                </p>
-              </div>
-
-            </div>
-          </div>
+          </Reveal>
         </div>
-      </div>
+      </section>
+
+      <Section tone="default" padding="xl">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+          {/* Form */}
+          <Reveal className="lg:col-span-3">
+            <div className="rounded-2xl border border-border bg-card/70 backdrop-blur-md p-6 md:p-8">
+              {state === "sent" ? (
+                <div className="text-center py-10">
+                  <CheckCircle2 className="h-10 w-10 text-emerald-400 mx-auto mb-3" />
+                  <h3 className="text-xl font-semibold mb-1">Message queued</h3>
+                  <p className="text-muted-foreground">
+                    We'll reply within one business day at <span className="text-foreground font-medium">{form.email || "your inbox"}</span>.
+                  </p>
+                  <Button className="mt-6" variant="outline" onClick={() => setState("idle")}>
+                    Send another
+                  </Button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="text-sm font-medium mb-1.5 block">Your name</label>
+                      <Input id="name" name="name" required value={form.name} onChange={handleChange} placeholder="Ada Lovelace" />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="text-sm font-medium mb-1.5 block">Email</label>
+                      <Input id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="ada@yourcompany.com" />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="subject" className="text-sm font-medium mb-1.5 block">Subject</label>
+                    <Input id="subject" name="subject" required value={form.subject} onChange={handleChange} placeholder="What can we help with?" />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="text-sm font-medium mb-1.5 block">Message</label>
+                    <Textarea id="message" name="message" rows={6} value={form.message} onChange={handleChange} placeholder="Tell us a bit more…" />
+                  </div>
+                  <Button type="submit" disabled={state === "sending"} className="w-full btn-aurora rounded-xl h-11 font-semibold">
+                    {state === "sending" ? (
+                      <>
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        Sending
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4 mr-2" />
+                        Send message
+                      </>
+                    )}
+                  </Button>
+                  {!CONTACT_ENDPOINT && (
+                    <p className="text-xs text-muted-foreground">
+                      This form opens your email client. Prefer to type here directly? Set <code className="font-mono">VITE_CONTACT_ENDPOINT</code> at build time.
+                    </p>
+                  )}
+                </form>
+              )}
+            </div>
+          </Reveal>
+
+          {/* Info card */}
+          <Reveal delay={100} className="lg:col-span-2">
+            <div className="rounded-2xl border border-border bg-card/70 backdrop-blur-md p-6 md:p-8 space-y-6 h-full">
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Direct channels</h3>
+                <div className="space-y-4 text-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="h-9 w-9 rounded-lg bg-primary/10 border border-primary/20 text-primary flex items-center justify-center shrink-0">
+                      <Mail className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <div className="font-medium">General & support</div>
+                      <a className="text-muted-foreground hover:text-foreground transition-colors" href={`mailto:${SITE.contact.email}`}>
+                        {SITE.contact.email}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="h-9 w-9 rounded-lg bg-primary/10 border border-primary/20 text-primary flex items-center justify-center shrink-0">
+                      <MapPin className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <div className="font-medium">Kloudfox HQ</div>
+                      <div className="text-muted-foreground">
+                        {SITE.address.addressLocality}, {SITE.address.addressRegion} · {SITE.address.addressCountry}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-4 border-t border-border">
+                <div className="text-sm text-muted-foreground leading-relaxed">
+                  For security disclosures, please email <a className="underline underline-offset-4" href="mailto:security@kloudfox.com">security@kloudfox.com</a> — encrypted PGP key available on request.
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
       <Footer />
     </div>
   );

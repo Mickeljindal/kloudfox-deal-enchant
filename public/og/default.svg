@@ -1,0 +1,150 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Base background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#070713"/>
+      <stop offset="1" stop-color="#04040c"/>
+    </linearGradient>
+
+    <!-- Headline gradient: violet -> sky -> emerald -->
+    <linearGradient id="headline" x1="64" y1="330" x2="640" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9560F0"/>
+      <stop offset="0.5" stop-color="#41A4FB"/>
+      <stop offset="1" stop-color="#14EB9C"/>
+    </linearGradient>
+
+    <!-- Fox mark gradient -->
+    <linearGradient id="fox" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FA8C42"/>
+      <stop offset="1" stop-color="#9560F0"/>
+    </linearGradient>
+
+    <!-- Aurora blobs -->
+    <radialGradient id="a1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#9560F0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#9560F0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#41A4FB" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#41A4FB" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a3" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#14EB9C" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#14EB9C" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+
+    <linearGradient id="cardsheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.01"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Aurora layer -->
+  <g filter="url(#blur)">
+    <ellipse cx="230" cy="150" rx="360" ry="300" fill="url(#a1)"/>
+    <ellipse cx="1050" cy="120" rx="340" ry="300" fill="url(#a2)"/>
+    <ellipse cx="980" cy="560" rx="380" ry="300" fill="url(#a3)"/>
+  </g>
+
+  <!-- Fine grid -->
+  <g stroke="#ffffff" stroke-opacity="0.045" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="350" y1="0" x2="350" y2="630"/>
+    <line x1="550" y1="0" x2="550" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="950" y1="0" x2="950" y2="630"/>
+  </g>
+
+  <!-- Border frame -->
+  <rect x="16" y="16" width="1168" height="598" rx="28" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+
+  <!-- Logo row -->
+  <g transform="translate(64, 60)">
+    <g transform="scale(1.35)">
+      <path d="M6 8l6-3 4 2 4-2 6 3-1 8-4 5h-3l-1 3h-2l-1-3h-3l-4-5z" fill="url(#fox)"/>
+      <circle cx="12.5" cy="14" r="1.2" fill="#ffffff"/>
+      <circle cx="19.5" cy="14" r="1.2" fill="#ffffff"/>
+    </g>
+    <text x="52" y="27" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#ffffff" letter-spacing="-0.5">KloudFox</text>
+  </g>
+
+  <!-- Eyebrow -->
+  <g transform="translate(64, 214)">
+    <rect x="0" y="-14" width="26" height="4" rx="2" fill="#9560F0"/>
+    <text x="40" y="-6" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#B79BF5" letter-spacing="3">AI-POWERED MONITORING</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="62" y="320" font-family="Helvetica, Arial, sans-serif" font-size="82" font-weight="800" fill="#ffffff" letter-spacing="-2.5">Know before your</text>
+  <text x="62" y="410" font-family="Helvetica, Arial, sans-serif" font-size="82" font-weight="800" fill="url(#headline)" letter-spacing="-2.5">customers do.</text>
+
+  <!-- Sub-headline -->
+  <text x="64" y="474" font-family="Helvetica, Arial, sans-serif" font-size="27" font-weight="400" fill="#A8AEC0">40-second checks from four continents.</text>
+  <text x="64" y="510" font-family="Helvetica, Arial, sans-serif" font-size="27" font-weight="400" fill="#A8AEC0">Uptime, SSL &amp; incident alerts before your users notice.</text>
+
+  <!-- Bottom row: url + trust -->
+  <g transform="translate(64, 566)">
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">kloudfox.com</text>
+    <circle cx="196" cy="-7" r="4" fill="#14EB9C"/>
+    <text x="212" y="0" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="400" fill="#7C8398">Free forever plan · No credit card</text>
+  </g>
+
+  <!-- Right: floating monitors mini-card, slightly tilted -->
+  <g transform="translate(792, 176) rotate(-3)">
+    <rect x="0" y="0" width="352" height="278" rx="20" fill="#0B0B18" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5"/>
+    <rect x="0" y="0" width="352" height="278" rx="20" fill="url(#cardsheen)"/>
+
+    <!-- Card header -->
+    <circle cx="24" cy="30" r="4" fill="#EF4444" fill-opacity="0.8"/>
+    <circle cx="40" cy="30" r="4" fill="#FBBF24" fill-opacity="0.8"/>
+    <circle cx="56" cy="30" r="4" fill="#10B981" fill-opacity="0.8"/>
+    <text x="80" y="35" font-family="monospace" font-size="13" fill="#8891A6">watch.kloudfox.com</text>
+    <line x1="0" y1="54" x2="352" y2="54" stroke="#ffffff" stroke-opacity="0.08"/>
+
+    <!-- Stat pills -->
+    <g transform="translate(20, 72)">
+      <rect x="0" y="0" width="98" height="52" rx="10" fill="#8B5CF6" fill-opacity="0.12" stroke="#8B5CF6" stroke-opacity="0.3"/>
+      <text x="12" y="22" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#B79BF5">UPTIME</text>
+      <text x="12" y="42" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">99.98%</text>
+
+      <rect x="107" y="0" width="98" height="52" rx="10" fill="#10B981" fill-opacity="0.12" stroke="#10B981" stroke-opacity="0.3"/>
+      <text x="119" y="22" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#6EE7B7">RESPONSE</text>
+      <text x="119" y="42" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">87ms</text>
+
+      <rect x="214" y="0" width="98" height="52" rx="10" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-opacity="0.3"/>
+      <text x="226" y="22" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#7DD3FC">INCIDENTS</text>
+      <text x="226" y="42" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+    </g>
+
+    <!-- Monitor rows -->
+    <g transform="translate(20, 144)" font-family="Helvetica, Arial, sans-serif">
+      <circle cx="6" cy="14" r="5" fill="#10B981"/>
+      <text x="22" y="19" font-size="14" fill="#E5E7EB">api.acme.io</text>
+      <text x="300" y="19" font-size="12" fill="#8891A6" text-anchor="end" font-family="monospace">42ms</text>
+
+      <circle cx="6" cy="52" r="5" fill="#10B981"/>
+      <text x="22" y="57" font-size="14" fill="#E5E7EB">app.linear.app</text>
+      <text x="300" y="57" font-size="12" fill="#8891A6" text-anchor="end" font-family="monospace">118ms</text>
+
+      <circle cx="6" cy="90" r="5" fill="#FBBF24"/>
+      <text x="22" y="95" font-size="14" fill="#E5E7EB">checkout.shop</text>
+      <text x="300" y="95" font-size="12" fill="#FBBF24" text-anchor="end" font-family="monospace">214ms</text>
+    </g>
+
+    <!-- Sparkline -->
+    <polyline points="20,262 60,254 100,258 140,246 180,250 220,238 260,244 300,230 332,236"
+      fill="none" stroke="#41A4FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

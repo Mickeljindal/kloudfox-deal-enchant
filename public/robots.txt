@@ -1,14 +1,29 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# Kloudfox robots.txt
+# https://kloudfox.com
 
 User-agent: *
 Allow: /
+Disallow: /emails
+Disallow: /emails/
+Disallow: /pitch-deck
+
+# AI crawlers we welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://kloudfox.com/sitemap.xml

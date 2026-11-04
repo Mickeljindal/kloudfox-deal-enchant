@@ -1,0 +1,32 @@
+# Kloudfox
+
+> Kloudfox is AI-powered website monitoring that predicts outages before they happen. It probes your endpoints every 40 seconds from four continents, applies anomaly detection to catch problems in advance, and ships alerts to Slack, PagerDuty, and webhooks in under 30 seconds.
+
+Kloudfox includes uptime monitoring, SSL/TLS monitoring, hosted status pages, incident management with on-call rotations, and a full integrations layer. There is a free forever plan (5 monitors, 1 status page, 5-minute checks), paid plans start at $25/month, and every paid plan includes a 60-day money-back guarantee.
+
+## Products
+
+- [Website Monitoring](https://kloudfox.com/website-monitoring): 40-second HTTP(S) checks worldwide, content assertions, multi-region probes.
+- [SSL Monitoring](https://kloudfox.com/ssl-monitoring): Hourly TLS validation, expiry countdowns, chain verification, cipher grading.
+- [Status Pages](https://kloudfox.com/status-page): Hosted, on-brand, custom-domain public status pages with subscriber notifications.
+- [Incident Management](https://kloudfox.com/incident-management): On-call rotations, runbooks, war-rooms, and auto-drafted postmortems.
+- [Integrations](https://kloudfox.com/integrations): Slack, Discord, PagerDuty, Zapier, webhooks, iOS, Android, email, SMS.
+
+## Company
+
+- [About Kloudfox](https://kloudfox.com/about)
+- [Pricing](https://kloudfox.com/pricing)
+- [Contact](https://kloudfox.com/contact)
+
+## Reading
+
+- [Blog index](https://kloudfox.com/blog): Deep-dive posts on uptime, SSL, incident response, and monitoring architecture. New posts daily.
+- [RSS feed](https://kloudfox.com/rss.xml)
+- [Sitemap](https://kloudfox.com/sitemap.xml)
+
+## Guarantees
+
+- Free forever plan, no credit card
+- 60-day money-back guarantee on every paid plan
+- SOC 2-compliant hosting
+- GDPR / DPA available at [/data-processing-agreement](https://kloudfox.com/data-processing-agreement)
