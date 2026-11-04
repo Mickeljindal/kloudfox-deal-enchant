@@ -28,6 +28,7 @@ const STATIC_ROUTES = [
   { path: "/about", priority: "0.7", changefreq: "monthly" },
   { path: "/pricing", priority: "0.9", changefreq: "weekly" },
   { path: "/contact", priority: "0.6", changefreq: "monthly" },
+  { path: "/torixpulse-transition", priority: "0.8", changefreq: "weekly" },
   { path: "/website-monitoring", priority: "0.9", changefreq: "monthly" },
   { path: "/ssl-monitoring", priority: "0.9", changefreq: "monthly" },
   { path: "/status-page", priority: "0.9", changefreq: "monthly" },

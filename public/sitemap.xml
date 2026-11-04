@@ -2,91 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kloudfox.com/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/about</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/pricing</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/contact</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://kloudfox.com/torixpulse-transition</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kloudfox.com/website-monitoring</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/ssl-monitoring</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/status-page</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/incident-management</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/integrations</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/blog</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/terms-of-service</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/privacy-policy</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/cookie-policy</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/refund-policy</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://kloudfox.com/data-processing-agreement</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

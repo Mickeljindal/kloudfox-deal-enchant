@@ -63,3 +63,42 @@ export function absoluteUrl(path = "/"): string {
   const p = path.startsWith("/") ? path : `/${path}`;
   return `${SITE.url}${p}`;
 }
+
+/* -------------------------------------------------------------------------- */
+/*  Transition — KloudFox → TorixPulse (AppSumo lifetime-deal continuation)    */
+/*                                                                             */
+/*  All announcement copy, links, and routing live here so the banner and the  */
+/*  public transition page stay in sync and can be tuned in ONE place.         */
+/* -------------------------------------------------------------------------- */
+
+export const MIGRATION = {
+  /** Master switch. false → banner hidden + transition footer link removed. */
+  enabled: true,
+
+  /**
+   * Message token. Bump this whenever the banner wording materially changes so
+   * that visitors who dismissed an older banner are shown the new one again.
+   */
+  version: "2026-07-torixpulse-v2",
+
+  /** Public announcement page route. */
+  path: "/torixpulse-transition",
+
+  /** Parent company behind the transition. */
+  parentCompany: "KloudBean",
+
+  partner: {
+    name: "TorixPulse",
+    company: "TorixStack",
+    url: "https://torixstack.com/torixpulse/",
+  },
+
+  /** Top-of-site announcement strip copy. */
+  banner: {
+    headline: "KloudFox is transitioning to TorixPulse!",
+    description:
+      "We're partnering with TorixStack to bring you an improved monitoring experience. Your AppSumo Lifetime Deal benefits remain honoured on TorixPulse. Your account is ready — simply reconfigure your monitors and status pages to get started.",
+    primaryCta: "Explore Your TorixPulse Account",
+    secondaryCta: "Learn About the Transition",
+  },
+};

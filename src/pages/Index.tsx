@@ -16,6 +16,7 @@ import FAQSection, { FAQS } from "@/components/FAQSection";
 import MobileAppSection from "@/components/MobileAppSection";
 import CustomerLogosCarousel from "@/components/CustomerLogosCarousel";
 import BigWordmark from "@/components/kf/BigWordmark";
+import TransitionCallout from "@/components/kf/TransitionCallout";
 
 import SEO, {
   faqJsonLd,
@@ -46,6 +47,9 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+
+        {/* KloudFox → TorixPulse transition call-out */}
+        <TransitionCallout />
 
         {/* Trusted-by strip */}
         <section

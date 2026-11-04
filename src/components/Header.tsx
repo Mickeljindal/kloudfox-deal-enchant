@@ -4,6 +4,7 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { NAV, SITE } from "@/lib/site";
+import AnnouncementBanner from "./AnnouncementBanner";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -24,14 +25,16 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-background/70 backdrop-blur-xl border-b border-hairline/70 shadow-soft"
-          : "bg-background/40 backdrop-blur-md border-b border-transparent",
-      )}
-    >
+    <>
+      <AnnouncementBanner />
+      <header
+        className={cn(
+          "sticky top-0 z-50 transition-all duration-300",
+          scrolled
+            ? "bg-background/70 backdrop-blur-xl border-b border-hairline/70 shadow-soft"
+            : "bg-background/40 backdrop-blur-md border-b border-transparent",
+        )}
+      >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -176,7 +179,8 @@ const Header = () => {
           </div>
         )}
       </div>
-    </header>
+      </header>
+    </>
   );
 };
 

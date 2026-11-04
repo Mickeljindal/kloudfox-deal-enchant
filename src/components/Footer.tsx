@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Twitter, Linkedin, Instagram, Facebook, ArrowUpRight } from "lucide-react";
-import { SITE } from "@/lib/site";
+import { SITE, MIGRATION } from "@/lib/site";
 import StatusPing from "./kf/StatusPing";
 
 const Footer = () => {
@@ -34,6 +34,9 @@ const Footer = () => {
       links: [
         { name: "About", href: "/about" },
         { name: "Contact", href: "/contact" },
+        ...(MIGRATION.enabled
+          ? [{ name: `${MIGRATION.partner.name} transition`, href: MIGRATION.path }]
+          : []),
       ],
     },
     {
